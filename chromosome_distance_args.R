@@ -48,17 +48,6 @@ filtered_data <- gff_data %>%
     seqid = factor(seqid, levels = chrom_limits$seqid)  # Apply same order to id
   )
 
-# # Combinar los datos de límites del cromosoma con los datos filtrados
-# result <- filtered_data %>%
-#   left_join(chrom_limits, by = "seqid") %>%
-#   mutate(
-#     distance_to_chrom_start = start - chrom_start,  # Distancia del inicio del gen al inicio del cromosoma
-#     distance_to_chrom_end = chrom_end - end        # Distancia del final del gen al final del cromosoma
-#   )
-
-# filtered_result <- result %>%
-#   select(seqid, start, distance_to_chrom_start, distance_to_chrom_end)
-
 # make plot
 ggplot() +
   # Add line of chromosome
