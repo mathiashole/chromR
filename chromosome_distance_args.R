@@ -80,5 +80,6 @@ ggplot() +
 
 # Save plot picture
 plot_file <- "gene_positions_plot.pdf"
-ggsave(plot_file, width = 10, height = 6)
+# ggsave(plot_file, width = 10, height = 6)
+ggsave(plot_file,width = 8, height = 10)
 cat("Plot saved to:", plot_file, "\n")
