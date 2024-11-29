@@ -35,6 +35,10 @@ chrom_limits <- gff_data %>%
   )  %>%
   arrange(desc(chrom_length))  # Ordenar de mayor a menor longitud
 
+# Reordenar los niveles de seqid según la longitud del cromosoma
+chrom_limits <- chrom_limits %>%
+  mutate(seqid = factor(seqid, levels = seqid))  # Reordenar niveles
+
 # sequence filter both keywords
 filtered_data <- gff_data %>%
   filter(grepl(keyword1, attributes)) %>%
