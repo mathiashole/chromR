@@ -33,7 +33,7 @@ chrom_limits <- gff_data %>%
     chrom_length = chrom_end - chrom_start,  # Calcular longitud del cromosoma
     .groups = "drop"
   )  %>%
-  arrange(desc(chrom_length))  # Ordenar de mayor a menor longitud
+  arrange(chrom_length)  # Ordenar de mayor a menor longitud
 
 # Reordenar los niveles de seqid según la longitud del cromosoma
 chrom_limits <- chrom_limits %>%
@@ -48,16 +48,16 @@ filtered_data <- gff_data %>%
     seqid = factor(seqid, levels = chrom_limits$seqid)  # Apply same order to id
   )
 
-# Combinar los datos de límites del cromosoma con los datos filtrados
-result <- filtered_data %>%
-  left_join(chrom_limits, by = "seqid") %>%
-  mutate(
-    distance_to_chrom_start = start - chrom_start,  # Distancia del inicio del gen al inicio del cromosoma
-    distance_to_chrom_end = chrom_end - end        # Distancia del final del gen al final del cromosoma
-  )
+# # Combinar los datos de límites del cromosoma con los datos filtrados
+# result <- filtered_data %>%
+#   left_join(chrom_limits, by = "seqid") %>%
+#   mutate(
+#     distance_to_chrom_start = start - chrom_start,  # Distancia del inicio del gen al inicio del cromosoma
+#     distance_to_chrom_end = chrom_end - end        # Distancia del final del gen al final del cromosoma
+#   )
 
-filtered_result <- result %>%
-  select(seqid, start, distance_to_chrom_start, distance_to_chrom_end)
+# filtered_result <- result %>%
+#   select(seqid, start, distance_to_chrom_start, distance_to_chrom_end)
 
 # make plot
 ggplot() +
