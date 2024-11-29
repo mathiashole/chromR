@@ -52,6 +52,18 @@ result <- filtered_data %>%
 filtered_result <- result %>%
   select(seqid, start, distance_to_chrom_start, distance_to_chrom_end)
 
+# # length of chromosome
+# chrom_lengths <- chrom_limits %>%
+#   mutate(length = chrom_end - chrom_start)
+
+# # reorder chromosome large to short
+# chrom_lengths <- chrom_lengths %>%
+#   arrange(length) %>%
+#   mutate(seqid = factor(seqid, levels = seqid))
+
+# dgf1_data <- dgf1_data %>%
+#   mutate(seqid = factor(seqid, levels = levels(chrom_lengths$seqid)))
+
 # output_file <- "gene_positions.csv"
 # write_csv(filtered_result, output_file)
 # cat("Results saved to:", output_file, "\n")
