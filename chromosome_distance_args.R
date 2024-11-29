@@ -44,7 +44,8 @@ filtered_data <- gff_data %>%
   filter(grepl(keyword1, attributes)) %>%
   filter(grepl(keyword2, type)) %>%
   mutate(
-    mid_position = (start + end) / 2  # calculate mean position
+    mid_position = (start + end) / 2,  # calculate mean position
+    seqid = factor(seqid, levels = chrom_limits$seqid)  # Apply same order to id
   )
 
 # Combinar los datos de límites del cromosoma con los datos filtrados
