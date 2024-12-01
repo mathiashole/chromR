@@ -10,7 +10,7 @@ args <- commandArgs(trailingOnly = TRUE)
 
 # arguments validation
 if (length(args) < 3) {
-  stop("Usage: Rscript plot_dgf1_genes.R <gff_file> <keyword1> <keyword2>")
+  stop("Usage: Rscript chromosome_distance_args.R (gff_file) (keyword1) (keyword2_associated_keyword1) [(keyword3...)]")
 }
 
 # global variable
