@@ -49,14 +49,26 @@ chrom_limits <- gff_data %>%
 chrom_limits <- chrom_limits %>%
   mutate(seqid = factor(seqid, levels = seqid))  # Reordenar levels
 
-# sequence filter both keywords
-filtered_data <- gff_data %>%
-  filter(grepl(keyword1, attributes)) %>%
-  filter(grepl(keyword2, type)) %>%
-  mutate(
-    mid_position = (start + end) / 2,  # calculate mean position
-    seqid = factor(seqid, levels = chrom_limits$seqid)  # Apply same order to id
-  )
+# # sequence filter both keywords
+# filtered_data <- gff_data %>%
+#   filter(grepl(keyword1, attributes)) %>%
+#   filter(grepl(keyword2, type)) %>%
+#   mutate(
+#     mid_position = (start + end) / 2,  # calculate mean position
+#     seqid = factor(seqid, levels = chrom_limits$seqid)  # Apply same order to id
+#   )
+
+# Filtrar datos para cada palabra clave y combinarlos
+filtered_data <- lapply(keywords, function(kw) {
+  gff_data %>%
+    filter(grepl(kw, attributes)) %>%
+    mutate(
+      mid_position = (start + end) / 2,  # mean position
+      keyword = kw,                     # add associated keyword
+      seqid = factor(seqid, levels = chrom_limits$seqid)  # Reorder levels
+    )
+}) %>%
+  bind_rows()  # Combain all filter data in just one dataframe
 
 # make plot
 ggplot() +
