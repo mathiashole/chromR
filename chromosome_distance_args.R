@@ -77,7 +77,7 @@ ggplot() +
   labs(
     x = "Position on Chromosome",
     y = "Chromosome",
-    color = "Keywords",  # Leyenda para palabras clave
+    color = "Keywords",  # keyword label
     title = "Gene Positions by Keywords on Chromosomes"
   ) +
   theme_minimal()
