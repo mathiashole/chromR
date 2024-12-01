@@ -58,7 +58,7 @@ chrom_limits <- chrom_limits %>%
 #     seqid = factor(seqid, levels = chrom_limits$seqid)  # Apply same order to id
 #   )
 
-# Filtrar datos para cada palabra clave y combinarlos
+# filter data per keyword and combain
 filtered_data <- lapply(keywords, function(kw) {
   gff_data %>%
     filter(grepl(kw, attributes)) %>%
