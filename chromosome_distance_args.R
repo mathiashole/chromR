@@ -13,10 +13,20 @@ if (length(args) < 3) {
   stop("Usage: Rscript chromosome_distance_args.R (gff_file) (keyword1) (keyword2_associated_keyword1) [(keyword3...)]")
 }
 
+# # global variable
+# gff_file <- args[1]
+# keyword1 <- args[2]
+# keyword2 <- args[3]
+
+# # charge gff file
+# gff_data <- read_tsv(gff_file, comment = "#", col_names = FALSE)
+
+# # change column name of gff
+# colnames(gff_data) <- c("seqid", "source", "type", "start", "end", "score", "strand", "phase", "attributes")
+
 # global variable
 gff_file <- args[1]
-keyword1 <- args[2]
-keyword2 <- args[3]
+keywords <- args[2:length(args)]  # All keywords provided
 
 # charge gff file
 gff_data <- read_tsv(gff_file, comment = "#", col_names = FALSE)
