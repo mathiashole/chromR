@@ -81,8 +81,8 @@ ggplot() +
   # Add gene point to chromosome line
   geom_point(
     data = filtered_data,
-    aes(x = mid_position, y = seqid),
-    color = "red", size = 1.5
+    aes(x = mid_position, y = seqid, color = keyword),
+    size = 1.5
   ) +
   # fix label
   labs(
