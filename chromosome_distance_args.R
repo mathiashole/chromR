@@ -34,20 +34,20 @@ gff_data <- read_tsv(gff_file, comment = "#", col_names = FALSE)
 # change column name of gff
 colnames(gff_data) <- c("seqid", "source", "type", "start", "end", "score", "strand", "phase", "attributes")
 
-# Calcular los límites del cromosoma (inicio y final) por grupo
+# Calculate mimits of chromosome (start and end) per group
 chrom_limits <- gff_data %>%
   group_by(seqid) %>%
   summarize(
     chrom_start = min(start),
     chrom_end = max(end),
-    chrom_length = chrom_end - chrom_start,  # Calcular longitud del cromosoma
+    chrom_length = chrom_end - chrom_start,  # Calcualte chrmosome length
     .groups = "drop"
   )  %>%
-  arrange(chrom_length)  # Ordenar de mayor a menor longitud
+  arrange(chrom_length)  # Order longest to smaller
 
-# Reordenar los niveles de seqid según la longitud del cromosoma
+# Reorder seqid levels per chromosome length
 chrom_limits <- chrom_limits %>%
-  mutate(seqid = factor(seqid, levels = seqid))  # Reordenar niveles
+  mutate(seqid = factor(seqid, levels = seqid))  # Reordenar levels
 
 # sequence filter both keywords
 filtered_data <- gff_data %>%
