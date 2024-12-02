@@ -8,22 +8,23 @@ library(ggplot2)
 # read arguments
 args <- commandArgs(trailingOnly = TRUE)
 
-# arguments validation
+# Validate arguments
 if (length(args) < 3) {
   stop("Usage: Rscript chromosome_distance_args.R (gff_file) (keyword1) (keyword2_associated_keyword1) [(keyword3...)]")
 }
 
-# global variable
+# Input variables
 gff_file <- args[1]
 keywords <- args[2:length(args)]  # All keywords provided
 
-# charge gff file
+# Load GFF file
 gff_data <- read_tsv(gff_file, comment = "#", col_names = FALSE)
 
-# change column name of gff
+# Rename GFF columns
 colnames(gff_data) <- c("seqid", "source", "type", "start", "end", "score", "strand", "phase", "attributes")
 
 # Calculate mimits of chromosome (start and end) per group
+# Calculate chromosome limits
 chrom_limits <- gff_data %>%
   group_by(seqid) %>%
   summarize(
@@ -34,11 +35,11 @@ chrom_limits <- gff_data %>%
   )  %>%
   arrange(chrom_length)  # Order longest to smaller
 
-# Reorder seqid levels per chromosome length
+# Order seqid
 chrom_limits <- chrom_limits %>%
   mutate(seqid = factor(seqid, levels = seqid))  # Reordenar levels
 
-# filter data per keyword and combain
+# Filter data for keyword1 and keyword2
 filtered_data <- lapply(keywords, function(kw) {
   gff_data %>%
     filter(grepl(kw, attributes)) %>%
@@ -52,19 +53,19 @@ filtered_data <- lapply(keywords, function(kw) {
 
 # make plot
 ggplot() +
-  # Add line of chromosome
+  # Chromosome lines
   geom_segment(
     data = chrom_limits,
     aes(x = chrom_start, xend = chrom_end, y = seqid, yend = seqid),
     color = "gray50", size = 0.8
   ) +
-  # Add gene point to chromosome line
+  # Points for genes
   geom_point(
     data = filtered_data,
     aes(x = mid_position, y = seqid, color = keyword),
     size = 1.5
   ) +
-  # fix label
+  # Finalize plot aesthetics
   labs(
     x = "Position on Chromosome",
     y = "Chromosome",
