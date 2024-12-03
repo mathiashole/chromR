@@ -17,6 +17,15 @@ if (length(args) < 3) {
 gff_file <- args[1]
 keywords <- args[2:length(args)]  # All keywords provided
 
+# Validate arguments
+if (!file.exists(gff_file)) {
+  stop("The provided GFF file does not exist.")
+}
+
+if (anyDuplicated(keywords)) {
+  stop("Duplicate keywords detected. Please provide unique keywords.")
+}
+
 # Load GFF file
 gff_data <- read_tsv(gff_file, comment = "#", col_names = FALSE)
 
