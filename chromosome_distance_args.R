@@ -83,14 +83,14 @@ ggplot() +
   ) +
   theme_minimal()
 
-if (!is.null(pseudo_data)) {
-  plot <- plot +
-    geom_point(
-      data = pseudo_data,
-      aes(x = mid_position, y = seqid),
-      color = "black", size = 2
-    )
-}
+# if (!is.null(pseudo_data)) {
+#   plot <- plot +
+#     geom_point(
+#       data = pseudo_data,
+#       aes(x = mid_position, y = seqid),
+#       color = "black", size = 2
+#     )
+# }
 
 # Save plot picture
 plot_file <- "gene_positions_plot.pdf"
