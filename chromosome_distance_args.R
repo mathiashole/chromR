@@ -74,14 +74,6 @@ ggplot() +
     aes(x = mid_position, y = seqid, color = keyword),
     size = 1.5
   ) +
-  # # Points for pseudogenes (if present)
-  # if (!is.null(pseudo_data)) {
-  #   geom_point(
-  #     data = pseudo_data,
-  #     aes(x = mid_position, y = seqid),
-  #     color = "black", size = 2
-  #   )
-  # } +
   # Finalize plot aesthetics
   labs(
     x = "Position on Chromosome",
@@ -90,6 +82,15 @@ ggplot() +
     title = "Gene Positions by Keywords on Chromosomes"
   ) +
   theme_minimal()
+
+if (!is.null(pseudo_data)) {
+  plot <- plot +
+    geom_point(
+      data = pseudo_data,
+      aes(x = mid_position, y = seqid),
+      color = "black", size = 2
+    )
+}
 
 # Save plot picture
 plot_file <- "gene_positions_plot.pdf"
