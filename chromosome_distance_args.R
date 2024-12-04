@@ -15,12 +15,16 @@ if (length(args) < 3) {
 
 # Input variables
 gff_file <- args[1]
-keywords <- args[2:length(args)]  # All keywords provided
+keyword_pairs <- args[2:length(args)]  # All keywords provided
 
 # Validate arguments
 if (!file.exists(gff_file)) {
   stop("The provided GFF file does not exist.")
 }
+
+# Split keyword pairs into `attributes` and `type`
+keywords_attr <- keyword_pairs[seq(1, length(keyword_pairs), by = 2)]  # Odd indices: attributes
+keywords_type <- keyword_pairs[seq(2, length(keyword_pairs), by = 2)]  # Even indices: types
 
 # Load GFF file
 gff_data <- read_tsv(gff_file, comment = "#", col_names = FALSE)
