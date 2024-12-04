@@ -92,7 +92,7 @@ filtered_data <- lapply(seq_along(keywords_attr), function(i) {
 # }
 
 # make plot
-plot <- ggplot() +
+ggplot() +
   # Chromosome lines
   geom_segment(
     data = chrom_limits,
@@ -102,14 +102,14 @@ plot <- ggplot() +
   # Points for genes
   geom_point(
     data = filtered_data,
-    aes(x = mid_position, y = seqid, color = keywords_attr),
+    aes(x = mid_position, y = seqid, color = factor(keyword_attr)),
     size = 1.5
   ) +
   # Finalize plot aesthetics
   labs(
     x = "Position on Chromosome",
     y = "Chromosome",
-    color = "Keywords_attr",  # keyword label
+    color = "Keywords",  # keyword label
     title = "Gene Positions by Keywords on Chromosomes"
   ) +
   theme_minimal() #+
