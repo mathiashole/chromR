@@ -48,17 +48,33 @@ chrom_limits <- gff_data %>%
 chrom_limits <- chrom_limits %>%
   mutate(seqid = factor(seqid, levels = seqid))  # Reordenar levels
 
-# Filter data for keyword1 and keyword2
-filtered_data <- lapply(keywords, function(kw) {
+# # Filter data for keyword1 and keyword2
+# filtered_data <- lapply(keywords, function(kw) {
+#   gff_data %>%
+#     filter(grepl(kw, attributes)) %>%
+#     mutate(
+#       mid_position = (start + end) / 2,  # mean position
+#       keyword = kw,                     # add associated keyword
+#       seqid = factor(seqid, levels = chrom_limits$seqid)  # Reorder levels
+#     )
+# }) %>%
+#   bind_rows()  # Combain all filter data in just one dataframe
+
+# Filter GFF data using the keyword pairs
+filtered_data <- lapply(seq_along(keywords_attr), function(i) {
   gff_data %>%
-    filter(grepl(kw, attributes)) %>%
+    filter(
+      grepl(keywords_attr[i], attributes),  # Filter by attribute keyword
+      grepl(keywords_type[i], type)        # Filter by type keyword
+    ) %>%
     mutate(
-      mid_position = (start + end) / 2,  # mean position
-      keyword = kw,                     # add associated keyword
-      seqid = factor(seqid, levels = chrom_limits$seqid)  # Reorder levels
+      mid_position = (start + end) / 2,  # Calculate midpoint
+      keyword_attr = keywords_attr[i],  # Add attribute keyword as a column
+      keyword_type = keywords_type[i],  # Add type keyword as a column
+      seqid = factor(seqid)             # Ensure seqid is a factor
     )
 }) %>%
-  bind_rows()  # Combain all filter data in just one dataframe
+  bind_rows()  # Combine all filtered data
 
 # # Process pseudogenes if file is provided
 # if (!is.null(pseudogene_file)) {
