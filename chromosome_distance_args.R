@@ -60,20 +60,20 @@ filtered_data <- lapply(keywords, function(kw) {
 }) %>%
   bind_rows()  # Combain all filter data in just one dataframe
 
-# Process pseudogenes if file is provided
-if (!is.null(pseudogene_file)) {
-  pseudogenes <- read_tsv(pseudogene_file, col_names = FALSE)
-  pseudo_pattern <- paste(pseudogenes[[1]], collapse = "|")
+# # Process pseudogenes if file is provided
+# if (!is.null(pseudogene_file)) {
+#   pseudogenes <- read_tsv(pseudogene_file, col_names = FALSE)
+#   pseudo_pattern <- paste(pseudogenes[[1]], collapse = "|")
   
-  pseudo_data <- gff_data %>%
-    filter(grepl(pseudo_pattern, attributes)) %>%
-    mutate(
-      mid_position = (start + end) / 2,
-      seqid = factor(seqid, levels = chrom_limits$seqid)
-    )
-} else {
-  pseudo_data <- NULL
-}
+#   pseudo_data <- gff_data %>%
+#     filter(grepl(pseudo_pattern, attributes)) %>%
+#     mutate(
+#       mid_position = (start + end) / 2,
+#       seqid = factor(seqid, levels = chrom_limits$seqid)
+#     )
+# } else {
+#   pseudo_data <- NULL
+# }
 
 # make plot
 plot <- ggplot() +
@@ -96,7 +96,8 @@ plot <- ggplot() +
     color = "Keywords",  # keyword label
     title = "Gene Positions by Keywords on Chromosomes"
   ) +
-  theme_minimal()
+  theme_minimal() #+
+  # theme_classic()
 
 # if (!is.null(pseudo_data)) {
 #   plot <- plot +
