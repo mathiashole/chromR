@@ -48,18 +48,6 @@ chrom_limits <- gff_data %>%
 chrom_limits <- chrom_limits %>%
   mutate(seqid = factor(seqid, levels = seqid))  # Reordenar levels
 
-# # Filter data for keyword1 and keyword2
-# filtered_data <- lapply(keywords, function(kw) {
-#   gff_data %>%
-#     filter(grepl(kw, attributes)) %>%
-#     mutate(
-#       mid_position = (start + end) / 2,  # mean position
-#       keyword = kw,                     # add associated keyword
-#       seqid = factor(seqid, levels = chrom_limits$seqid)  # Reorder levels
-#     )
-# }) %>%
-#   bind_rows()  # Combain all filter data in just one dataframe
-
 # Filter GFF data using the keyword pairs
 filtered_data <- lapply(seq_along(keywords_attr), function(i) {
   gff_data %>%
