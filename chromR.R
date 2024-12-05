@@ -17,25 +17,6 @@ for (i in seq_along(args)) {
   }
 }
 
-# charge library
-library(dplyr)
-library(readr)
-library(ggplot2)
-
-# read arguments
-args <- commandArgs(trailingOnly = TRUE)
-
-# Validate arguments
-if (length(args) < 3) {
-  stop("Usage: Rscript chromosome_distance_args.R (gff_file) (keyword1) (keyword2_associated_keyword1) [(keyword3...)]")
-}
-
-print(args[2])
-
-# Input variables
-gff_file <- args[1]
-keyword_pairs <- args[2:length(args)]  # All keywords provided
-
 # Validate arguments
 if (!file.exists(gff_file)) {
   stop("The provided GFF file does not exist.")
@@ -44,6 +25,25 @@ if (!file.exists(gff_file)) {
 # Split keyword pairs into `attributes` and `type`
 keywords_attr <- keyword_pairs[seq(1, length(keyword_pairs), by = 2)]  # Odd indices: attributes
 keywords_type <- keyword_pairs[seq(2, length(keyword_pairs), by = 2)]  # Even indices: types
+
+# charge library
+library(dplyr)
+library(readr)
+library(ggplot2)
+
+# # read arguments
+# args <- commandArgs(trailingOnly = TRUE)
+
+# # Validate arguments
+# if (length(args) < 3) {
+#   stop("Usage: Rscript chromosome_distance_args.R (gff_file) (keyword1) (keyword2_associated_keyword1) [(keyword3...)]")
+# }
+
+# print(args[2])
+
+# # Input variables
+# gff_file <- args[1]
+# keyword_pairs <- args[2:length(args)]  # All keywords provided
 
 # Load GFF file
 gff_data <- read_tsv(gff_file, comment = "#", col_names = FALSE)
