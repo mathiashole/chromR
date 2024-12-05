@@ -1,5 +1,15 @@
 #!/usr/bin/env Rscript
 
+# Parse arguments manually
+for (i in seq_along(args)) {
+  if (args[i] == "--gff_file" || args[i] == "-g") {
+    gff_file <- args[i + 1]
+  } else if (args[i] == "--keywords" || args[i] == "-k") {
+    keywords <- args[(i + 1):length(args)]
+    break
+  }
+}
+
 # charge library
 library(dplyr)
 library(readr)
@@ -12,6 +22,8 @@ args <- commandArgs(trailingOnly = TRUE)
 if (length(args) < 3) {
   stop("Usage: Rscript chromosome_distance_args.R (gff_file) (keyword1) (keyword2_associated_keyword1) [(keyword3...)]")
 }
+
+print(args[2])
 
 # Input variables
 gff_file <- args[1]
