@@ -5,14 +5,14 @@ args <- commandArgs(trailingOnly = TRUE)
 
 # init variable values
 gff_file <- NULL
-keywords_paris <- NULL
+keywords_pairs <- NULL
 
 # Parse arguments manually
 for (i in seq_along(args)) {
   if (args[i] == "--gff_file" || args[i] == "-g") {
     gff_file <- args[i + 1]
   } else if (args[i] == "--keywords" || args[i] == "-k") {
-    keywords_paris <- args[(i + 1):length(args)]
+    keywords_pairs <- args[(i + 1):length(args)]
     break
   }
 }
