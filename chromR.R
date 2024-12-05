@@ -1,5 +1,12 @@
 #!/usr/bin/env Rscript
 
+# Get command-line arguments
+args <- commandArgs(trailingOnly = TRUE)
+
+# init variable values
+gff_file <- NULL
+keywords <- NULL
+
 # Parse arguments manually
 for (i in seq_along(args)) {
   if (args[i] == "--gff_file" || args[i] == "-g") {
