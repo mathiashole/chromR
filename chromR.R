@@ -7,6 +7,7 @@ args <- commandArgs(trailingOnly = TRUE)
 gff_file <- NULL
 keyword_pairs <- NULL
 list_id <- NULL
+pseudo_data <- NULL
 
 # Parse arguments manually
 for (i in seq_along(args)) {
@@ -84,9 +85,9 @@ if (!is.null(list_id)) {
       mid_position = (start + end) / 2,
       seqid = factor(seqid, levels = chrom_limits$seqid)
     )
-} else {
-  pseudo_data <- NULL
-}
+ } #else {
+#   pseudo_data <- NULL
+# }
 
 # make plot
 plot <- ggplot() +
