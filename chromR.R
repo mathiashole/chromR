@@ -84,6 +84,8 @@ if (!is.null(list_id)) {
       mid_position = (start + end) / 2,
       seqid = factor(seqid, levels = chrom_limits$seqid)
     )
+} else {
+  pseudo_data <- NULL
 }
 
 # make plot
