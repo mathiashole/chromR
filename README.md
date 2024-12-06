@@ -24,6 +24,8 @@ To use the gene on chromosome plotting script, follow these steps:
 
 ```{bash, eval = FALSE}
 
+Rscript chromR.R -g </path/of/file.gff> -k <keyword> <keyword_asociated> -l </path/of/file_id>
+
 ```
 
 ## :sparkling_heart: Contributing
