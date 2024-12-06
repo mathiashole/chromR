@@ -115,7 +115,7 @@ if (!is.null(pseudo_data)) {
     geom_point(
       data = pseudo_data,
       aes(x = mid_position, y = seqid),
-      color = "black", size = 2
+      color = "gray", size = 0.9
     )
 }
 
