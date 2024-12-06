@@ -35,19 +35,6 @@ library(dplyr)
 library(readr)
 library(ggplot2)
 
-# Process pseudogenes if file is provided
-if (!is.null(list_id)) {
-  pseudogenes <- read_tsv(list_id, col_names = FALSE)
-  pseudo_pattern <- paste(pseudogenes[[1]], collapse = "|")
-  
-  pseudo_data <- filtered_data %>%
-    filter(grepl(pseudo_pattern, attributes)) %>%
-    mutate(
-      mid_position = (start + end) / 2,
-      seqid = factor(seqid, levels = chrom_limits$seqid)
-    )
-}
-
 # Load GFF file
 gff_data <- read_tsv(gff_file, comment = "#", col_names = FALSE)
 
@@ -86,23 +73,21 @@ filtered_data <- lapply(seq_along(keywords_attr), function(i) {
 }) %>%
   bind_rows()  # Combine all filtered data
 
-# # Process pseudogenes if file is provided
-# if (!is.null(pseudogene_file)) {
-#   pseudogenes <- read_tsv(pseudogene_file, col_names = FALSE)
-#   pseudo_pattern <- paste(pseudogenes[[1]], collapse = "|")
+# Process pseudogenes if file is provided
+if (!is.null(list_id)) {
+  pseudogenes <- read_tsv(list_id, col_names = FALSE)
+  pseudo_pattern <- paste(pseudogenes[[1]], collapse = "|")
   
-#   pseudo_data <- gff_data %>%
-#     filter(grepl(pseudo_pattern, attributes)) %>%
-#     mutate(
-#       mid_position = (start + end) / 2,
-#       seqid = factor(seqid, levels = chrom_limits$seqid)
-#     )
-# } else {
-#   pseudo_data <- NULL
-# }
+  pseudo_data <- filtered_data %>%
+    filter(grepl(pseudo_pattern, attributes)) %>%
+    mutate(
+      mid_position = (start + end) / 2,
+      seqid = factor(seqid, levels = chrom_limits$seqid)
+    )
+}
 
 # make plot
-ggplot() +
+plot <- ggplot() +
   # Chromosome lines
   geom_segment(
     data = chrom_limits,
@@ -125,19 +110,19 @@ ggplot() +
   theme_minimal() #+
   # theme_classic()
 
-# if (!is.null(pseudo_data)) {
-#   plot <- plot +
-#     geom_point(
-#       data = pseudo_data,
-#       aes(x = mid_position, y = seqid),
-#       color = "black", size = 2
-#     )
-# }
+if (!is.null(pseudo_data)) {
+  plot <- plot +
+    geom_point(
+      data = pseudo_data,
+      aes(x = mid_position, y = seqid),
+      color = "black", size = 2
+    )
+}
 
 # Save plot picture
 plot_file <- "gene_positions_plot.pdf"
 # ggsave(plot_file, width = 10, height = 6)
 plot_file_png <- "gene_positions_plot.png"  # PNG format
 ggsave(plot_file_png, width = 8, height = 10, dpi = 600)
-ggsave(plot_file, width = 8, height = 10)
+ggsave(plot_file, plot = plot, width = 8, height = 10)
 cat("Plot saved to:", plot_file, "\n")
