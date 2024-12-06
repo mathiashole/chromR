@@ -6,6 +6,7 @@ args <- commandArgs(trailingOnly = TRUE)
 # init variable values
 gff_file <- NULL
 keyword_pairs <- NULL
+list_id <- NULL
 
 # Parse arguments manually
 for (i in seq_along(args)) {
