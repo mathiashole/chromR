@@ -14,6 +14,9 @@ for (i in seq_along(args)) {
     gff_file <- args[i + 1]
   } else if (args[i] == "--keywords" || args[i] == "-k") {
     keyword_pairs <- args[(i + 1):length(args)]
+    #break
+  } else if (args[i] == "--list" || args[i] == "-l") {
+    list_id <- args[(i + 1):length(args)]
     break
   }
 }
