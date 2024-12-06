@@ -35,6 +35,19 @@ library(dplyr)
 library(readr)
 library(ggplot2)
 
+# Process pseudogenes if file is provided
+if (!is.null(list_id)) {
+  pseudogenes <- read_tsv(list_id, col_names = FALSE)
+  pseudo_pattern <- paste(pseudogenes[[1]], collapse = "|")
+  
+  pseudo_data <- filtered_data %>%
+    filter(grepl(pseudo_pattern, attributes)) %>%
+    mutate(
+      mid_position = (start + end) / 2,
+      seqid = factor(seqid, levels = chrom_limits$seqid)
+    )
+}
+
 # Load GFF file
 gff_data <- read_tsv(gff_file, comment = "#", col_names = FALSE)
 
