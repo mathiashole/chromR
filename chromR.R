@@ -35,20 +35,6 @@ library(dplyr)
 library(readr)
 library(ggplot2)
 
-# # read arguments
-# args <- commandArgs(trailingOnly = TRUE)
-
-# # Validate arguments
-# if (length(args) < 3) {
-#   stop("Usage: Rscript chromosome_distance_args.R (gff_file) (keyword1) (keyword2_associated_keyword1) [(keyword3...)]")
-# }
-
-# print(args[2])
-
-# # Input variables
-# gff_file <- args[1]
-# keyword_pairs <- args[2:length(args)]  # All keywords provided
-
 # Load GFF file
 gff_data <- read_tsv(gff_file, comment = "#", col_names = FALSE)
 
