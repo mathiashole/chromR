@@ -8,6 +8,7 @@ gff_file <- NULL
 keyword_pairs <- NULL
 list_id <- NULL
 pseudo_data <- NULL
+strict_keywords <- FALSE
 
 # Parse arguments manually
 for (i in seq_along(args)) {
