@@ -9,6 +9,7 @@ keyword_pairs <- NULL
 list_id <- NULL
 pseudo_data <- NULL
 strict <- FALSE
+number <- Inf  # Default to Inf, meaning no limit (all chromosomes)
 
 # Parse arguments manually
 for (i in seq_along(args)) {
