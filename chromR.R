@@ -62,6 +62,7 @@ chrom_limits <- gff_data %>%
 
 # Order seqid
 chrom_limits <- chrom_limits %>%
+  slice_head(n = number) %>% # Apply filtering based on 'number' argument
   mutate(seqid = factor(seqid, levels = seqid))  # Reordenar levels
 
 # Filter GFF data using the keyword pairs
