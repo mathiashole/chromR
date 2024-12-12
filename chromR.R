@@ -67,6 +67,7 @@ chrom_limits <- chrom_limits %>%
     if (!is.infinite(number)) slice_head(., n = number) else . 
   } %>%
   # slice_head(n = number) %>% # Apply filtering based on 'number' argument
+  arrange(chrom_length) %>%  # Reorder by ascending chrom_length
   mutate(seqid = factor(seqid, levels = seqid)) # Reordenar levels
 
 # Filter GFF data using the keyword pairs
