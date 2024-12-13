@@ -119,7 +119,7 @@ plot <- ggplot() +
   geom_segment(
     data = chrom_limits,
     aes(x = chrom_start, xend = chrom_end, y = seqid, yend = seqid),
-    color = "gray50", size = 0.8
+    color = "gray50", size = 0.8, alpha = 0.8
   ) +
   # Points for genes
   geom_point(
