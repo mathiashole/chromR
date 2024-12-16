@@ -7,6 +7,13 @@
 
 ## :book: Features...
 
+-  :bar_chart: Custom Visualization: Display genes, domains, or specific regions on chromosomes or contigs.
+-  🎨 Color Customization: Define colors for categories using either hex color codes (e.g., #1f77b4) or standard R color names (e.g., black, orange).
+-  :wrench: Keyword Filtering: Highlight specific genes, regions, or domains of interest using keywords.
+-  :page_facing_up: GFF Support: Parse and plot data from GFF (General Feature Format) files.
+-  :rocket: Command-Line Friendly: Run directly from the terminal or integrate into pipelines.
+-  :computer: RStudio Compatible: Easy to modify, debug, or execute within RStudio.
+
 ## :wrench: Usage
 
 To use the gene on chromosome plotting script, follow these steps:
