@@ -16,14 +16,23 @@
 
 ## :wrench: Usage
 
-To use the gene on chromosome plotting script, follow these steps:
+### Requirements:
 
-1. Download or clone the script from the repository.
-2. Ensure the required R packages are installed: `dplyr`, `readr` and `ggplot2`
-3. **Option 1: Using the terminal**  
-   Open a terminal, navigate to the folder containing the script, and run the script with the appropriate arguments.
-4. **Option 2: Using RStudio**  
-   Open the script directly in RStudio and run it from there, passing the arguments manually or setting them as variables within the script.
+Ensure the following R packages are installed: `dplyr`, `readr`, `ggplot2`
+
+### Execution Options:
+
+1. Using the Terminal
+-  Navigate to the folder containing `chromR.R` and execute the script with the necessary arguments:
+
+```{bash, eval = FALSE}
+Rscript chromR.R --gff_file </path/to/file.gff> --keywords <keyword1> <keyword2> --colors <color1> <color2>
+```
+
+2. Using RStudio
+
+-  Open chromR.R in RStudio.
+-  Set the arguments manually in the script or pass them interactively.
 
 ## :gear: Arguments
 
