@@ -24,6 +24,9 @@ for (i in seq_along(args)) {
     strict <- TRUE
   } else if (args[i] == "--list" || args[i] == "-l") {
     list_id <- args[(i + 1):length(args)]
+    # break
+  } else if (args[i] == "--colors" || args[i] == "-c") {
+    colors_input <- args[(i + 1):length(args)]
     break
   }
 }
