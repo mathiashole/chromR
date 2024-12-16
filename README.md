@@ -25,6 +25,18 @@ To use the gene on chromosome plotting script, follow these steps:
 4. **Option 2: Using RStudio**  
    Open the script directly in RStudio and run it from there, passing the arguments manually or setting them as variables within the script.
 
+:gear: Arguments
+
+| Argument            | Description                               | Example                     |
+|---------------------|-------------------------------------------|-----------------------------|
+| `--gff_file` / `-g` | Path to the GFF file.                    | `--gff_file data.gff`       |
+| `--keywords` / `-k` | Keywords to highlight specific features. | `--keywords gene1 CDS`      |
+| `--colors` / `-c`   | Colors for keywords (names or hex).      | `--colors black orange`     |
+| `--layout` / `-l`   | Optional layout input (e.g., ID file).   | `--layout data_ids.txt`     |
+
+Note: Colors must match the number of keywords provided. They can be standard R color names or hex codes.
+
+
 ## :hammer: in progress ...
 
 ## :bulb: Bash Quick Examples
