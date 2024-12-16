@@ -10,6 +10,7 @@ list_id <- NULL
 pseudo_data <- NULL
 strict <- FALSE
 number <- Inf  # Default to Inf, meaning no limit (all chromosomes)
+colors_input <- NULL
 
 # Parse arguments manually
 for (i in seq_along(args)) {
