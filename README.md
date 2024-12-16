@@ -25,7 +25,7 @@ To use the gene on chromosome plotting script, follow these steps:
 4. **Option 2: Using RStudio**  
    Open the script directly in RStudio and run it from there, passing the arguments manually or setting them as variables within the script.
 
-:gear: Arguments
+## :gear: Arguments
 
 | Argument            | Description                               | Example                     |
 |---------------------|-------------------------------------------|-----------------------------|
