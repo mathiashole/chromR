@@ -22,14 +22,14 @@ Ensure the following R packages are installed: `dplyr`, `readr`, `ggplot2`
 
 ### Execution Options:
 
-1. Using the Terminal
+#### 1. Using the Terminal
 -  Navigate to the folder containing `chromR.R` and execute the script with the necessary arguments:
 
 ```{bash, eval = FALSE}
 Rscript chromR.R --gff_file </path/to/file.gff> --keywords <keyword1> <keyword2> --colors <color1> <color2>
 ```
 
-2. Using RStudio
+#### 2. Using RStudio
 
 -  Open chromR.R in RStudio.
 -  Set the arguments manually in the script or pass them interactively.
