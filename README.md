@@ -26,7 +26,7 @@ Ensure the following R packages are installed: `dplyr`, `readr`, `ggplot2`
 -  Navigate to the folder containing `chromR.R` and execute the script with the necessary arguments:
 
 ```{bash, eval = FALSE}
-Rscript chromR.R --gff_file </path/to/file.gff> --keywords <keyword1> <keyword2> --colors <color1> <color2>
+Rscript chromR.R --gff_file </path/to/file.gff> --keywords <keyword1> <keyword2> --colors <color1>
 ```
 
 #### 2. Using RStudio
