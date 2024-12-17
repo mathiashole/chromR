@@ -50,8 +50,12 @@ Note: Colors must match the number of keywords provided. They can be standard R 
 
 ## :bulb: Bash Quick Examples
 
+Example 1: Basic Plot
+
+Highlight gene1 and CDS in black and orange:
+
 ```{bash, eval = FALSE}
-Rscript chromR.R -g </path/of/file.gff> -k <keyword> <keyword_asociated>
+Rscript chromR.R --gff_file data.gff --keywords gene1 CDS --colors black orange
 ```
 
 ```{bash, eval = FALSE}
