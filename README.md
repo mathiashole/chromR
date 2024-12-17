@@ -64,6 +64,8 @@ Rscript chromR.R -g </path/of/file.gff> -k <keyword> <keyword_asociated> -l </pa
 
 ## :sparkling_heart: Contributing
 
+We welcome contributions!
+
 - :octocat: [Pull requests](https://github.com/mathiashole/chromR/pulls) and :star2: stars are always welcome.
 - For major changes, please open an [issue](https://github.com/mathiashole/chromR/issues) first to discuss what you would like to change.
 - Please make sure to update tests as appropriate.
