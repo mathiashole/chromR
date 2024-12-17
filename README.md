@@ -72,5 +72,5 @@ Rscript chromR.R -g </path/of/file.gff> -k <keyword> <keyword_asociated> -l </pa
 
 :bird: [Mathias](https://twitter.com/joaquinmangino)
 
-## License
+## :scroll: License
 MIT &copy; [Mathias Mangino](https://github.com/mathiashole)
