@@ -23,7 +23,7 @@ for (i in seq_along(args)) {
     number <- as.integer(args[i + 1])
   } else if (args[i] == "--strict" || args[i] == "-s") {
     strict <- TRUE
-  } else if (args[i] == "--list" || args[i] == "-l") {
+  } else if (args[i] == "--layout" || args[i] == "-l") {
     list_id <- args[(i + 1):length(args)]
     # break
   } else if (args[i] == "--colors" || args[i] == "-c") {
