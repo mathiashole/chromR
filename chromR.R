@@ -6,7 +6,7 @@ args <- commandArgs(trailingOnly = TRUE)
 # init variable values
 gff_file <- NULL
 keyword_pairs <- NULL
-list_id <- NULL
+layout_id <- NULL
 pseudo_data <- NULL
 strict <- FALSE
 number <- Inf  # Default to Inf, meaning no limit (all chromosomes)
@@ -24,7 +24,7 @@ for (i in seq_along(args)) {
   } else if (args[i] == "--strict" || args[i] == "-s") {
     strict <- TRUE
   } else if (args[i] == "--layout" || args[i] == "-l") {
-    list_id <- args[(i + 1):length(args)]
+    layout_id <- args[(i + 1):length(args)]
     # break
   } else if (args[i] == "--colors" || args[i] == "-c") {
     colors_input <- args[(i + 1):length(args)]
@@ -103,8 +103,8 @@ if (strict && !is.null(filtered_data)) {
 }
 
 # Process pseudogenes if file is provided
-if (!is.null(list_id)) {
-  pseudogenes <- read_tsv(list_id, col_names = FALSE)
+if (!is.null(layout_id)) {
+  pseudogenes <- read_tsv(layout_id, col_names = FALSE)
   pseudo_pattern <- paste(pseudogenes[[1]], collapse = "|")
   
   pseudo_data <- filtered_data %>%
