@@ -37,6 +37,15 @@ if (!file.exists(gff_file)) {
   stop("The provided GFF file does not exist.")
 }
 
+# Validate and parse colors
+if (!is.null(colors_input)) {
+  # Ensure the colors are valid hex codes
+  if (all(grepl("^#[A-Fa-f0-9]{6}$", colors_input))) {
+    custom_colors <- colors_input
+  } else {
+    stop("Invalid color format detected. Use hex colors like #1f77b4.")
+  }
+
 # Split keyword pairs into `attributes` and `type`
 keywords_attr <- keyword_pairs[seq(1, length(keyword_pairs), by = 2)]  # Odd indices: attributes
 keywords_type <- keyword_pairs[seq(2, length(keyword_pairs), by = 2)]  # Even indices: types
