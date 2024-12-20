@@ -48,7 +48,7 @@ if (!is.null(colors_input)) {
 } else {
   # Default colors if no colors are passed
   custom_colors <- RColorBrewer::brewer.pal(8, "Set1")  # Default palette
-} ## NEED ADD execution colors
+}
 
 # Split keyword pairs into `attributes` and `type`
 keywords_attr <- keyword_pairs[seq(1, length(keyword_pairs), by = 2)]  # Odd indices: attributes
