@@ -45,6 +45,10 @@ if (!is.null(colors_input)) {
   } else {
     stop("Invalid color format detected. Use hex colors like #1f77b4.")
   }
+} else {
+  # Default colors if no colors are passed
+  custom_colors <- RColorBrewer::brewer.pal(8, "Set1")  # Default palette
+}
 
 # Split keyword pairs into `attributes` and `type`
 keywords_attr <- keyword_pairs[seq(1, length(keyword_pairs), by = 2)]  # Odd indices: attributes
