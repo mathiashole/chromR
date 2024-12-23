@@ -149,6 +149,7 @@ plot <- ggplot() +
     aes(x = mid_position, y = seqid, color = factor(keyword_attr)),
     size = 1.5
   ) +
+  scale_color_manual(values = color_mapping) +  # Apply custom colors
   # Finalize plot aesthetics
   labs(
     x = "Position on Chromosome",
