@@ -55,7 +55,7 @@ keywords_attr <- keyword_pairs[seq(1, length(keyword_pairs), by = 2)]  # Odd ind
 keywords_type <- keyword_pairs[seq(2, length(keyword_pairs), by = 2)]  # Even indices: types
 
 # Get unique keyword attributes
-unique_keywords <- unique(keyword_attr)
+unique_keywords <- unique(keywords_attr)
 # Create a named COLOR vector
 color_mapping <- setNames(custom_colors[seq_along(unique_keywords)], unique_keywords)
 
