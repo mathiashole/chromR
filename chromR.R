@@ -37,17 +37,30 @@ if (!file.exists(gff_file)) {
   stop("The provided GFF file does not exist.")
 }
 
+# # Validate and parse colors
+# if (!is.null(colors_input)) {
+#   # Ensure the colors are valid hex codes
+#   if (all(grepl("^#[A-Fa-f0-9]{6}$", colors_input))) {
+#     custom_colors <- colors_input
+#   } else {
+#     stop("Invalid color format detected. Use hex colors like #1f77b4.")
+#   }
+# } else {
+#   # Default colors if no colors are passed
+#   custom_colors <- RColorBrewer::brewer.pal(8, "Set1")  # Default palette
+# }
 # Validate and parse colors
 if (!is.null(colors_input)) {
-  # Ensure the colors are valid hex codes
-  if (all(grepl("^#[A-Fa-f0-9]{6}$", colors_input))) {
+  # Ensure the colors are either valid hex codes or named colors
+  valid_colors <- colors_input %in% colors() | grepl("^#[A-Fa-f0-9]{6}$", colors_input) ## NEED DEBUG HEX COLORS
+  if (all(valid_colors)) {
     custom_colors <- colors_input
   } else {
-    stop("Invalid color format detected. Use hex colors like #1f77b4.")
+    stop("Invalid color format detected. Use valid R color names (e.g., 'red') or hex colors like #1f77b4.")
   }
 } else {
   # Default colors if no colors are passed
-  custom_colors <- RColorBrewer::brewer.pal(8, "Set1")  # Default palette
+  custom_colors <- RColorBrewer::brewer.pal(8, "Set1")
 }
 
 # Split keyword pairs into `attributes` and `type`
