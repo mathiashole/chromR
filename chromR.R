@@ -37,18 +37,6 @@ if (!file.exists(gff_file)) {
   stop("The provided GFF file does not exist.")
 }
 
-# # Validate and parse colors
-# if (!is.null(colors_input)) {
-#   # Ensure the colors are valid hex codes
-#   if (all(grepl("^#[A-Fa-f0-9]{6}$", colors_input))) {
-#     custom_colors <- colors_input
-#   } else {
-#     stop("Invalid color format detected. Use hex colors like #1f77b4.")
-#   }
-# } else {
-#   # Default colors if no colors are passed
-#   custom_colors <- RColorBrewer::brewer.pal(8, "Set1")  # Default palette
-# }
 # Validate and parse colors
 if (!is.null(colors_input)) {
   # Ensure the colors are either valid hex codes or named colors
