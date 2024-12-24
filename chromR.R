@@ -11,6 +11,7 @@ pseudo_data <- NULL
 strict <- FALSE
 number <- Inf  # Default to Inf, meaning no limit (all chromosomes)
 colors_input <- NULL
+line_plot <- NULL
 
 # Parse arguments manually
 for (i in seq_along(args)) {
@@ -26,6 +27,8 @@ for (i in seq_along(args)) {
   } else if (args[i] == "--layout" || args[i] == "-l") {
     layout_id <- args[(i + 1):length(args)]
     # break
+  } else if (args[i] == "--line_plot" || args[i] == "-lp") {
+    line_plot <- TRUE 
   } else if (args[i] == "--colors" || args[i] == "-c") {
     colors_input <- args[(i + 1):length(args)]
     break
