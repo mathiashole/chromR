@@ -19,14 +19,12 @@ for (i in seq_along(args)) {
     gff_file <- args[i + 1]
   } else if (args[i] == "--keywords" || args[i] == "-k") {
     keyword_pairs <- args[(i + 1):length(args)]
-    #break
   } else if (args[i] == "--number" || args[i] == "-n") {
     number <- as.integer(args[i + 1])
   } else if (args[i] == "--strict" || args[i] == "-s") {
     strict <- TRUE
   } else if (args[i] == "--layout" || args[i] == "-l") {
     layout_id <- args[(i + 1):length(args)]
-    # break
   } else if (args[i] == "--line_plot" || args[i] == "-lp") {
     line_plot <- TRUE 
   } else if (args[i] == "--colors" || args[i] == "-c") {
