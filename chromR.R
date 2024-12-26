@@ -171,6 +171,26 @@ if (!is.null(pseudo_data)) {
     )
 }
 
+# Add gene representation
+if (line_plot) {
+  # Add genes as lines
+  plot <- plot +
+    geom_segment(
+      data = filtered_data,
+      aes(x = start, xend = end, y = seqid, yend = seqid, color = factor(keyword_attr)),
+      size = 1.2
+    )
+}  
+# } else {
+#   # Add genes as points
+#   plot <- plot +
+#     geom_point(
+#       data = filtered_data,
+#       aes(x = mid_position, y = seqid, color = factor(keyword_attr)),
+#       size = 1.5
+#     )
+# }
+
 # Save plot picture
 plot_file <- "gene_positions_plot.pdf"
 # ggsave(plot_file, width = 10, height = 6)
