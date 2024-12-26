@@ -179,7 +179,16 @@ if (line_plot) {
       data = filtered_data,
       aes(x = start, xend = end, y = seqid, yend = seqid, color = factor(keyword_attr)),
       size = 1.2
-    )
+    ) +
+  scale_color_manual(values = color_mapping) +  # Apply custom colors
+  # Finalize plot aesthetics
+  labs(
+    x = "Position on Chromosome",
+    y = "Chromosome",
+    color = "Keywords",  # keyword label
+    title = "Gene Positions by Keywords on Chromosomes"
+  ) +
+  theme_minimal()
 }  
 # } else {
 #   # Add genes as points
