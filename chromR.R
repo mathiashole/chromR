@@ -174,7 +174,7 @@ if (!is.null(pseudo_data)) {
 # Add gene representation
 if (line_plot) {
   # Add genes as lines
-  plot <- plot +
+  line_plot <- plot +
     geom_segment(
       data = filtered_data,
       aes(x = start, xend = end, y = seqid, yend = seqid, color = factor(keyword_attr)),
