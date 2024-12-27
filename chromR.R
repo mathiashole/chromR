@@ -144,7 +144,7 @@ plot <- ggplot() +
     data = chrom_limits,
     aes(x = chrom_start, xend = chrom_end, y = seqid, yend = seqid),
     color = "gray50", size = 0.8, alpha = 0.8
-  ) +
+  )# +
   # Points for genes
   geom_point(
     data = filtered_data,
@@ -191,7 +191,7 @@ if (line_plot) {
   theme_minimal()
   
   if (!is.null(pseudo_data)) {
-  plot <- plot +
+  line_plot <- line_plot +
     geom_segment(
       data = pseudo_data,
       aes(x = start, xend = end, y = seqid, yend = seqid),
