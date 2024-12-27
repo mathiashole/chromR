@@ -145,8 +145,10 @@ plot <- ggplot() +
     aes(x = chrom_start, xend = chrom_end, y = seqid, yend = seqid),
     color = "gray50", size = 0.8, alpha = 0.8
   )# +
+
   # Points for genes
-  geom_point(
+  point_plot <- plot +
+    geom_point(
     data = filtered_data,
     aes(x = mid_position, y = seqid, color = factor(keyword_attr)),
     size = 1.5
