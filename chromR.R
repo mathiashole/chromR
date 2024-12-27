@@ -205,6 +205,15 @@ if (line_plot) {
     #   color = "azure4", size = 1.6
     # )
   }
+
+  # Save plot picture
+  line_plot_file <- "gene_positions_line_plot.pdf"
+  # ggsave(line_plot_file, width = 10, height = 6)
+  line_plot_file_png <- "gene_positions_line_plot.png"  # PNG format
+  ggsave(line_plot_file_png, plot = line_plot, width = 8, height = 10, dpi = 600)
+  ggsave(line_plot_file, plot = pline_plot, width = 8, height = 10)
+  cat("Plot saved to:", line_plot_file, "\n")
+
 }  
 
 
