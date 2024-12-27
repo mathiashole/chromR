@@ -189,16 +189,22 @@ if (line_plot) {
     title = "Gene Positions by Keywords on Chromosomes"
   ) +
   theme_minimal()
+  
+  if (!is.null(pseudo_data)) {
+  plot <- plot +
+    geom_segment(
+      data = pseudo_data,
+      aes(x = start, xend = end, y = seqid, yend = seqid),
+      color = "azure4", size = 1.6
+    )
+    # geom_point(
+    #   data = pseudo_data,
+    #   aes(x = mid_position, y = seqid),
+    #   color = "azure4", size = 1.6
+    # )
+  }
 }  
-# } else {
-#   # Add genes as points
-#   plot <- plot +
-#     geom_point(
-#       data = filtered_data,
-#       aes(x = mid_position, y = seqid, color = factor(keyword_attr)),
-#       size = 1.5
-#     )
-# }
+
 
 # Save plot picture
 plot_file <- "gene_positions_plot.pdf"
