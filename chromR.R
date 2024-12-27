@@ -211,7 +211,7 @@ if (line_plot) {
   # ggsave(line_plot_file, width = 10, height = 6)
   line_plot_file_png <- "gene_positions_line_plot.png"  # PNG format
   ggsave(line_plot_file_png, plot = line_plot, width = 8, height = 10, dpi = 600)
-  ggsave(line_plot_file, plot = pline_plot, width = 8, height = 10)
+  ggsave(line_plot_file, plot = line_plot, width = 8, height = 10)
   cat("Plot saved to:", line_plot_file, "\n")
 
 }  
