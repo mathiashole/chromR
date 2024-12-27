@@ -165,7 +165,7 @@ plot <- ggplot() +
   # theme_classic()
 
 if (!is.null(pseudo_data)) {
-  plot <- plot +
+  point_plot <- point_plot +
     geom_point(
       data = pseudo_data,
       aes(x = mid_position, y = seqid),
