@@ -11,7 +11,7 @@ pseudo_data <- NULL
 strict <- FALSE
 number <- Inf  # Default to Inf, meaning no limit (all chromosomes)
 colors_input <- NULL
-line_plot <- NULL
+line_plot <- FALSE
 
 # Parse arguments manually
 for (i in seq_along(args)) {
