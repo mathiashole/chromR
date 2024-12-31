@@ -56,7 +56,7 @@ Example 1: Basic Plot
 Highlight gene1 and CDS in black and orange:
 
 ```{bash, eval = FALSE}
-Rscript chromR.R --gff_file data.gff --keywords gene1 CDS --colors black orange
+Rscript chromR.R --gff_file data.gff --keywords gene1 CDS --colors orange
 ```
 
 ```{bash, eval = FALSE}
