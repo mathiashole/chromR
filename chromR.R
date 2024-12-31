@@ -197,11 +197,6 @@ if (line_plot) {
       aes(x = start, xend = end, y = seqid, yend = seqid),
       color = "azure4", size = 1.6
     )
-    # geom_point(
-    #   data = pseudo_data,
-    #   aes(x = mid_position, y = seqid),
-    #   color = "azure4", size = 1.6
-    # )
   }
 
   # Save plot picture
