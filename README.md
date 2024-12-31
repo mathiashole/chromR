@@ -53,7 +53,7 @@ Note: Colors must match the number of keywords provided. They can be standard R 
 
 Example 1: Basic Plot
 
-Highlight gene1 and CDS in black and orange:
+Highlight gene1 and CDS in orange:
 
 ```{bash, eval = FALSE}
 Rscript chromR.R --gff_file data.gff --keywords gene1 CDS --colors orange
