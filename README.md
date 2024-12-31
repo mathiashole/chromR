@@ -42,6 +42,7 @@ Rscript chromR.R --gff_file </path/to/file.gff> --keywords <keyword1> <keyword2>
 | `--keywords` / `-k` | Keywords to highlight specific features. | `--keywords gene1 CDS`      |
 | `--colors` / `-c`   | Colors for keywords (names or hex).      | `--colors black orange`     |
 | `--layout` / `-l`   | Optional layout input (e.g., ID file).   | `--layout data_ids.txt`     |
+| `--line_plot` / `-lp`| Optional line plot gene.                | `--line_plot`               |
 
 Note: Colors must match the number of keywords provided. They can be standard R color names or hex codes.
 
