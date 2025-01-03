@@ -84,6 +84,15 @@ chrom_limits <- gff_data %>%
   )  %>%
   arrange(chrom_length)  # Order longest to smaller
 
+# Apply strict keyword filtering if enabled
+if (strict && !is.null(chrom_limits)) {
+  keyword_contigs <- unique(chrom_limits$seqid)
+  chrom_limits <- chrom_limits %>%
+    filter(seqid %in% keyword_contigs)
+  # filtered_data <- filtered_data %>%
+  #   filter(seqid %in% chrom_limits$seqid)
+}
+
 # Order seqid
 chrom_limits <- chrom_limits %>%
   arrange(desc(chrom_length))  %>%
@@ -113,14 +122,14 @@ filtered_data <- lapply(seq_along(keywords_attr), function(i) {
 filtered_data <- filtered_data %>% # Apply filtering based on 'number' and id
   filter(seqid %in% chrom_limits$seqid)
 
-# Apply strict keyword filtering if enabled
-if (strict && !is.null(filtered_data)) {
-  keyword_contigs <- unique(filtered_data$seqid)
-  chrom_limits <- chrom_limits %>%
-    filter(seqid %in% keyword_contigs)
-  filtered_data <- filtered_data %>%
-    filter(seqid %in% chrom_limits$seqid)
-}
+# # Apply strict keyword filtering if enabled
+# if (strict && !is.null(filtered_data)) {
+#   keyword_contigs <- unique(filtered_data$seqid)
+#   chrom_limits <- chrom_limits %>%
+#     filter(seqid %in% keyword_contigs)
+#   filtered_data <- filtered_data %>%
+#     filter(seqid %in% chrom_limits$seqid)
+# }
 
 # Process pseudogenes if file is provided
 if (!is.null(layout_id)) {
