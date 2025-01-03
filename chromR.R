@@ -111,12 +111,12 @@ filtered_data <- lapply(seq_along(keywords_attr), function(i) {
   bind_rows()  # Combine all filtered data
 
 # Apply strict keyword filtering if enabled
-if (strict && !is.null(chrom_limits)) {
-  keyword_contigs <- unique(chrom_limits$seqid)
+if (strict && !is.null(filtered_data)) {
+  keyword_contigs <- unique(filtered_data$seqid)
   chrom_limits <- chrom_limits %>%
     filter(seqid %in% keyword_contigs)
-  # filtered_data <- filtered_data %>%
-  #   filter(seqid %in% chrom_limits$seqid)
+  filtered_data <- filtered_data %>%
+    filter(seqid %in% chrom_limits$seqid)
 }
 
 filtered_data <- filtered_data %>% # Apply filtering based on 'number' and id
