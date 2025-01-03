@@ -110,9 +110,6 @@ filtered_data <- lapply(seq_along(keywords_attr), function(i) {
 }) %>%
   bind_rows()  # Combine all filtered data
 
-filtered_data <- filtered_data %>% # Apply filtering based on 'number' and id
-  filter(seqid %in% chrom_limits$seqid)
-
 # Apply strict keyword filtering if enabled
 if (strict && !is.null(filtered_data)) {
   keyword_contigs <- unique(filtered_data$seqid)
@@ -121,6 +118,18 @@ if (strict && !is.null(filtered_data)) {
   filtered_data <- filtered_data %>%
     filter(seqid %in% chrom_limits$seqid)
 }
+
+filtered_data <- filtered_data %>% # Apply filtering based on 'number' and id
+  filter(seqid %in% chrom_limits$seqid)
+
+# # Apply strict keyword filtering if enabled
+# if (strict && !is.null(filtered_data)) {
+#   keyword_contigs <- unique(filtered_data$seqid)
+#   chrom_limits <- chrom_limits %>%
+#     filter(seqid %in% keyword_contigs)
+#   filtered_data <- filtered_data %>%
+#     filter(seqid %in% chrom_limits$seqid)
+# }
 
 # Process pseudogenes if file is provided
 if (!is.null(layout_id)) {
@@ -197,6 +206,7 @@ if (line_plot) {
       aes(x = start, xend = end, y = seqid, yend = seqid),
       color = "azure4", size = 1.6
     )
+
   }
 
   # Save plot picture
