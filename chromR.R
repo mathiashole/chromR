@@ -128,8 +128,8 @@ chrom_limits <- chrom_limits %>%
   arrange(chrom_length) %>%
   mutate(seqid = factor(seqid, levels = seqid))
 
-# filtered_data <- filtered_data %>% # Apply filtering based on 'number' and id
-#   filter(seqid %in% chrom_limits$seqid)
+filtered_data <- filtered_data %>% # Apply filtering based on 'number' and id
+  filter(seqid %in% chrom_limits$seqid)
 
 # # Apply strict keyword filtering if enabled
 # if (strict && !is.null(filtered_data)) {
