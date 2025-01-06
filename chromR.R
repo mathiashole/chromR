@@ -121,15 +121,6 @@ chrom_limits <- chrom_limits %>%
 filtered_data <- filtered_data %>% # Apply filtering based on 'number' and id
   filter(seqid %in% chrom_limits$seqid)
 
-# # Apply strict keyword filtering if enabled
-# if (strict && !is.null(filtered_data)) {
-#   keyword_contigs <- unique(filtered_data$seqid)
-#   chrom_limits <- chrom_limits %>%
-#     filter(seqid %in% keyword_contigs)
-#   filtered_data <- filtered_data %>%
-#     filter(seqid %in% chrom_limits$seqid)
-# }
-
 # Process pseudogenes if file is provided
 if (!is.null(layout_id)) {
   pseudogenes <- read_tsv(layout_id, col_names = FALSE)
