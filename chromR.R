@@ -84,15 +84,15 @@ chrom_limits <- gff_data %>%
   )  %>%
   arrange(chrom_length)  # Order longest to smaller
 
-# Order seqid
-chrom_limits <- chrom_limits %>%
-  arrange(desc(chrom_length))  %>%
-  { # Apply filtering based on 'number' argument
-    if (!is.infinite(number)) slice_head(., n = number) else . 
-  } %>%
-  # slice_head(n = number) %>% # Apply filtering based on 'number' argument
-  arrange(chrom_length) %>%  # Reorder by ascending chrom_length
-  mutate(seqid = factor(seqid, levels = seqid)) # Reordenar levels
+# # Order seqid
+# chrom_limits <- chrom_limits %>%
+#   arrange(desc(chrom_length))  %>%
+#   { # Apply filtering based on 'number' argument
+#     if (!is.infinite(number)) slice_head(., n = number) else . 
+#   } %>%
+#   # slice_head(n = number) %>% # Apply filtering based on 'number' argument
+#   arrange(chrom_length) %>%  # Reorder by ascending chrom_length
+#   mutate(seqid = factor(seqid, levels = seqid)) # Reordenar levels
 
 # Filter GFF data using the keyword pairs
 filtered_data <- lapply(seq_along(keywords_attr), function(i) {
@@ -110,17 +110,17 @@ filtered_data <- lapply(seq_along(keywords_attr), function(i) {
 }) %>%
   bind_rows()  # Combine all filtered data
 
-filtered_data <- filtered_data %>% # Apply filtering based on 'number' and id
-  filter(seqid %in% chrom_limits$seqid)
+# filtered_data <- filtered_data %>% # Apply filtering based on 'number' and id
+#   filter(seqid %in% chrom_limits$seqid)
 
-# Apply strict keyword filtering if enabled
-if (strict && !is.null(filtered_data)) {
-  keyword_contigs <- unique(filtered_data$seqid)
-  chrom_limits <- chrom_limits %>%
-    filter(seqid %in% keyword_contigs)
-  filtered_data <- filtered_data %>%
-    filter(seqid %in% chrom_limits$seqid)
-}
+# # Apply strict keyword filtering if enabled
+# if (strict && !is.null(filtered_data)) {
+#   keyword_contigs <- unique(filtered_data$seqid)
+#   chrom_limits <- chrom_limits %>%
+#     filter(seqid %in% keyword_contigs)
+#   filtered_data <- filtered_data %>%
+#     filter(seqid %in% chrom_limits$seqid)
+# }
 
 # Process pseudogenes if file is provided
 if (!is.null(layout_id)) {
