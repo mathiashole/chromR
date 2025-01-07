@@ -68,6 +68,18 @@ Rscript chromR.R -g </path/of/file.gff> -k <keyword1> <keyword1_asociated> <keyw
 Rscript chromR.R -g </path/of/file.gff> -k <keyword> <keyword_asociated> -l </path/of/file_id>
 ```
 
+## :bulb: R Quick Examples
+
+```{r, eval = FALSE}
+args <- c("chromR.R", 
+          "--gff_file", "data.gff",
+          "--keywords", "gene1 CDS", 
+          "--colors, "orange")
+
+# Execution command
+system2("Rscript", args = args)
+```
+
 ## :sparkling_heart: Contributing
 
 We welcome contributions!
