@@ -226,6 +226,12 @@ if (export_csv) {
   cat("Tables exported as CSV files: chrom_limits.csv and filtered_data.csv\n")
 }
 
+if (export_tsv) {
+  write_tsv(chrom_limits, "chrom_limits.tsv")
+  write_tsv(filtered_data, "filtered_data.tsv")
+  cat("Tables exported as TSV files: chrom_limits.tsv and filtered_data.tsv\n")
+}
+
 # Save plot picture
 plot_file <- "gene_positions_plot.pdf"
 # ggsave(plot_file, width = 10, height = 6)
