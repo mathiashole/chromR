@@ -28,7 +28,11 @@ for (i in seq_along(args)) {
   } else if (args[i] == "--layout" || args[i] == "-l") {
     layout_id <- args[(i + 1):length(args)]
   } else if (args[i] == "--line_plot" || args[i] == "-lp") {
-    line_plot <- TRUE 
+    line_plot <- TRUE
+  } else if (args[i] == "--csv" || args[i] == "-csv") {
+    export_csv <- TRUE
+  } else if (args[i] == "--tsv" || args[i] == "-tsv") {
+    export_tsv <- TRUE 
   } else if (args[i] == "--colors" || args[i] == "-c") {
     colors_input <- args[(i + 1):length(args)]
     break
