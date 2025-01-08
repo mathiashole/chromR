@@ -140,10 +140,6 @@ if (!is.null(layout_id)) {
     )
  }
 
-print(chrom_limits)
-print("THEN")
-print(filtered_data)
-
 # make plot
 plot <- ggplot() +
   # Chromosome lines
