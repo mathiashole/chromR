@@ -221,8 +221,8 @@ if (line_plot) {
 
 # Export tables if requested
 if (export_csv) {
-  write_csv(chrom_limits, "chrom_limits.csv")
-  write_csv(filtered_data, "filtered_data.csv")
+  write_csv(chrom_limits, "chrom_limits.csv", col_names = FALSE)
+  write_csv(filtered_data, "filtered_data.csv", col_names = FALSE)
   cat("Tables exported as CSV files: chrom_limits.csv and filtered_data.csv\n")
 }
 
