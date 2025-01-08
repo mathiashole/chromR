@@ -219,6 +219,12 @@ if (line_plot) {
 
 }  
 
+# Export tables if requested
+if (export_csv) {
+  write_csv(chrom_limits, "chrom_limits.csv")
+  write_csv(filtered_data, "filtered_data.csv")
+  cat("Tables exported as CSV files: chrom_limits.csv and filtered_data.csv\n")
+}
 
 # Save plot picture
 plot_file <- "gene_positions_plot.pdf"
