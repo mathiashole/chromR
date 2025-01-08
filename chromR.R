@@ -227,8 +227,8 @@ if (export_csv) {
 }
 
 if (export_tsv) {
-  write_tsv(chrom_limits, "chrom_limits.tsv")
-  write_tsv(filtered_data, "filtered_data.tsv")
+  write_tsv(chrom_limits, "chrom_limits.tsv", col_names = FALSE)
+  write_tsv(filtered_data, "filtered_data.tsv", col_names = FALSE)
   cat("Tables exported as TSV files: chrom_limits.tsv and filtered_data.tsv\n")
 }
 
