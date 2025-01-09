@@ -61,6 +61,11 @@ if (!is.null(colors_input)) {
   custom_colors <- RColorBrewer::brewer.pal(8, "Set1")
 }
 
+# Validate output format
+if (!is.null(table_format) && !table_format %in% c("csv", "tsv")) {
+  stop("Invalid format specified for --tab. Use 'csv' or 'tsv'.")
+}
+
 # Split keyword pairs into `attributes` and `type`
 keywords_attr <- keyword_pairs[seq(1, length(keyword_pairs), by = 2)]  # Odd indices: attributes
 keywords_type <- keyword_pairs[seq(2, length(keyword_pairs), by = 2)]  # Even indices: types
