@@ -30,7 +30,7 @@ for (i in seq_along(args)) {
     layout_id <- args[(i + 1):length(args)]
   } else if (args[i] == "--line_plot" || args[i] == "-lp") {
     line_plot <- TRUE
-  } else if (args[i] == "--tab" || args[i] == "-tab") {
+  } else if (args[i] == "--table" || args[i] == "-tab") {
     table_format <- args[i + 1]
   # (args[i] == "--csv" || args[i] == "-csv") {
   #   export_csv <- TRUE
@@ -63,7 +63,7 @@ if (!is.null(colors_input)) {
 
 # Validate output format
 if (!is.null(table_format) && !table_format %in% c("csv", "tsv")) {
-  stop("Invalid format specified for --tab. Use 'csv' or 'tsv'.")
+  stop("Invalid format specified for --table. Use 'csv' or 'tsv'.")
 }
 
 # Split keyword pairs into `attributes` and `type`
