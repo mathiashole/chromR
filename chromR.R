@@ -13,8 +13,6 @@ number <- Inf  # Default to Inf, meaning no limit (all chromosomes)
 colors_input <- NULL
 line_plot <- FALSE
 table_format <- NULL
-# export_csv <- FALSE
-# export_tsv <- FALSE
 
 # Parse arguments manually
 for (i in seq_along(args)) {
