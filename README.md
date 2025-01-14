@@ -70,6 +70,10 @@ Rscript chromR.R -g </path/of/file.gff> -k <keyword> <keyword_asociated> -l </pa
 
 ## :bulb: R Quick Examples
 
+Example 1: Basic Plot
+
+Highlight gene1 and CDS in orange:
+
 ```{r, eval = FALSE}
 args <- c("chromR.R", 
           "--gff_file", "data.gff",
