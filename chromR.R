@@ -224,6 +224,8 @@ if (!is.null(table_format)) {
   } else if (table_format == "tsv") {
     write_tsv(chrom_limits, "chrom_limits.tsv", col_names = FALSE)
     write_tsv(filtered_data, "filtered_data.tsv", col_names = FALSE)
+  } else {
+    stop("Unsupported table format specified.")
   }
   cat("Tables saved in", table_format, "format without column names.\n")
 }
