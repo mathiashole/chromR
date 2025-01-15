@@ -230,6 +230,9 @@ if (!is.null(table_format)) {
   } else if (table_format == "json") {
     write_json(chrom_limits, "chrom_limits.json", dataframe = "columns")
     write_json(filtered_data, "filtered_data.json", dataframe = "columns")
+  }  else if (table_format == "parquet") {
+    write_parquet(chrom_limits, "chrom_limits.parquet")
+    write_parquet(filtered_data, "filtered_data.parquet")
   } else {
     stop("Unsupported table format specified.")
   }
