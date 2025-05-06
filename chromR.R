@@ -80,6 +80,15 @@ library(dplyr)
 library(readr)
 library(ggplot2)
 
+read_fill_file <- function(fill_file, format = NULL) {
+  if (is.null(format)) {
+    stop("You must specify the format with --format (csv or tsv)")
+  }
+  
+
+  return(data)
+}
+
 # Load GFF file
 gff_data <- read_tsv(gff_file, comment = "#", col_names = FALSE)
 
