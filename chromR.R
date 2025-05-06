@@ -191,19 +191,6 @@ chrom_limits <- chrom_limits %>%
 filtered_data <- filtered_data %>% # Apply filtering based on 'number' and id
   filter(seqid %in% chrom_limits$seqid)
 
-# Process pseudogenes if file is provided
-if (!is.null(layout_id)) {
-  pseudogenes <- read_tsv(layout_id, col_names = FALSE)
-  pseudo_pattern <- paste(pseudogenes[[1]], collapse = "|")
-  
-  pseudo_data <- filtered_data %>%
-    filter(grepl(pseudo_pattern, attributes)) %>%
-    mutate(
-      mid_position = (start + end) / 2,
-      seqid = factor(seqid, levels = chrom_limits$seqid)
-    )
- }
-
 # make plot
 plot <- ggplot() +
   # Chromosome lines
@@ -230,6 +217,46 @@ plot <- ggplot() +
   ) +
   theme_minimal() #+
   # theme_classic()
+
+# Process pseudogenes if file is provided
+if (!is.null(layout_id)) {
+  pseudogenes <- read_tsv(layout_id, col_names = FALSE)
+  pseudo_pattern <- paste(pseudogenes[[1]], collapse = "|")
+  
+  pseudo_data <- filtered_data %>%
+    filter(grepl(pseudo_pattern, attributes)) %>%
+    mutate(
+      mid_position = (start + end) / 2,
+      seqid = factor(seqid, levels = chrom_limits$seqid)
+    )
+ }
+
+# # make plot
+# plot <- ggplot() +
+#   # Chromosome lines
+#   geom_segment(
+#     data = chrom_limits,
+#     aes(x = chrom_start, xend = chrom_end, y = seqid, yend = seqid),
+#     color = "gray50", size = 0.8, alpha = 0.8
+#   )# +
+
+#   # Points for genes
+#   point_plot <- plot +
+#     geom_point(
+#     data = filtered_data,
+#     aes(x = mid_position, y = seqid, color = factor(keyword_attr)),
+#     size = 1.5
+#   ) +
+#   scale_color_manual(values = color_mapping) +  # Apply custom colors
+#   # Finalize plot aesthetics
+#   labs(
+#     x = "Position on Chromosome",
+#     y = "Chromosome",
+#     color = "Keywords",  # keyword label
+#     title = "Gene Positions by Keywords on Chromosomes"
+#   ) +
+#   theme_minimal() #+
+#   # theme_classic()
 
 if (!is.null(pseudo_data)) {
   point_plot <- point_plot +
