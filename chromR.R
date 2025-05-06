@@ -13,7 +13,7 @@ number <- Inf  # Default to Inf, meaning no limit (all chromosomes)
 colors_input <- NULL
 line_plot <- FALSE
 table_format <- NULL
-shell_mode <- FALSE
+fill_mode <- FALSE
 coords_file <- NULL
 feature_col <- "feature"  # Default value
 
@@ -35,7 +35,13 @@ for (i in seq_along(args)) {
     table_format <- args[i + 1]
   } else if (args[i] == "--colors" || args[i] == "-c") {
     colors_input <- args[(i + 1):length(args)]
-    break
+    # break
+  } else if (args[i] == "--shell" || args[i] == "-sh") {
+    fill_mode <- TRUE
+  } else if (args[i] == "--coords" || args[i] == "-cd") {
+    coords_file <- args[i + 1]
+  } else if (args[i] == "--feature-col" || args[i] == "-fc") {
+    feature_col <- args[i + 1]
   }
 }
 
