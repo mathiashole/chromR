@@ -38,8 +38,10 @@ for (i in seq_along(args)) {
     # break
   } else if (args[i] == "--fill" || args[i] == "-f") {
     fill_mode <- TRUE
-  } else if (args[i] == "--coords" || args[i] == "-cd") {
-    coords_file <- args[i + 1]
+    coords_file <- args[i + 1]  # The next argument is the file
+    i <- i + 1  # We skip the next element
+  # } else if (args[i] == "--coords" || args[i] == "-cd") {
+  #   coords_file <- args[i + 1]
   } else if (args[i] == "--feature-col" || args[i] == "-fc") {
     feature_col <- args[i + 1]
   }
