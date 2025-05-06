@@ -13,6 +13,9 @@ number <- Inf  # Default to Inf, meaning no limit (all chromosomes)
 colors_input <- NULL
 line_plot <- FALSE
 table_format <- NULL
+shell_mode <- FALSE
+coords_file <- NULL
+feature_col <- "feature"  # Default value
 
 # Parse arguments manually
 for (i in seq_along(args)) {
@@ -223,7 +226,7 @@ if (!is.null(table_format)) {
     write_csv(filtered_data, "filtered_data.csv", col_names = FALSE)
   } else if (table_format == "tsv") {
     write_tsv(chrom_limits, "chrom_limits.tsv", col_names = FALSE)
-    write_tsv(filtered_data, "filtered_data.tsv", col_names = FALSE)
+    write_tsv(filtered_data, "filtered_data.tsv", col_names = FALSE)x
   } else {
     stop("Unsupported table format specified.")
   }
