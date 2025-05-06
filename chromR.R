@@ -317,6 +317,31 @@ if (line_plot) {
 
   }
 
+  # if (!is.null(fill_file)) {
+  #   plot <- plot +
+  #     geom_segment(
+  #       data = fill_data,
+  #       aes(x = start, xend = end, y = seqid, yend = seqid, color = factor(category)),
+  #       size = 1.2
+  #     )
+  # } else {
+  #   plot <- plot +
+  #     geom_segment(
+  #       data = filtered_data,
+  #       aes(x = start, xend = end, y = seqid, yend = seqid, color = factor(keyword_attr)),
+  #       size = 1.2
+  #     )
+  # }
+  
+  # if (!is.null(pseudo_data)) {
+  #   plot <- plot +
+  #     geom_segment(
+  #       data = pseudo_data,
+  #       aes(x = start, xend = end, y = seqid, yend = seqid),
+  #       color = "azure4", size = 1.6
+  #     )
+  # }
+
   # Save plot picture
   line_plot_file <- "gene_positions_line_plot.pdf"
   line_plot_file_png <- "gene_positions_line_plot.png"  # PNG format
