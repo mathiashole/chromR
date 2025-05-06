@@ -49,6 +49,9 @@ for (i in seq_along(args)) {
 if (!file.exists(gff_file)) {
   stop("The provided GFF file does not exist.")
 }
+if (shell_mode && is.null(coords_file)) {
+  stop("In --shell mode, --coords must be specified.")
+}
 
 # Validate and parse colors
 if (!is.null(colors_input)) {
