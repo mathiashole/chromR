@@ -95,6 +95,14 @@ read_fill_file <- function(fill_file, format = NULL) {
     data <- read_tsv(fill_file, col_names = FALSE, show_col_types = FALSE)
   }
 
+  # Validate minimum structure
+  if (ncol(data) < 4) {
+    stop("The file must have at least 4 columns: contig, start, end, category")
+  }
+  
+  # Assign names to the relevant columns
+  colnames(data)[1:4] <- c("seqid", "start", "end", "category")
+
   return(data)
 }
 
