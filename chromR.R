@@ -84,7 +84,16 @@ read_fill_file <- function(fill_file, format = NULL) {
   if (is.null(format)) {
     stop("You must specify the format with --format (csv or tsv)")
   }
+  format <- tolower(format)
+  if (!format %in% c("csv", "tsv")) {
+    stop("Invalid format. Use 'csv' or 'tsv'")
+  }
   
+  if (format == "csv") {
+    data <- read_csv(fill_file, col_names = FALSE, show_col_types = FALSE)
+  } else {
+    data <- read_tsv(fill_file, col_names = FALSE, show_col_types = FALSE)
+  }
 
   return(data)
 }
