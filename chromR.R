@@ -37,6 +37,8 @@ for (i in seq_along(args)) {
     # break
   } else if (args[i] == "--fill_file" || args[i] == "-ff") {
   fill_file <- args[i + 1]
+  } else if (args[i] == "--format") {
+  file_format <- args[i + 1]
   }
 }
 
