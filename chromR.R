@@ -224,15 +224,6 @@ if (!is.null(table_format)) {
   } else if (table_format == "tsv") {
     write_tsv(chrom_limits, "chrom_limits.tsv", col_names = FALSE)
     write_tsv(filtered_data, "filtered_data.tsv", col_names = FALSE)
-  } else if (table_format == "xlsx") {
-    write.xlsx(chrom_limits, "chrom_limits.xlsx", col_names = FALSE)
-    write.xlsx(filtered_data, "filtered_data.xlsx", col_names = FALSE)
-  } else if (table_format == "json") {
-    write_json(chrom_limits, "chrom_limits.json", dataframe = "columns")
-    write_json(filtered_data, "filtered_data.json", dataframe = "columns")
-  }  else if (table_format == "parquet") {
-    write_parquet(chrom_limits, "chrom_limits.parquet")
-    write_parquet(filtered_data, "filtered_data.parquet")
   } else {
     stop("Unsupported table format specified.")
   }
