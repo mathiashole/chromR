@@ -36,7 +36,7 @@ for (i in seq_along(args)) {
   } else if (args[i] == "--colors" || args[i] == "-c") {
     colors_input <- args[(i + 1):length(args)]
     # break
-  } else if (args[i] == "--shell" || args[i] == "-sh") {
+  } else if (args[i] == "--fill" || args[i] == "-f") {
     fill_mode <- TRUE
   } else if (args[i] == "--coords" || args[i] == "-cd") {
     coords_file <- args[i + 1]
