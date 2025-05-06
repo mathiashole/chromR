@@ -233,6 +233,23 @@ if (!is.null(layout_id)) {
       mid_position = (start + end) / 2,
       seqid = factor(seqid, levels = chrom_limits$seqid)
     )
+
+  # if (!is.null(fill_file)) {
+  #   pseudo_data <- fill_data %>%
+  #     filter(grepl(pseudo_pattern, category)) %>%
+  #     mutate(seqid = factor(seqid, levels = chrom_limits$seqid))
+  # } else {
+  #   pseudo_data <- filtered_data %>%
+  #     filter(grepl(pseudo_pattern, attributes)) %>%
+  #     mutate(seqid = factor(seqid, levels = chrom_limits$seqid))
+  # }
+  
+  # plot <- plot +
+  #   geom_point(
+  #     data = pseudo_data,
+  #     aes(x = mid_position, y = seqid),
+  #     color = "azure4", size = 1.6
+  #   )
  }
 
 # # make plot
