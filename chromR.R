@@ -14,6 +14,7 @@ colors_input <- NULL
 line_plot <- FALSE
 table_format <- NULL
 fill_file <- NULL
+format <- NULL
 
 # Parse arguments manually
 for (i in seq_along(args)) {
