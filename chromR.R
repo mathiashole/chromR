@@ -124,6 +124,9 @@ chrom_limits <- gff_data %>%
   )  %>%
   arrange(chrom_length)  # Order longest to smaller
 
+# ========================================================================
+
+# ========================================================================
 # Filter GFF data using the keyword pairs
 filtered_data <- lapply(seq_along(keywords_attr), function(i) {
   gff_data %>%
