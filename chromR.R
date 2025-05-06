@@ -13,9 +13,6 @@ number <- Inf  # Default to Inf, meaning no limit (all chromosomes)
 colors_input <- NULL
 line_plot <- FALSE
 table_format <- NULL
-fill_mode <- FALSE
-coords_file <- NULL
-feature_col <- "feature"  # Default value
 
 # Parse arguments manually
 for (i in seq_along(args)) {
@@ -36,23 +33,12 @@ for (i in seq_along(args)) {
   } else if (args[i] == "--colors" || args[i] == "-c") {
     colors_input <- args[(i + 1):length(args)]
     # break
-  } else if (args[i] == "--fill" || args[i] == "-f") {
-    fill_mode <- TRUE
-    coords_file <- args[i + 1]  # The next argument is the file
-    i <- i + 1  # We skip the next element
-  # } else if (args[i] == "--coords" || args[i] == "-cd") {
-  #   coords_file <- args[i + 1]
-  } else if (args[i] == "--feature-col" || args[i] == "-fc") {
-    feature_col <- args[i + 1]
   }
 }
 
 # Validate arguments
 if (!file.exists(gff_file)) {
   stop("The provided GFF file does not exist.")
-}
-if (fill_mode && is.null(coords_file)) {
-  stop("In --fill mode, --coords must be specified.")
 }
 
 # Validate and parse colors
