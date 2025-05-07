@@ -102,17 +102,6 @@ gff_data <- read_tsv(gff_file, comment = "#", col_names = FALSE)
 # Rename GFF columns
 colnames(gff_data) <- c("seqid", "source", "type", "start", "end", "score", "strand", "phase", "attributes")
 
-# Split keyword pairs into `attributes` and `type`
-keywords_attr <- keyword_pairs[seq(1, length(keyword_pairs), by = 2)]  # Odd indices: attributes
-keywords_type <- keyword_pairs[seq(2, length(keyword_pairs), by = 2)]  # Even indices: types
-
-# Get unique keyword attributes
-unique_keywords <- unique(keywords_attr)
-# Create a named COLOR vector
-color_mapping <- setNames(custom_colors[seq_along(unique_keywords)], unique_keywords)
-
-
-
 # Calculate mimits of chromosome (start and end) per group
 # Calculate chromosome limits
 chrom_limits <- gff_data %>%
@@ -124,6 +113,15 @@ chrom_limits <- gff_data %>%
     .groups = "drop"
   )  %>%
   arrange(chrom_length)  # Order longest to smaller
+
+# Split keyword pairs into `attributes` and `type`
+keywords_attr <- keyword_pairs[seq(1, length(keyword_pairs), by = 2)]  # Odd indices: attributes
+keywords_type <- keyword_pairs[seq(2, length(keyword_pairs), by = 2)]  # Even indices: types
+
+# Get unique keyword attributes
+unique_keywords <- unique(keywords_attr)
+# Create a named COLOR vector
+color_mapping <- setNames(custom_colors[seq_along(unique_keywords)], unique_keywords)
 
 # ========================================================================
 # if (!is.null(fill_file)) {
