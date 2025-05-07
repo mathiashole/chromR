@@ -116,34 +116,34 @@ chrom_limits <- gff_data %>%
   mutate(seqid = factor(seqid, levels = seqid))
 
 # ========================================================================
-# if (!is.null(fill_file)) {
-#   # Modo fill_file
-#   if (!file.exists(fill_file)) {
-#     stop("The specified fill file does not exist")
-#   }
+if (!is.null(fill_file)) {
+  # Modo fill_file
+  if (!file.exists(fill_file)) {
+    stop("The specified fill file does not exist")
+  }
   
-#   fill_data <- read_fill_file(fill_file) %>%
-#     filter(seqid %in% chrom_limits$seqid) %>%
-#     mutate(
-#       mid_position = (start + end) / 2,
-#       seqid = factor(seqid, levels = levels(chrom_limits$seqid))
-#     )
+  fill_data <- read_fill_file(fill_file) %>%
+    filter(seqid %in% chrom_limits$seqid) %>%
+    mutate(
+      mid_position = (start + end) / 2,
+      seqid = factor(seqid, levels = levels(chrom_limits$seqid))
+    )
   
-#   # Create the base plot object
-#   plot <- ggplot() +
-#     geom_segment(
-#       data = chrom_limits,
-#       aes(x = chrom_start, xend = chrom_end, y = seqid, yend = seqid),
-#       color = "gray50", size = 0.8, alpha = 0.8
-#     ) +
-#     geom_point(
-#       data = fill_data,
-#       aes(x = mid_position, y = seqid, color = factor(category)),
-#       size = 1.5
-#     ) +
-#     labs(color = "Category")
+  # Create the base plot object
+  plot <- ggplot() +
+    geom_segment(
+      data = chrom_limits,
+      aes(x = chrom_start, xend = chrom_end, y = seqid, yend = seqid),
+      color = "gray50", size = 0.8, alpha = 0.8
+    ) +
+    geom_point(
+      data = fill_data,
+      aes(x = mid_position, y = seqid, color = factor(category)),
+      size = 1.5
+    ) +
+    labs(color = "Category")
   
-# } else {
+} else {
     # Keywords mode
     # Split keyword pairs into `attributes` and `type`
     keywords_attr <- keyword_pairs[seq(1, length(keyword_pairs), by = 2)]  # Odd indices: attributes
