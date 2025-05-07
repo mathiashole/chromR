@@ -143,81 +143,81 @@ chrom_limits <- gff_data %>%
 #     ) +
 #     labs(color = "Category")
   
-# } else {}
+# } else {
+    # Keywords mode
+    # Split keyword pairs into `attributes` and `type`
+    keywords_attr <- keyword_pairs[seq(1, length(keyword_pairs), by = 2)]  # Odd indices: attributes
+    keywords_type <- keyword_pairs[seq(2, length(keyword_pairs), by = 2)]  # Even indices: types
 
-# Split keyword pairs into `attributes` and `type`
-keywords_attr <- keyword_pairs[seq(1, length(keyword_pairs), by = 2)]  # Odd indices: attributes
-keywords_type <- keyword_pairs[seq(2, length(keyword_pairs), by = 2)]  # Even indices: types
+    # Get unique keyword attributes
+    unique_keywords <- unique(keywords_attr)
+    # Create a named COLOR vector
+    color_mapping <- setNames(custom_colors[seq_along(unique_keywords)], unique_keywords)
 
-# Get unique keyword attributes
-unique_keywords <- unique(keywords_attr)
-# Create a named COLOR vector
-color_mapping <- setNames(custom_colors[seq_along(unique_keywords)], unique_keywords)
+    # ========================================================================
+    # Filter GFF data using the keyword pairs
+    filtered_data <- lapply(seq_along(keywords_attr), function(i) {
+      gff_data %>%
+        filter(
+          grepl(keywords_attr[i], attributes),  # Filter by attribute keyword
+          grepl(keywords_type[i], type)        # Filter by type keyword
+        ) %>%
+        mutate(
+          mid_position = (start + end) / 2,  # Calculate midpoint
+          keyword_attr = keywords_attr[i],  # Add attribute keyword as a column
+          keyword_type = keywords_type[i],  # Add type keyword as a column
+          seqid = factor(seqid)             # Ensure seqid is a factor
+        )
+    }) %>%
+      bind_rows()  # Combine all filtered data
 
-# ========================================================================
-# Filter GFF data using the keyword pairs
-filtered_data <- lapply(seq_along(keywords_attr), function(i) {
-  gff_data %>%
-    filter(
-      grepl(keywords_attr[i], attributes),  # Filter by attribute keyword
-      grepl(keywords_type[i], type)        # Filter by type keyword
-    ) %>%
-    mutate(
-      mid_position = (start + end) / 2,  # Calculate midpoint
-      keyword_attr = keywords_attr[i],  # Add attribute keyword as a column
-      keyword_type = keywords_type[i],  # Add type keyword as a column
-      seqid = factor(seqid)             # Ensure seqid is a factor
-    )
-}) %>%
-  bind_rows()  # Combine all filtered data
+    # Apply strict keyword filtering if enabled
+    if (strict && !is.null(filtered_data)) {
+      keyword_contigs <- unique(filtered_data$seqid)
+      chrom_limits <- chrom_limits %>%
+        filter(seqid %in% keyword_contigs)
+      filtered_data <- filtered_data %>%
+        filter(seqid %in% chrom_limits$seqid)
+    }
 
-# Apply strict keyword filtering if enabled
-if (strict && !is.null(filtered_data)) {
-  keyword_contigs <- unique(filtered_data$seqid)
-  chrom_limits <- chrom_limits %>%
-    filter(seqid %in% keyword_contigs)
-  filtered_data <- filtered_data %>%
-    filter(seqid %in% chrom_limits$seqid)
-}
+    # Apply filtering based on 'number' argument
+    chrom_limits <- chrom_limits %>%
+      arrange(desc(chrom_length)) %>%
+      {
+        if (!is.infinite(number)) slice_head(., n = number) else . 
+      } %>%
+      arrange(chrom_length) %>%
+      mutate(seqid = factor(seqid, levels = seqid))
 
-# Apply filtering based on 'number' argument
-chrom_limits <- chrom_limits %>%
-  arrange(desc(chrom_length)) %>%
-  {
-    if (!is.infinite(number)) slice_head(., n = number) else . 
-  } %>%
-  arrange(chrom_length) %>%
-  mutate(seqid = factor(seqid, levels = seqid))
+    filtered_data <- filtered_data %>% # Apply filtering based on 'number' and id
+      filter(seqid %in% chrom_limits$seqid)
 
-filtered_data <- filtered_data %>% # Apply filtering based on 'number' and id
-  filter(seqid %in% chrom_limits$seqid)
+    # make plot
+    plot <- ggplot() +
+      # Chromosome lines
+      geom_segment(
+        data = chrom_limits,
+        aes(x = chrom_start, xend = chrom_end, y = seqid, yend = seqid),
+        color = "gray50", size = 0.8, alpha = 0.8
+      )# +
 
-# make plot
-plot <- ggplot() +
-  # Chromosome lines
-  geom_segment(
-    data = chrom_limits,
-    aes(x = chrom_start, xend = chrom_end, y = seqid, yend = seqid),
-    color = "gray50", size = 0.8, alpha = 0.8
-  )# +
-
-  # Points for genes
-  point_plot <- plot +
-    geom_point(
-    data = filtered_data,
-    aes(x = mid_position, y = seqid, color = factor(keyword_attr)),
-    size = 1.5
-  ) +
-  scale_color_manual(values = color_mapping) +  # Apply custom colors
-  # Finalize plot aesthetics
-  labs(
-    x = "Position on Chromosome",
-    y = "Chromosome",
-    color = "Keywords",  # keyword label
-    title = "Gene Positions by Keywords on Chromosomes"
-  ) +
-  theme_minimal() #+
-  # theme_classic()
+      # Points for genes
+      point_plot <- plot +
+        geom_point(
+        data = filtered_data,
+        aes(x = mid_position, y = seqid, color = factor(keyword_attr)),
+        size = 1.5
+      ) +
+      scale_color_manual(values = color_mapping) +  # Apply custom colors
+      # Finalize plot aesthetics
+      labs(
+        x = "Position on Chromosome",
+        y = "Chromosome",
+        color = "Keywords",  # keyword label
+        title = "Gene Positions by Keywords on Chromosomes"
+      ) +
+      theme_minimal() #+
+      # theme_classic()
 #   } else {
 #     stop("Either --keywords or --fill_file must be specified")
 #   }
