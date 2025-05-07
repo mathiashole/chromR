@@ -114,15 +114,6 @@ chrom_limits <- gff_data %>%
   )  %>%
   arrange(chrom_length)  # Order longest to smaller
 
-# Split keyword pairs into `attributes` and `type`
-keywords_attr <- keyword_pairs[seq(1, length(keyword_pairs), by = 2)]  # Odd indices: attributes
-keywords_type <- keyword_pairs[seq(2, length(keyword_pairs), by = 2)]  # Even indices: types
-
-# Get unique keyword attributes
-unique_keywords <- unique(keywords_attr)
-# Create a named COLOR vector
-color_mapping <- setNames(custom_colors[seq_along(unique_keywords)], unique_keywords)
-
 # ========================================================================
 # if (!is.null(fill_file)) {
 #   # Modo fill_file
@@ -152,6 +143,16 @@ color_mapping <- setNames(custom_colors[seq_along(unique_keywords)], unique_keyw
 #     labs(color = "Category")
   
 # } else {}
+
+# Split keyword pairs into `attributes` and `type`
+keywords_attr <- keyword_pairs[seq(1, length(keyword_pairs), by = 2)]  # Odd indices: attributes
+keywords_type <- keyword_pairs[seq(2, length(keyword_pairs), by = 2)]  # Even indices: types
+
+# Get unique keyword attributes
+unique_keywords <- unique(keywords_attr)
+# Create a named COLOR vector
+color_mapping <- setNames(custom_colors[seq_along(unique_keywords)], unique_keywords)
+
 # ========================================================================
 # Filter GFF data using the keyword pairs
 filtered_data <- lapply(seq_along(keywords_attr), function(i) {
