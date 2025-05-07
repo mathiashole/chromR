@@ -113,6 +113,7 @@ chrom_limits <- gff_data %>%
     .groups = "drop"
   )  %>%
   arrange(chrom_length)  # Order longest to smaller
+  mutate(seqid = factor(seqid, levels = seqid))
 
 # ========================================================================
 # if (!is.null(fill_file)) {
