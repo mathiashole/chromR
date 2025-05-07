@@ -219,10 +219,10 @@ if (!is.null(fill_file)) {
       ) +
       theme_minimal() #+
       # theme_classic()
-#   } else {
-#     stop("Either --keywords or --fill_file must be specified")
-#   }
-# }
+  } else {
+    stop("Either --keywords or --fill_file must be specified")
+  }
+}
 
 # Process pseudogenes if file is provided
 if (!is.null(layout_id)) {
