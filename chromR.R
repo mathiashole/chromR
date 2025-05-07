@@ -145,6 +145,7 @@ if (!is.null(fill_file)) {
   
 } else {
     # Keywords mode
+    if (!is.null(keyword_pairs)) {
     # Split keyword pairs into `attributes` and `type`
     keywords_attr <- keyword_pairs[seq(1, length(keyword_pairs), by = 2)]  # Odd indices: attributes
     keywords_type <- keyword_pairs[seq(2, length(keyword_pairs), by = 2)]  # Even indices: types
