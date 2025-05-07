@@ -92,6 +92,11 @@ read_fill_file <- function(fill_file, format = NULL) {
   return(data)
 }
 
+# charge library
+library(dplyr)
+library(readr)
+library(ggplot2)
+
 # Split keyword pairs into `attributes` and `type`
 keywords_attr <- keyword_pairs[seq(1, length(keyword_pairs), by = 2)]  # Odd indices: attributes
 keywords_type <- keyword_pairs[seq(2, length(keyword_pairs), by = 2)]  # Even indices: types
@@ -100,13 +105,6 @@ keywords_type <- keyword_pairs[seq(2, length(keyword_pairs), by = 2)]  # Even in
 unique_keywords <- unique(keywords_attr)
 # Create a named COLOR vector
 color_mapping <- setNames(custom_colors[seq_along(unique_keywords)], unique_keywords)
-
-# charge library
-library(dplyr)
-library(readr)
-library(ggplot2)
-
-
 
 # Load GFF file
 gff_data <- read_tsv(gff_file, comment = "#", col_names = FALSE)
