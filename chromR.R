@@ -197,9 +197,7 @@ if (!is.null(fill_file)) {
     # Apply filtering based on 'number' argument
     chrom_limits <- chrom_limits %>%
       arrange(desc(chrom_length)) %>%
-      {
-        if (!is.infinite(number)) slice_head(., n = number) else . 
-      } %>%
+      { if (!is.infinite(number)) slice_head(., n = number) else . } %>%
       arrange(chrom_length) %>%
       mutate(seqid = factor(seqid, levels = seqid))
 
