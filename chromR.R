@@ -134,13 +134,13 @@ if (!is.null(fill_file)) {
       data = chrom_limits,
       aes(x = chrom_start, xend = chrom_end, y = seqid, yend = seqid),
       color = "gray50", size = 0.8, alpha = 0.8
-    ) +
-    geom_point(
-      data = fill_data,
-      aes(x = mid_position, y = seqid, color = factor(category)),
-      size = 1.5
-    ) +
-    labs(color = "Category")
+    ) #+
+    # geom_point(
+    #   data = fill_data,
+    #   aes(x = mid_position, y = seqid, color = factor(category)),
+    #   size = 1.5
+    # ) +
+    # labs(color = "Category")
   
 } else {
     # Keywords mode
