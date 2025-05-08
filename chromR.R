@@ -204,7 +204,7 @@ if (!is.null(fill_file)) {
     filtered_data <- filtered_data %>% # Apply filtering based on 'number' and id
       filter(seqid %in% chrom_limits$seqid)
 
-    make plot
+    #make plot
     plot <- ggplot() +
       # Chromosome lines
       geom_segment(
