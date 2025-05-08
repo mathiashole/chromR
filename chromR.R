@@ -88,7 +88,6 @@ read_fill_file <- function(fill_file, format = NULL) {
   
   # Assign names to the relevant columns
   colnames(data)[1:4] <- c("seqid", "start", "end", "category")
-
   return(data)
 }
 
