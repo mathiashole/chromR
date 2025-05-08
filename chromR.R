@@ -312,7 +312,6 @@ if (line_plot) {
   ) +
   theme_minimal()
   }
-}
   
   if (!is.null(pseudo_data)) {
   line_plot <- line_plot +
@@ -321,6 +320,7 @@ if (line_plot) {
       aes(x = start, xend = end, y = seqid, yend = seqid),
       color = "azure4", size = 1.6
     )
+  }
 
   # Save plot picture
   line_plot_file <- "gene_positions_line_plot.pdf"
