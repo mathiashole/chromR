@@ -141,6 +141,22 @@ if (!is.null(fill_file)) {
     #   size = 1.5
     # ) +
     # labs(color = "Category")
+      # Points for genes
+    point_plot <- plot +
+      geom_point(
+      data = fill_data,
+      aes(x = mid_position, y = seqid, color = factor(category)),
+      size = 1.5
+    ) +
+    scale_color_manual(values = custom_colors) +  # Apply custom colors
+    # Finalize plot aesthetics
+    labs(
+      x = "Position on Chromosome",
+      y = "Chromosome",
+      color = "Categories",  # keyword label
+      title = "Genomic Features by Category"
+    ) +
+    theme_minimal()
   
 } else {
     # Keywords mode
