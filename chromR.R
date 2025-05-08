@@ -153,7 +153,7 @@ if (!is.null(fill_file)) {
     labs(
       x = "Position on Chromosome",
       y = "Chromosome",
-      color = "Categories",  # keyword label
+      color = "Categories",  # category label is necesary
       title = "Genomic Features by Category"
     ) +
     theme_minimal()
