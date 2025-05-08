@@ -283,7 +283,17 @@ if (line_plot) {
         data = fill_data,
         aes(x = start, xend = end, y = seqid, yend = seqid, color = factor(category)),
         size = 1.2
-      )
+      ) +
+    scale_color_manual(values = custom_colors) +  # Apply custom colors
+    # Finalize plot aesthetics
+    labs(
+      x = "Position on Chromosome",
+      y = "Chromosome",
+      color = "Categories",  # category label is necesary
+      title = "Genomic Features by Category"
+    ) +
+    theme_minimal()
+    
   } else {}
   # Add genes as lines
   line_plot <- plot +
