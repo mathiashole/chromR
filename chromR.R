@@ -329,7 +329,7 @@ if (line_plot) {
   ggsave(line_plot_file, plot = line_plot, width = 8, height = 10)
   cat("Plot saved to:", line_plot_file, "\n")
 
-}  
+}
 
 # Save tables in the specified format without column names
 if (!is.null(table_format)) {
