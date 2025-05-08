@@ -65,6 +65,7 @@ if (!is.null(table_format) && !table_format %in% c("csv", "tsv")) {
   stop("Invalid format specified for --table. Use 'csv' or 'tsv'.")
 }
 
+# Function to read fill file
 read_fill_file <- function(fill_file, format = NULL) {
   if (is.null(format)) {
     stop("You must specify the format with --format (csv or tsv)")
