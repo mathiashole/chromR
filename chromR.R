@@ -258,7 +258,7 @@ if (!is.null(layout_id)) {
       mutate(seqid = factor(seqid, levels = chrom_limits$seqid))
   }
   
-  plot <- plot +
+  point_plot <- plot +
     geom_point(
       data = pseudo_data,
       aes(x = mid_position, y = seqid),
