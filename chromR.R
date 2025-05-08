@@ -204,51 +204,32 @@ if (!is.null(fill_file)) {
     filtered_data <- filtered_data %>% # Apply filtering based on 'number' and id
       filter(seqid %in% chrom_limits$seqid)
 
-    # make plot
-    # plot <- ggplot() +
-    #   # Chromosome lines
-    #   geom_segment(
-    #     data = chrom_limits,
-    #     aes(x = chrom_start, xend = chrom_end, y = seqid, yend = seqid),
-    #     color = "gray50", size = 0.8, alpha = 0.8
-    #   )# +
-
-    #   # Points for genes
-    #   point_plot <- plot +
-    #     geom_point(
-    #     data = filtered_data,
-    #     aes(x = mid_position, y = seqid, color = factor(keyword_attr)),
-    #     size = 1.5
-    #   ) +
-    #   scale_color_manual(values = color_mapping) +  # Apply custom colors
-    #   # Finalize plot aesthetics
-    #   labs(
-    #     x = "Position on Chromosome",
-    #     y = "Chromosome",
-    #     color = "Keywords",  # keyword label
-    #     title = "Gene Positions by Keywords on Chromosomes"
-    #   ) +
-    #   theme_minimal() #+
-    #   # theme_classic()
+    make plot
     plot <- ggplot() +
+      # Chromosome lines
       geom_segment(
         data = chrom_limits,
         aes(x = chrom_start, xend = chrom_end, y = seqid, yend = seqid),
         color = "gray50", size = 0.8, alpha = 0.8
-      ) +
-      geom_point(
+      )# +
+
+      # Points for genes
+      point_plot <- plot +
+        geom_point(
         data = filtered_data,
         aes(x = mid_position, y = seqid, color = factor(keyword_attr)),
         size = 1.5
       ) +
-      scale_color_manual(values = color_mapping) +
+      scale_color_manual(values = color_mapping) +  # Apply custom colors
+      # Finalize plot aesthetics
       labs(
         x = "Position on Chromosome",
         y = "Chromosome",
-        color = "Keywords",
+        color = "Keywords",  # keyword label
         title = "Gene Positions by Keywords on Chromosomes"
       ) +
-      theme_minimal()
+      theme_minimal() #+
+    #   # theme_classic()
 
   } else {
     stop("Either --keywords or --fill_file must be specified")
