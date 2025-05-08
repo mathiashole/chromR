@@ -34,7 +34,6 @@ for (i in seq_along(args)) {
     table_format <- args[i + 1]
   } else if (args[i] == "--colors" || args[i] == "-c") {
     colors_input <- args[(i + 1):length(args)]
-    # break
   } else if (args[i] == "--fill_file" || args[i] == "-ff") {
   fill_file <- args[i + 1]
   } else if (args[i] == "--format" || args[i] == "-f") {
