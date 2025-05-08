@@ -277,6 +277,14 @@ if (!is.null(layout_id)) {
 
 # Add gene representation
 if (line_plot) {
+  if(!is.null(fill_file)){
+    line_plot <- plot +
+      geom_segment(
+        data = fill_data,
+        aes(x = start, xend = end, y = seqid, yend = seqid, color = factor(category)),
+        size = 1.2
+      )
+  } else {}
   # Add genes as lines
   line_plot <- plot +
     geom_segment(
