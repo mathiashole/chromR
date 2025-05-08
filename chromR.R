@@ -338,7 +338,7 @@ if (!is.null(table_format)) {
     write_csv(filtered_data, "filtered_data.csv", col_names = FALSE)
   } else if (table_format == "tsv") {
     write_tsv(chrom_limits, "chrom_limits.tsv", col_names = FALSE)
-    write_tsv(filtered_data, "filtered_data.tsv", col_names = FALSE)x
+    write_tsv(filtered_data, "filtered_data.tsv", col_names = FALSE)
   } else {
     stop("Unsupported table format specified.")
   }
