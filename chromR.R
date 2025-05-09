@@ -142,6 +142,9 @@ if (!is.null(fill_file)) {
     arrange(chrom_length) %>%
     mutate(seqid = factor(seqid, levels = seqid))
 
+  fill_data <- fill_data %>% # Apply filtering based on 'number' and id
+    filter(seqid %in% chrom_limits$seqid)
+
   # Get unique category attributes
   unique_category <- unique(fill_data$category)
   # Create a named COLOR vector
