@@ -121,7 +121,7 @@ if (!is.null(fill_file)) {
     stop("The specified fill file does not exist")
   }
   
-  fill_data <- read_fill_file(fill_file) %>%
+  fill_data <- read_fill_file(fill_file, format = file_format) %>%
     filter(seqid %in% chrom_limits$seqid) %>%
     mutate(
       mid_position = (start + end) / 2,
