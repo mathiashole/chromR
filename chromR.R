@@ -127,6 +127,11 @@ if (!is.null(fill_file)) {
       mid_position = (start + end) / 2,
       seqid = factor(seqid, levels = levels(chrom_limits$seqid))
     )
+
+  # Get unique category attributes
+  unique_category <- unique()
+  # Create a named COLOR vector
+  color_mapping <- setNames(custom_colors[seq_along(unique_keywords)], unique_keywords)
   
   # Create the base plot object
   plot <- ggplot() +
