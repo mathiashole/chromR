@@ -131,7 +131,7 @@ if (!is.null(fill_file)) {
   # Get unique category attributes
   unique_category <- unique(fill_data$category)
   # Create a named COLOR vector
-  color_mapping <- setNames(custom_colors[seq_along(unique_keywords)], unique_keywords)
+  color_mapping <- setNames(custom_colors[seq_along(unique_category)], unique_category)
   
   # Create the base plot object
   plot <- ggplot() +
