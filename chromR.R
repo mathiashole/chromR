@@ -127,6 +127,13 @@ if (!is.null(fill_file)) {
       mid_position = (start + end) / 2,
       seqid = factor(seqid, levels = levels(chrom_limits$seqid))
     )
+  
+  # Apply strict keyword filtering if enabled
+  if (strict && !is.null(fill_data)) {
+    keyword_contigs <- unique(fill_data$seqid)
+    chrom_limits <- chrom_limits %>% filter(seqid %in% keyword_contigs)
+    fill_data <- fill_data %>% filter(seqid %in% chrom_limits$seqid)
+  }
 
   # Get unique category attributes
   unique_category <- unique(fill_data$category)
