@@ -153,7 +153,7 @@ if (!is.null(fill_file)) {
       aes(x = mid_position, y = seqid, color = factor(category)),
       size = 1.5
     ) +
-    scale_color_manual(values = custom_colors) +  # Apply custom colors
+    scale_color_manual(values = color_mapping) +  # Apply custom colors
     # Finalize plot aesthetics
     labs(
       x = "Position on Chromosome",
@@ -289,7 +289,7 @@ if (line_plot) {
         aes(x = start, xend = end, y = seqid, yend = seqid, color = factor(category)),
         size = 1.2
       ) +
-    scale_color_manual(values = custom_colors) +  # Apply custom colors
+    scale_color_manual(values = color_mapping) +  # Apply custom colors
     # Finalize plot aesthetics
     labs(
       x = "Position on Chromosome",
