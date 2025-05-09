@@ -135,6 +135,13 @@ if (!is.null(fill_file)) {
     fill_data <- fill_data %>% filter(seqid %in% chrom_limits$seqid)
   }
 
+  # Apply filtering based on 'number' argument
+  chrom_limits <- chrom_limits %>%
+    arrange(desc(chrom_length)) %>%
+    { if (!is.infinite(number)) slice_head(., n = number) else . } %>%
+    arrange(chrom_length) %>%
+    mutate(seqid = factor(seqid, levels = seqid))
+
   # Get unique category attributes
   unique_category <- unique(fill_data$category)
   # Create a named COLOR vector
