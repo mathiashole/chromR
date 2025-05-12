@@ -357,7 +357,12 @@ if (line_plot) {
 if (!is.null(table_format)) {
   if (table_format == "csv") {
     write_csv(chrom_limits, "chrom_limits.csv", col_names = FALSE)
-    write_csv(filtered_data, "filtered_data.csv", col_names = FALSE)
+    # write_csv(filtered_data, "filtered_data.csv", col_names = FALSE)
+    if (!is.null(fill_file)) {
+      write_csv(fill_data, "fill_data.csv", col_names = FALSE)
+    } else if (!is.null(keyword_pairs)) {
+      write_csv(filtered_data, "filtered_data.csv", col_names = FALSE)
+    }
   } else if (table_format == "tsv") {
     write_tsv(chrom_limits, "chrom_limits.tsv", col_names = FALSE)
     write_tsv(filtered_data, "filtered_data.tsv", col_names = FALSE)
