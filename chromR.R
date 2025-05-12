@@ -365,7 +365,12 @@ if (!is.null(table_format)) {
     }
   } else if (table_format == "tsv") {
     write_tsv(chrom_limits, "chrom_limits.tsv", col_names = FALSE)
-    write_tsv(filtered_data, "filtered_data.tsv", col_names = FALSE)
+    # write_tsv(filtered_data, "filtered_data.tsv", col_names = FALSE)
+    if (!is.null(fill_file)) {
+      write_tsv(fill_data, "fill_data.tsv", col_names = FALSE)
+    } else if (!is.null(keyword_pairs)) {
+      write_tsv(filtered_data, "filtered_data.tsv", col_names = FALSE)
+    }
   } else {
     stop("Unsupported table format specified.")
   }
