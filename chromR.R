@@ -15,6 +15,7 @@ line_plot <- FALSE
 table_format <- NULL
 fill_file <- NULL
 file_format <- NULL
+order_file <- NULL
 
 # Parse arguments manually
 for (i in seq_along(args)) {
