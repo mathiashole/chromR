@@ -94,6 +94,12 @@ read_fill_file <- function(fill_file, format = NULL) {
   return(data)
 }
 
+read_order_file <- function(order_file) {
+  if(!file.exists(order_file)) {
+    stop("The provided ORDER file does not exist")
+  }
+}
+
 # charge library
 library(dplyr)
 library(readr)
