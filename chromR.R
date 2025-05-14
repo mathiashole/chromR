@@ -98,6 +98,19 @@ read_order_file <- function(order_file, format = NULL) {
   if(!file.exists(order_file)) {
     stop("The provided ORDER file does not exist")
   }
+
+    format <- tolower(format)
+  if (!format %in% c("csv", "tsv")) {
+    stop("Invalid format. Use 'csv' or 'tsv'")
+  }
+  
+  if (format == "csv") {
+    data <- read_csv(order_file, col_names = FALSE, show_col_types = FALSE)
+  } else {
+    data <- read_tsv(order_file, col_names = FALSE, show_col_types = FALSE)
+  }
+
+
 }
 
 # charge library
