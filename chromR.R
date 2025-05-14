@@ -94,7 +94,7 @@ read_fill_file <- function(fill_file, format = NULL) {
   return(data)
 }
 
-read_order_file <- function(order_file) {
+read_order_file <- function(order_file, format = NULL) {
   if(!file.exists(order_file)) {
     stop("The provided ORDER file does not exist")
   }
