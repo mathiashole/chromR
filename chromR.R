@@ -105,12 +105,12 @@ read_order_file <- function(order_file, format = NULL) {
   }
   
   if (format == "csv") {
-    data <- read_csv(order_file, col_names = FALSE, show_col_types = FALSE)
+    custom_order <- read_csv(order_file, col_names = FALSE, show_col_types = FALSE)
   } else {
-    data <- read_tsv(order_file, col_names = FALSE, show_col_types = FALSE)
+    custom_order <- read_tsv(order_file, col_names = FALSE, show_col_types = FALSE)
   }
 
-
+  return(custom_order)
 }
 
 # charge library
