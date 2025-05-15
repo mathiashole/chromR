@@ -13,6 +13,7 @@
 - Filter by number of chromosomes to display (`--number`)
 
 ### 📌 Data Handling:
+- Support for Keyword Filtering, highlight specific genes, regions, or domains of interest using keywords (`--keywords`)
 - Support for fill files (`--fill_file`) in CSV/TSV formats
 - Table exports (CSV/TSV with `--table`)
 
@@ -21,8 +22,8 @@
 - High point support via layout file (`--layout`)
 
 ### 🎨 Color Customization: 
-- Define colors for categories using either hex color codes (e.g., #1f77b4)
-- Define colors for standard R color names (e.g., black, orange).
+- Define colors for categories using either hex color codes (`--colors` e.g., #1f77b4)
+- Define colors for standard R color names (`--colors` e.g., black, orange).
 
 -  📊 Custom Visualization: Display genes, domains, or specific regions on chromosomes or contigs.
 -  🎨 Color Customization: Define colors for categories using either hex color codes (e.g., #1f77b4) or standard R color names (e.g., black, orange).
