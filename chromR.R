@@ -99,7 +99,7 @@ read_order_file <- function(order_file, format = NULL) {
     stop("The provided ORDER file does not exist")
   }
 
-    format <- tolower(format)
+  format <- tolower(format)
   if (!format %in% c("csv", "tsv")) {
     stop("Invalid format. Use 'csv' or 'tsv'")
   }
