@@ -136,6 +136,17 @@ chrom_limits <- gff_data %>%
   # arrange(chrom_length) %>% # Order longest to smaller
   # mutate(seqid = factor(seqid, levels = seqid))
 
+if (!is.null(order_file)) {
+  custom_order <- read_order_file(order_file)
+  chrom_limits <- chrom_limits %>%
+    mutate(seqid = factor(seqid, levels = custom_order)) %>%
+    arrange(seqid)  # 
+} else {
+  chrom_limits <- chrom_limits %>%
+    arrange(chrom_length) %>%
+    mutate(seqid = factor(seqid, levels = seqid))
+}
+
 # ========================================================================
 if (!is.null(fill_file)) {
   # Modo fill_file
