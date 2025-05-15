@@ -47,7 +47,7 @@ Rscript chromR.R --gff_file </path/to/file.gff> --keywords <keyword1> <keyword2>
 | `--order_file` / `-of` | Path to the GFF file.                    | `-of chrom_order.tsv`       |
 | `--number` / `-n` | Path to the GFF file.                    | `--number 10 (Top 10 most longest)`       |
 | `--fill_file` / `-ff` | Path to the GFF file.                    | `--fill_file regions.tsv`       |
-| `--format` / `-f` | Path to the GFF file.                    | `--format tsv`       |
+| `--format` / `-f` | Fill and Order file format (csv/tsv)                    | `--format tsv`       |
 | `--table` / `-tab` | Export tables (csv/tsv).                    | `--table csv`       |
 
 :bulb: Note: Colors must match the number of keywords provided. They can be standard R color names or hex codes. In the case of hexadecimal colors, they must be put in quotes (e.g. "#F4A582").
