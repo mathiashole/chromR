@@ -140,11 +140,11 @@ if (!is.null(order_file)) {
   custom_order <- read_order_file(order_file)
   chrom_limits <- chrom_limits %>%
     mutate(seqid = factor(seqid, levels = custom_order)) %>%
-    arrange(seqid)  # 
+    arrange(seqid)  # Order as defined
 } else {
   chrom_limits <- chrom_limits %>%
     arrange(chrom_length) %>%
-    mutate(seqid = factor(seqid, levels = seqid))
+    mutate(seqid = factor(seqid, levels = seqid)) # default order
 }
 
 # ========================================================================
