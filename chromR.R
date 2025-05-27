@@ -379,6 +379,7 @@ if (line_plot) {
 
 }
 
+# Need stadistic information of position count 
 # Save tables in the specified format without column names
 if (!is.null(table_format)) {
   if (table_format == "csv") {
