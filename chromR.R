@@ -314,15 +314,6 @@ if (!is.null(layout_id)) {
     )
 }
 
-# if (!is.null(pseudo_data)) {
-#   point_plot <- point_plot +
-#     geom_point(
-#       data = pseudo_data,
-#       aes(x = mid_position, y = seqid),
-#       color = "azure4", size = 1.6
-#     )
-# }
-
 # Add gene representation
 if (line_plot) {
   if(!is.null(fill_file)){
