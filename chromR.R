@@ -149,6 +149,7 @@ if (!is.null(order_file)) {
 
 # ========================================================================
 # Need add enviroment in fill file and filter keyword
+# and need clean code
 if (!is.null(fill_file)) {
   # Modo fill_file
   if (!file.exists(fill_file)) {
