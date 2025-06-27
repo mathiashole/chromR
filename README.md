@@ -87,10 +87,6 @@ Rscript chromR.R --gff_file data.gff --keywords gene1 CDS --colors orange
 Rscript chromR.R -g </path/of/file.gff> -k <keyword1> <keyword1_asociated> <keyword2> <keyword2_asociated>
 ```
 
-```{bash, eval = FALSE}
-Rscript chromR.R -g </path/of/file.gff> -k <keyword> <keyword_asociated> -l </path/of/file_id>
-```
-
 If you have any genome data, put this data in TSV or CSV format and use GFF to map the chromosome.
 
 Example 2: Fill data to Plot
