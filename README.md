@@ -32,6 +32,10 @@
 -  🚀 Command-Line Friendly: Run directly from the terminal or integrate into pipelines.
 -  🖥️ RStudio Compatible: Easy to modify, debug, or execute within RStudio.
 
+## :framed_picture: Example Output
+
+![chromR Visualization Example](docs/chromR_example.png)
+
 ## :wrench: Usage
 
 ### Requirements:
