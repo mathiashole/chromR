@@ -84,9 +84,6 @@ Rscript chromR.R --gff_file </path/to/file.gff> --keywords <keyword1> <keyword2>
 
 :bulb: Note: Colors must match the number of keywords provided. They can be standard R color names or hex codes. In the case of hexadecimal colors, they must be put in quotes (e.g. "#F4A582").
 
-
-## :hammer: in progress ...
-
 ## :bulb: Bash Quick Examples
 
 Example 1: Basic Plot
