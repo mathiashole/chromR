@@ -34,7 +34,6 @@
 -  🚀 Command-Line Friendly: Run directly from the terminal or integrate into pipelines.
 -  🖥️ RStudio Compatible: Easy to modify, debug, or execute within RStudio.
 
-<br>
 
 ## :framed_picture: Example Output
 
@@ -46,7 +45,6 @@ Rscript chromR.R -g ../Saccharomyces_cerevisiae.R64-1-1.114.gff3 --keywords Ty1 
 
 <img align="center" src="docs/gene_positions_plot.png" width="800">
 
-<br>
 
 ## :wrench: Usage
 
