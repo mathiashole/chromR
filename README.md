@@ -41,8 +41,9 @@
 ## :framed_picture: Example Output
 
 -----
+<img align="center" src="docs\gene_positions_plot.png" width="800">
 
-![chromR Visualization Example](docs\gene_positions_plot.png)
+<br>
 
 ## :wrench: Usage
 
