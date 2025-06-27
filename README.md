@@ -130,7 +130,6 @@ system2("Rscript", args = args)
 ```
 
 
-
 ## :sparkling_heart: Contributing
 
 We welcome contributions!
