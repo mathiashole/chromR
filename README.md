@@ -91,6 +91,8 @@ Rscript chromR.R -g </path/of/file.gff> -k <keyword1> <keyword1_asociated> <keyw
 Rscript chromR.R -g </path/of/file.gff> -k <keyword> <keyword_asociated> -l </path/of/file_id>
 ```
 
+If you have any genome data, put this data in TSV or CSV format and use GFF to map the chromosome.
+
 ## :bulb: R Quick Examples
 
 Example 1: Basic Plot
