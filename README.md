@@ -34,7 +34,7 @@
 
 ## :framed_picture: Example Output
 
-![chromR Visualization Example](docs/chromR_example.png)
+![chromR Visualization Example](docs\gene_positions_plot.png)
 
 ## :wrench: Usage
 
