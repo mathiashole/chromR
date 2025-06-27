@@ -38,9 +38,6 @@
 
 ## :framed_picture: Example Output
 
-### Graph of genes on chromosomes
-[ChromR example showing genes on chromosomes](https://i.imgur.com/ejemplo.png)
-
 - **Description**: This graph shows the position of two transposons, Ty1 (`Ty1`, `gene`) and TYA (`TYA`, `gene`) highlighted in green and orange.
 - **Command used**:
 ```{bash, eval = FALSE}
