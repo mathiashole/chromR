@@ -2,3 +2,6 @@
 *.png
 *.csv
 *.tsv
+
+# Exclude 
+!docs/gene_positions_plot.png
