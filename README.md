@@ -9,8 +9,6 @@
 
 ## :book: Features
 
------
-
 ### 📊 Advanced Visualization:
 - Display genes, domains, or specific regions on chromosomes or contigs as points or lines (`--line_plot`)
 - Custom chromosome ordering (`--order_file`)
@@ -40,8 +38,7 @@
 
 ## :framed_picture: Example Output
 
------
-<img align="center" src="docs\gene_positions_plot.png" width="800">
+<img align="center" src="docs/gene_positions_plot.png" width="800">
 
 <br>
 
