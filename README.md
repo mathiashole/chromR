@@ -106,10 +106,7 @@ Example 1: Basic Plot
 Highlight gene1 and CDS in orange:
 
 ```{r, eval = FALSE}
-args <- c("chromR.R", 
-          "--gff_file", "data.gff",
-          "--keywords", "gene1 CDS", 
-          "--colors, "orange")
+args <- c("chromR.R", "--gff_file", "data.gff", "--keywords", "gene1 CDS", "--colors, "orange")
 
 # Execution command
 system2("Rscript", args = args)
@@ -120,10 +117,7 @@ If you have any genome data, put this data in TSV or CSV format and use GFF to m
 Example 2: Fill data to Plot
 
 ```{r, eval = FALSE}
-args <- c("chromR.R", 
-          "--gff_file", "data.gff",
-          "--fill_file", "data_to_fill_information.tsv/.csv", 
-          "--format", "tsv/csv")
+args <- c("chromR.R", "--gff_file", "data.gff", "--fill_file", "data_to_fill_information.tsv/.csv", "--format", "tsv/csv")
 
 # Execution command
 system2("Rscript", args = args)
