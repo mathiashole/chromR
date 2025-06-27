@@ -107,18 +107,6 @@ args <- c("chromR.R",
 system2("Rscript", args = args)
 ```
 
-## :bulb: Bash Quick Examples
-
-Example 1: Basic Plot
-
-Highlight gene1 and CDS in orange:
-
-```{bash, eval = FALSE}
-Rscript chromR.R --gff_file data.gff --keywords gene1 CDS --colors orange
-
-# Execution command
-system2("Rscript", args = args)
-```
 
 ## :sparkling_heart: Contributing
 
