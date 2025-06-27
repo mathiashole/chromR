@@ -38,9 +38,7 @@
 
 ## :framed_picture: Example Output
 
-<div style="background-color: white; display: inline-block; padding: 10px; border-radius: 5px;">
-    <img align="center" src="docs/gene_positions_plot.png" width="800">
-</div>
+<img align="center" src="docs/gene_positions_plot.png" width="800" style="background-color: white; padding: 10px;"
 
 <br>
 
