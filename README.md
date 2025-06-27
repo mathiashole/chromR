@@ -42,6 +42,7 @@
 ```{bash, eval = FALSE}
 Rscript chromR.R -g ../genome/Saccharomyces_cerevisiae.R64-1-1.114.gff3 --keywords Ty1 gene TYA gene
 ```
+- **Genome example**: [Download Saccharomyces cerevisiae GFF](https://ftp.ensembl.org/pub/release-114/gff3/saccharomyces_cerevisiae/Saccharomyces_cerevisiae.R64-1-1.114.gff3.gz)
 
 <img align="center" src="docs/gene_positions_plot.png" width="800">
 
