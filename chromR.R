@@ -16,6 +16,7 @@ table_format <- NULL
 fill_file <- NULL
 file_format <- NULL
 order_file <- NULL
+accumulated_plot <- FALSE
 
 # Parse arguments manually
 for (i in seq_along(args)) {
