@@ -159,12 +159,12 @@ if (!is.null(fill_file)) {
     stop("The specified fill file does not exist")
   }
   
-  fill_data <- read_fill_file(fill_file, format = file_format) %>%
-    filter(seqid %in% chrom_limits$seqid) %>%
-    mutate(
-      mid_position = (start + end) / 2,
-      seqid = factor(seqid, levels = levels(chrom_limits$seqid))
-    )
+  # fill_data <- read_fill_file(fill_file, format = file_format) %>%
+  #   filter(seqid %in% chrom_limits$seqid) %>%
+  #   mutate(
+  #     mid_position = (start + end) / 2,
+  #     seqid = factor(seqid, levels = levels(chrom_limits$seqid))
+  #   )
   
   # Apply strict keyword filtering if enabled
   if (strict && !is.null(fill_data)) {
