@@ -11,6 +11,7 @@ pseudo_data <- NULL
 strict <- FALSE
 number <- Inf  # Default to Inf, meaning no limit (all chromosomes)
 colors_input <- NULL
+palette_name <- NULL # select palette color
 line_plot <- FALSE
 table_format <- NULL
 fill_file <- NULL
