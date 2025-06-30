@@ -40,13 +40,13 @@ for (i in seq_along(args)) {
   } else if (args[i] == "--palette" || args[i] == "-p") {
     palette_name <- args[i + 1]
   } else if (args[i] == "--fill_file" || args[i] == "-ff") {
-  fill_file <- args[i + 1]
+    fill_file <- args[i + 1]
   } else if (args[i] == "--format" || args[i] == "-f") {
-  file_format <- args[i + 1]
+    file_format <- args[i + 1]
   } else if (args[i] == "--order_file" || args[i] == "-of") {
     order_file <- args[i + 1]
   } else if (args[i] == "--accumulated_plot" || args[i] == "-ap") {
-  accumulated_plot <- TRUE
+    accumulated_plot <- TRUE
   }
 }
 
