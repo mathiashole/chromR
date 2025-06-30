@@ -386,7 +386,15 @@ if (line_plot) {
 if (accumulated_plot) {
   category_var <- if (!is.null(fill_file)) "category" else "keyword_attr"
 
-  acc_plot <- 
+  acc_plot <- ggplot(accum_data, aes(x = relative_pos, color = !!sym(category_var))) +
+    stat_ecdf(size = 1) +
+    scale_color_manual(values = color_mapping) +
+    labs(
+      x = "Relative position",
+      y = "Cumulative proportion of genes",
+      color = "Category"
+    ) +
+    theme_minimal()
   
   # ggplot(accum_data, aes(x = relative_pos, fill = !!sym(category_var))) +
   #   geom_density(alpha = 0.6) +
