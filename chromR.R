@@ -251,6 +251,10 @@ if (!is.null(fill_file)) {
     }) %>%
       bind_rows()  # Combine all filtered data
 
+    accum_data <- filtered_data %>%
+      left_join(chrom_limits %>% select(seqid, chrom_start, chrom_length), by = "seqid") %>%
+      mutate(relative_pos = (mid_position - chrom_start) / chrom_length)
+
     # Apply strict keyword filtering if enabled
     if (strict && !is.null(filtered_data)) {
       keyword_contigs <- unique(filtered_data$seqid)
