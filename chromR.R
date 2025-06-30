@@ -383,6 +383,26 @@ if (line_plot) {
 
 }
 
+if (accumulated_plot) {
+  category_var <- if (!is.null(fill_file)) "category" else "keyword_attr"
+
+  acc_plot <- ggplot(accum_data, aes(x = relative_pos, fill = !!sym(category_var))) +
+    geom_density(alpha = 0.6) +
+    scale_fill_manual(values = color_mapping) +
+    labs(
+      x = "Relative position on chromosome (0-1)",
+      y = "Density",
+      fill = ifelse(!is.null(fill_file), "Category", "Keyword"),
+      title = "Normalized gene distribution across chromosomes"
+    ) +
+    theme_minimal()
+
+  ggsave("gene_distribution_accumulated_plot.pdf", acc_plot, width = 8, height = 5)
+  ggsave("gene_distribution_accumulated_plot.png", acc_plot, width = 8, height = 5, dpi = 600)
+  cat("Accumulated plot saved as gene_distribution_accumulated_plot.pdf/png\n")
+}
+
+
 # Need stadistic information of position count 
 # Save tables in the specified format without column names
 if (!is.null(table_format)) {
