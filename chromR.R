@@ -165,6 +165,10 @@ if (!is.null(fill_file)) {
       mid_position = (start + end) / 2,
       seqid = factor(seqid, levels = levels(chrom_limits$seqid))
     )
+
+  accum_data <- fill_data %>%
+    left_join(chrom_limits %>% select(seqid, chrom_start, chrom_length), by = "seqid") %>%
+    mutate(relative_pos = (mid_position - chrom_start) / chrom_length)
   
   # Apply strict keyword filtering if enabled
   if (strict && !is.null(fill_data)) {
