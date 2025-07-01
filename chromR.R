@@ -72,11 +72,10 @@ if (!is.null(colors_input)) {
   }
   max_colors <- RColorBrewer::brewer.pal.info[palette_name, "maxcolors"]
   custom_colors <- RColorBrewer::brewer.pal(max_colors, palette_name)
+} else {
+  # Default colors if no colors are passed
+  custom_colors <- RColorBrewer::brewer.pal(8, "Set1")
 }
-# } else {
-#   # Default colors if no colors are passed
-#   custom_colors <- RColorBrewer::brewer.pal(8, "Set1")
-# }
 
 # Validate output format
 if (!is.null(table_format) && !table_format %in% c("csv", "tsv")) {
