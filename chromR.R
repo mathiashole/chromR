@@ -64,6 +64,15 @@ if (!is.null(colors_input)) {
   } else {
     stop("Invalid color format detected. Use valid R color names (e.g., 'red') or hex colors like #1f77b4.")
   }
+} else if (!is.null(palette_name)) {
+  # Option: select Palette of RColorBrewer
+  available_palettes <- rownames(RColorBrewer::brewer.pal.info)
+  if (!(palette_name %in% available_palettes)) {
+    stop(paste("Invalid palette name. Use one from RColorBrewer:", paste(available_palettes, collapse = ", ")))
+  }
+  max_colors <- RColorBrewer::brewer.pal.info[palette_name, "maxcolors"]
+  custom_colors <- RColorBrewer::brewer.pal(max_colors, palette_name)
+}
 # } else {
 #   # Default colors if no colors are passed
 #   custom_colors <- RColorBrewer::brewer.pal(8, "Set1")
