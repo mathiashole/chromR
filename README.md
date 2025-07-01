@@ -74,6 +74,7 @@ Rscript chromR.R --gff_file </path/to/file.gff> --keywords <keyword1> <keyword2>
 | `--gff_file` / `-g` | Path to the GFF file.                    | `--gff_file data.gff`       |
 | `--keywords` / `-k` | Keywords to highlight specific features. | `--keywords gene1 CDS`      |
 | `--colors` / `-c`   | Colors for keywords (names or hex).      | `--colors black orange`     |
+| `--palette` / `-p`  | Palette of RColorBrewer (names)          | `--palette Dark2`           |
 | `--layout` / `-l`   | Optional layout input (e.g., ID file).   | `--layout data_ids.txt`     |
 | `--strict` / `-s`   | Optional shows only the chromosomes that contain the keywords | `--strict`               |
 | `--line_plot` / `-lp`| Optional line plot gene.                | `--line_plot`               |
