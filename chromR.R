@@ -64,10 +64,10 @@ if (!is.null(colors_input)) {
   } else {
     stop("Invalid color format detected. Use valid R color names (e.g., 'red') or hex colors like #1f77b4.")
   }
-} else {
-  # Default colors if no colors are passed
-  custom_colors <- RColorBrewer::brewer.pal(8, "Set1")
-}
+# } else {
+#   # Default colors if no colors are passed
+#   custom_colors <- RColorBrewer::brewer.pal(8, "Set1")
+# }
 
 # Validate output format
 if (!is.null(table_format) && !table_format %in% c("csv", "tsv")) {
