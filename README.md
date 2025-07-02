@@ -23,7 +23,7 @@
 - Strict mode (`--strict`) to show only chromosomes containing keywords
 - High point support via layout file (`--layout`)
 
-### 🎨 Color Customization: 
+### 📊 Advanced Visualization and 🎨 Color Customization: 
 - Define colors for categories using either hex color codes (`--colors` e.g., #1f77b4)
 - Define colors for standard R color names (`--colors` e.g., black, orange).
 
