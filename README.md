@@ -77,7 +77,7 @@ Rscript chromR.R --gff_file </path/to/file.gff> --keywords <keyword1> <keyword2>
 | `--palette` / `-p`  | Select palette of RColorBrewer (names)   | `--palette Dark2`           |
 | `--layout` / `-l`   | Optional layout input (e.g., ID file).   | `--layout data_ids.txt`     |
 | `--accumulated_plot`/ `-ap`| Optional accumulated gene plot    | `--accumulated_plot`        |
-| `--strict` / `-s`   | Optional shows only the chromosomes that contain the keywords | `--strict`               |
+| `--strict` / `-s`   | Only show chromosomes that contain any of the keywords | `--strict`               |
 | `--line_plot` / `-lp`| Optional line plot gene.                | `--line_plot`               |
 | `--order_file` / `-of` | File with custom chromosome order.    | `-of chrom_order.tsv`       |
 | `--number` / `-n` | Maximum number of chromosomes to display.  | `-n 10 (Top 10 most longest)`       |
