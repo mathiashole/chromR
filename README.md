@@ -9,11 +9,6 @@
 
 ## :book: Features
 
-### 📊 Advanced Visualization:
-- Display genes, domains, or specific regions on chromosomes or contigs as points or lines (`--line_plot`)
-- Custom chromosome ordering (`--order_file`)
-- Filter by number of chromosomes to display (`--number`)
-
 ### 📌 Data Handling:
 - Support for Keyword Filtering, highlight specific genes, regions, or domains of interest using keywords (`--keywords`)
 - Support for fill files (`--fill_file`) in CSV/TSV formats
