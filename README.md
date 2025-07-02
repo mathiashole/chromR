@@ -22,6 +22,8 @@
 ### 🔍 Powerful Filtering:
 - Strict mode (`--strict`) to show only chromosomes containing keywords
 - High point support via layout file (`--layout`)
+- Custom chromosome ordering (`--order_file`)
+- Filter by number of chromosomes to display (`--number`)
 
 ### 📊 Advanced Visualization and 🎨 Color Customization: 
 - Define colors for categories using either hex color codes (`--colors` e.g., #1f77b4)
