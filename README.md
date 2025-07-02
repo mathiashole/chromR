@@ -5,8 +5,6 @@
 
  :honeybee: `chromR` is an R script designed for visualizing gene or domain positions on chromosomes or contigs. It allows users to customize their plots using keywords, file-based inputs, and color options, making it ideal for genomic data exploration.
 
-<br>
-
 ## :book: Features
 
 ### 📌 Data Handling:
