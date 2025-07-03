@@ -7,7 +7,7 @@
 
 ## :book: Features
 
-### 📊 Advanced Visualization 🎨 Color Customization: 
+### 📊 Visualization Option 
 - Define colors for categories using either hex color codes (`--colors` e.g., #1f77b4)
 - Define colors for standard R color names (`--colors` e.g., black, orange).
 
@@ -18,7 +18,9 @@
 -  🚀 Command-Line Friendly: Run directly from the terminal or integrate into pipelines.
 -  🖥️ RStudio Compatible: Easy to modify, debug, or execute within RStudio.
 
-### 🎨 Color Customization: 
+### 🎨 Color Customization 
+- Define colors for categories using R color names (e.g., "black") or hex codes (e.g., #1f77b4).
+- Support for RColorBrewer palettes via --palette
 
 ### 📌 Data Handling:
 - Support for Keyword Filtering, highlight specific genes, regions, or domains of interest using keywords (`--keywords`)
