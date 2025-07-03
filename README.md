@@ -9,23 +9,11 @@
 
 ### 📊 Visualization Option 
 
-- Plot genes, domains, or regions on chromosomes or contigs.
-- Additional plot types:
-    - --line_plot: display features as lines instead of points.
-    - --accumulated_plot: generate an accumulated gene count plot.
-- Use a layout file to adjust plot positioning (--layout).
-- Customize the order of chromosomes (--order_file).
-
-    Filter the number of chromosomes shown (--number).
-
-<!-- -  Plot genes, domains, or specific regions on chromosomes or contigs.
+-  Plot genes, domains, or specific regions on chromosomes or contigs.
 -  Highlight specific genes, regions, or domains using keyword filtering (`--keywords`).
 - Additional plot types:
     - `--line_plot`: display features as lines instead of points.
     - `--accumulated_plot`: generate an accumulated gene count plot.
--  📄 GFF Support: Parse and plot data from GFF (General Feature Format) files.
--  🚀 Command-Line Friendly: Run directly from the terminal or integrate into pipelines.
--  🖥️ RStudio Compatible: Easy to modify, debug, or execute within RStudio. -->
 
 ### 🎨 Color Customization 
 - Define colors for categories using R color names (e.g., "black") or hex codes (e.g., #1f77b4).
