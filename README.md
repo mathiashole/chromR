@@ -47,13 +47,14 @@ Rscript chromR.R -g ../genome/Saccharomyces_cerevisiae.R64-1-1.114.gff3 --keywor
 
 ## 🧪 Installation
 
-Clone this repository:
+#### 1. Clone this repository:
+
 ```{bash, eval = FALSE}
 git clone https://github.com/mathiashole/chromR.git
 cd chromR
 ```
 
-    Install required R packages:
+#### 2. Install required R packages:
 
 Open R or RStudio and run:
 
