@@ -31,12 +31,12 @@
 - Define colors for categories using R color names (e.g., "black") or hex codes (e.g., #1f77b4).
 - Support for RColorBrewer palettes via --palette
 
-### 📌 Data Handling:
+### 📁 Data Handling
 - Accepts standard GFF (General Feature Format) files as input (`--gff_file`).
 - Support for fill files (`--fill_file`) in CSV/TSV (`--formats`).
 - Export processed data as tables in CSV or TSV formats (CSV/TSV with `--table`)
 
-### 🔍 Powerful Filtering:
+### 🔍 Filtering Option
 - Strict mode (`--strict`) to show only chromosomes containing keywords
 - High point support via layout file (`--layout`)
 - Custom chromosome ordering (`--order_file`)
