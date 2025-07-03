@@ -42,6 +42,7 @@
 - Custom chromosome ordering (`--order_file`)
 - Filter by number of chromosomes to display (`--number`)
 
+### ⚙️ Integration & Compatibility
 
 ## :framed_picture: Example Output
 
