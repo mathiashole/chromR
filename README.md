@@ -45,6 +45,21 @@ Rscript chromR.R -g ../genome/Saccharomyces_cerevisiae.R64-1-1.114.gff3 --keywor
 
 <img align="center" src="docs/gene_positions_plot.png" width="800">
 
+## 🧪 Installation
+
+Clone this repository:
+```{bash, eval = FALSE}
+git clone https://github.com/mathiashole/chromR.git
+cd chromR
+```
+
+    Install required R packages:
+
+Open R or RStudio and run:
+
+```{r, eval = FALSE}
+install.packages(c("dplyr", "readr", "ggplot2"))
+```
 
 ## :wrench: Usage
 
