@@ -7,6 +7,19 @@
 
 ## :book: Features
 
+### 📊 Advanced Visualization 🎨 Color Customization: 
+- Define colors for categories using either hex color codes (`--colors` e.g., #1f77b4)
+- Define colors for standard R color names (`--colors` e.g., black, orange).
+
+-  📊 Custom Visualization: Display genes, domains, or specific regions on chromosomes or contigs.
+-  🎨 Color Customization: Define colors for categories using either hex color codes (e.g., #1f77b4) or standard R color names (e.g., black, orange).
+-  🛠️ Keyword Filtering: Highlight specific genes, regions, or domains of interest using keywords.
+-  📄 GFF Support: Parse and plot data from GFF (General Feature Format) files.
+-  🚀 Command-Line Friendly: Run directly from the terminal or integrate into pipelines.
+-  🖥️ RStudio Compatible: Easy to modify, debug, or execute within RStudio.
+
+### 🎨 Color Customization: 
+
 ### 📌 Data Handling:
 - Support for Keyword Filtering, highlight specific genes, regions, or domains of interest using keywords (`--keywords`)
 - Support for fill files (`--fill_file`) in CSV/TSV formats
@@ -18,16 +31,6 @@
 - Custom chromosome ordering (`--order_file`)
 - Filter by number of chromosomes to display (`--number`)
 
-### 📊 Advanced Visualization and 🎨 Color Customization: 
-- Define colors for categories using either hex color codes (`--colors` e.g., #1f77b4)
-- Define colors for standard R color names (`--colors` e.g., black, orange).
-
--  📊 Custom Visualization: Display genes, domains, or specific regions on chromosomes or contigs.
--  🎨 Color Customization: Define colors for categories using either hex color codes (e.g., #1f77b4) or standard R color names (e.g., black, orange).
--  🛠️ Keyword Filtering: Highlight specific genes, regions, or domains of interest using keywords.
--  📄 GFF Support: Parse and plot data from GFF (General Feature Format) files.
--  🚀 Command-Line Friendly: Run directly from the terminal or integrate into pipelines.
--  🖥️ RStudio Compatible: Easy to modify, debug, or execute within RStudio.
 
 
 ## :framed_picture: Example Output
