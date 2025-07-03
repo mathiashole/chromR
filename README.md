@@ -12,8 +12,8 @@
 -  Plot genes, domains, or specific regions on chromosomes or contigs.
 -  Highlight specific genes, regions, or domains using keyword filtering (`--keywords`).
 - Additional plot types:
-    - `--line_plot`: display features as lines instead of points.
-    - `--accumulated_plot`: generate an accumulated gene count plot.
+  - `--line_plot`: display features as lines instead of points.
+  - `--accumulated_plot`: generate an accumulated gene count plot.
 
 ### 🎨 Color Customization 
 - Define colors for categories using R color names (e.g., "black") or hex codes (e.g., #1f77b4).
