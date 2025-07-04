@@ -428,7 +428,7 @@ if (accumulated_plot) {
 
 output_prefix <- "Feature_chromosome"
 
-if ("--summary" %in% args) {
+if (summary_args) {
   summary_data <- if (!is.null(fill_file)) {
     fill_data %>%
       group_by(seqid, category) %>%
