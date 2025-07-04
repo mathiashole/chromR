@@ -18,7 +18,7 @@ fill_file <- NULL
 file_format <- NULL
 order_file <- NULL
 accumulated_plot <- FALSE
-summary_data <- FALSE
+summary_args <- FALSE
 
 # Parse arguments manually
 for (i in seq_along(args)) {
@@ -49,7 +49,7 @@ for (i in seq_along(args)) {
   } else if (args[i] == "--accumulated_plot" || args[i] == "-ap") {
     accumulated_plot <- TRUE
   } else if (args[i] == "--summary" || args[i] == "-sm") {
-    summary_data <- TRUE
+    summary_args <- TRUE
   }
 }
 
