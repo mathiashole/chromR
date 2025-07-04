@@ -426,6 +426,20 @@ if (accumulated_plot) {
   cat("Accumulated plot saved as gene_distribution_accumulated_plot.pdf/png\n")
 }
 
+if ("--summary" %in% args) {
+  summary_data <- if (!is.null(fill_file)) {
+    fill_data %>%
+      group_by(seqid, category) %>%
+      summarise(count = n(), .groups = "drop")
+  } else if (!is.null(keyword_pairs)) {
+    filtered_data %>%
+      group_by(seqid, keyword_attr) %>%
+      summarise(count = n(), .groups = "drop")
+  }
+
+  write_tsv(summary_data, paste0(output_prefix, "_summary.tsv"))
+  cat("Summary table saved to", paste0(output_prefix, "_summary.tsv"), "\n")
+}
 
 # Need stadistic information of position count 
 # Save tables in the specified format without column names
