@@ -18,6 +18,7 @@ fill_file <- NULL
 file_format <- NULL
 order_file <- NULL
 accumulated_plot <- FALSE
+summary_data <- FALSE
 
 # Parse arguments manually
 for (i in seq_along(args)) {
