@@ -426,6 +426,8 @@ if (accumulated_plot) {
   cat("Accumulated plot saved as gene_distribution_accumulated_plot.pdf/png\n")
 }
 
+output_prefix <- "Feature_chromosome"
+
 if ("--summary" %in% args) {
   summary_data <- if (!is.null(fill_file)) {
     fill_data %>%
