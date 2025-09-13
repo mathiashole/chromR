@@ -1,59 +1,53 @@
-# 🚀 ChromR Project Roadmap
+# 🚀 ChromR Visualization & Performance Roadmap
 
-This roadmap outlines the planned improvements and future directions for **chromR**.  
-Check the boxes as tasks are completed ✅
-
----
-
-## 📌 Short-term goals (0–3 months)
-- [ ] Improve documentation
-  - [ ] Expand `README.md` with clear usage examples
-  - [ ] Add installation instructions
-  - [ ] Provide minimal working dataset for testing
-- [ ] Improve outputs
-  - [ ] Organize results into structured folders (`hmms/`, `search/`, `logs/`)
-  - [ ] Standardize output formats (CSV, TSV, JSON)
-- [ ] Add more HMMER functionality
-  - [ ] Include `hmmscan` support
-  - [ ] Add wrapper for `hmmpress`
-- [ ] Testing & CI
-  - [ ] Add unit tests (e.g., with `pytest` or `testthat`)
-  - [ ] Integrate GitHub Actions for automated testing
+This roadmap focuses on improving **performance, scalability, and visualization** for chromR genomic plots.
 
 ---
 
-## 📌 Mid-term goals (3–6 months)
-- [ ] Add HPC/Cluster support
-  - [ ] Generate SLURM/PBS submission scripts automatically
-  - [ ] Provide `--slurm` flag for easy batch jobs
-- [ ] Improve configurability
-  - [ ] Support config files (YAML/JSON) to avoid long command lines
-  - [ ] Add logging verbosity levels (`--quiet`, `--debug`)
-- [ ] Performance improvements
-  - [ ] Benchmark against large datasets
-  - [ ] Parallelize searches where possible
+## ⚡ Performance & Scalability
+- [ ] Support for very large genomes
+  - [ ] Optimize reading of GFF and auxiliary files (read only necessary columns)
+  - [ ] Early filtering of irrelevant contigs or features
+- [ ] Sampling options
+  - [ ] Implement feature/contig sampling to avoid plot saturation
+  - [ ] Allow user-defined sampling thresholds or automatic detection
+- [ ] Parallel processing
+  - [ ] Use parallelization for data processing on multi-core machines
+  - [ ] Benchmark performance with large datasets
 
 ---
 
-## 📌 Long-term goals (6–12 months)
-- [ ] Visualization
-  - [ ] Plot HMM hit distributions across chromosomes
-  - [ ] Generate summary heatmaps for hits
-- [ ] Extend compatibility
-  - [ ] Docker container for easy deployment
-  - [ ] Package for Bioconda
-- [ ] Community & contributions
-  - [ ] Add contributing guidelines
-  - [ ] Define coding style and standards
-  - [ ] Encourage external contributions via issues & pull requests
+## 🎨 Visualization Improvements
+- [ ] Interactive plots
+  - [ ] Implement Plotly or equivalent for HTML interactive plots
+  - [ ] Add hover info: gene name, feature type, position, etc.
+- [ ] Chromosome scaling
+  - [ ] Automatic scale adjustment for contigs of very different lengths
+  - [ ] Ensure small contigs remain visible while maintaining relative positions
+- [ ] Labeling enhancements
+  - [ ] Rotate or adjust chromosome labels for long names
+  - [ ] Optional zoom-in/out or focus on selected chromosomes
+- [ ] Plot aesthetics
+  - [ ] Support custom color palettes and themes
+  - [ ] Different shapes or symbols for feature types (genes, pseudogenes, domains)
 
 ---
 
-## 📌 Stretch goals (future ideas)
-- [ ] Web-based interface for running searches and visualizing results
-- [ ] Integration with genome browsers (e.g., JBrowse, IGV)
-- [ ] Machine learning approaches for classifying hits
+## 📊 Advanced Plots
+- [ ] Accumulated/cumulative distribution plots
+  - [ ] Show normalized distribution across chromosomes
+  - [ ] Allow overlay of multiple categories or keywords
+- [ ] Multi-layer plots
+  - [ ] Combine different feature types in a single plot
+  - [ ] Interactive filtering to toggle categories on/off
 
 ---
 
-✨ This roadmap is open for feedback. If you have ideas, feel free to open an issue or submit a PR!
+## 📝 Notes
+- Consider adding **documentation examples** showing large genome datasets and interactive plots.
+- Include **sample datasets** for users to test performance and visualization features.
+
+---
+
+✨ This roadmap is a living document — ideas and improvements can be added via issues or pull requests.
+
