@@ -20,6 +20,7 @@ Check the boxes as tasks are completed ✅
   - [ ] Add unit tests (e.g., with `pytest` or `testthat`)
   - [ ] Integrate GitHub Actions for automated testing
 
+
 ---
 
 ## 📌 Mid-term goals (3–6 months)
