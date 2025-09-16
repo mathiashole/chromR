@@ -3,6 +3,7 @@
 [![R](https://img.shields.io/badge/R-276DC3?style=for-the-badge&logo=R&logoColor=white&labelColor=101010)](https://www.r-project.org/about.html)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/mathiashole/chromR?style=for-the-badge&labelColor=101010&color=white)
 ![GitHub last commit](https://img.shields.io/github/last-commit/mathiashole/chromR?style=for-the-badge&labelColor=101010)
+![GitHub](https://img.shields.io/github/license/mathiashole/chromR?style=for-the-badge&labelColor=101010)
 
 
  :honeybee: `chromR` is an R script designed for visualizing gene or domain positions on chromosomes or contigs. It allows users to customize their plots using keywords, file-based inputs, and color options, making it ideal for genomic data exploration.
