@@ -19,7 +19,7 @@ This roadmap focuses on improving **performance, scalability, and visualization*
 
 ## 🎨 Visualization Improvements
 - [ ] Interactive plots
-  - [ ] Implement Plotly or equivalent for HTML interactive plots
+  - [x] Implement Plotly or equivalent for HTML interactive plots
   - [ ] Add hover info: gene name, feature type, position, etc.
 - [ ] Chromosome scaling
   - [ ] Automatic scale adjustment for contigs of very different lengths
