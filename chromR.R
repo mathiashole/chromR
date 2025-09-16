@@ -477,3 +477,11 @@ plot_file_png <- "gene_positions_plot.png"  # PNG format
 ggsave(plot_file_png, plot = point_plot, width = 8, height = 10, dpi = 600)
 ggsave(plot_file, plot = point_plot, width = 8, height = 10)
 cat("Plot saved to:", plot_file, "\n")
+
+if (interactive_plot) {
+  suppressPackageStartupMessages({
+    library(plotly)
+    library(htmlwidgets)
+  })
+
+}
