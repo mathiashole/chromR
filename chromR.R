@@ -19,6 +19,7 @@ file_format <- NULL
 order_file <- NULL
 accumulated_plot <- FALSE
 summary_args <- FALSE
+interactive_plot <- FALSE # interactive plot
 
 # Parse arguments manually
 for (i in seq_along(args)) {
