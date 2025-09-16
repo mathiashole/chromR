@@ -484,4 +484,10 @@ if (interactive_plot) {
     library(htmlwidgets)
   })
 
+  interactive_file <- "gene_positions_plot.html"
+  p_interactive <- ggplotly(point_plot)  # no toco el point_plot original
+  saveWidget(p_interactive, interactive_file, selfcontained = TRUE)
+  cat("Interactive plot saved to:", interactive_file, "\n")
+
 }
+
