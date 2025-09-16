@@ -164,6 +164,11 @@ We welcome contributions!
 - For major changes, please open an [issue](https://github.com/mathiashole/chromR/issues) first to discuss what you would like to change.
 - Please make sure to update tests as appropriate.
 
+## :book: Roadmap
+
+[![roadmap](https://img.shields.io/badge/roadmap-available-blue?style=for-the-badge&labelColor=101010)](./ROADMAP.md)
+
+
 ## :mega: Contact
 
 :bird: [Mathias](https://twitter.com/joaquinmangino)
