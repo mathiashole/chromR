@@ -48,6 +48,8 @@ for (i in seq_along(args)) {
     order_file <- args[i + 1]
   } else if (args[i] == "--accumulated_plot" || args[i] == "-ap") {
     accumulated_plot <- TRUE
+  } else if (args[i] == "--interactive" || args[i] == "-int") {
+    interactive_plot <- TRUE
   } else if (args[i] == "--summary" || args[i] == "-sm") {
     summary_args <- TRUE
   }
