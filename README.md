@@ -169,9 +169,8 @@ We welcome contributions!
 See the full roadmap here [![roadmap](https://img.shields.io/badge/roadmap-available-blue?style=for-the-badge&labelColor=101010)](./ROADMAP.md)
 
 
-## :mega: Contact
+<!-- ## :mega: Contact -->
 
-:bird: [Mathias](https://twitter.com/joaquinmangino)
 
 ## :scroll: License
 MIT &copy; [Mathias Mangino](https://github.com/mathiashole)
