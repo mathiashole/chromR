@@ -166,7 +166,7 @@ We welcome contributions!
 
 ## :book: Roadmap
 
-[![roadmap](https://img.shields.io/badge/roadmap-available-blue?style=for-the-badge&labelColor=101010)](./ROADMAP.md)
+See the full roadmap here [![roadmap](https://img.shields.io/badge/roadmap-available-blue?style=for-the-badge&labelColor=101010)](./ROADMAP.md)
 
 
 ## :mega: Contact
