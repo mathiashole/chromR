@@ -485,7 +485,7 @@ if (interactive_plot) {
   })
 
   interactive_file <- "gene_positions_plot.html"
-  p_interactive <- ggplotly(point_plot)
+  p_interactive <- ggplotly(point_plot, tooltip = "text")
   saveWidget(p_interactive, interactive_file, selfcontained = TRUE)
   cat("Interactive plot saved to:", interactive_file, "\n")
 
