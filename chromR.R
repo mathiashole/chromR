@@ -338,7 +338,7 @@ if (!is.null(fill_file)) {
         geom_point(
         data = filtered_data,
         # aes(x = mid_position, y = seqid, color = factor(keyword_attr)),
-        aes(x = mid_position, y = seqid, color = factor(keyword_attr)),
+        aes(x = mid_position, y = seqid, color = factor(keyword_attr), text = hover_text),
         size = 1.5
       ) +
       scale_color_manual(values = color_mapping) +  # Apply custom colors
