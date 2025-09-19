@@ -306,6 +306,24 @@ if (!is.null(fill_file)) {
     filtered_data <- filtered_data %>% # Apply filtering based on 'number' and id
       filter(seqid %in% chrom_limits$seqid)
 
+# ---------------------------------------------------------------------------
+# Just try fill information of hover mode
+
+  filtered_data <- filtered_data %>%
+    mutate(
+      hover_text = paste0(
+        "Gene: ", keyword_attr, "<br>",
+        "Type: ", keyword_type, "<br>",
+        "SeqID: ", seqid, "<br>",
+        "Start: ", start, "<br>",
+        "End: ", end, "<br>",
+        "Length: ", end - start, "<br>",
+        "Mid Pos: ", mid_position
+      )
+    )
+
+# ---------------------------------------------------------------------------
+
     #make plot
     plot <- ggplot() +
       # Chromosome lines
