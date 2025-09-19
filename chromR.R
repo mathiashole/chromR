@@ -217,12 +217,12 @@ fill_data <- fill_data %>%
   fill_data <- fill_data %>%
     mutate(
       hover_text = paste0(
-        "Gene: ", category, "<br>",
-        "SeqID: ", seqid, "<br>",
-        "Start: ", start, "<br>",
-        "End: ", end, "<br>",
-        "Length: ", end - start, "<br>",
-        "Relative Pos: ", round((mid_position - chrom_start) / chrom_length, 3)
+        "<b>Category:</b> ", category, "<br>",
+        "<b>Chromosome:</b> ", seqid, "<br>",
+        "<b>Start:</b> ", start, "<br>",
+        "<b>End:</b> ", end, "<br>",
+        "<b>Length:</b> ", end - start, "<br>",
+        "<b>Relative Pos:</b> ", round((mid_position - chrom_start) / chrom_length, 3)
       )
     )
 
