@@ -208,6 +208,23 @@ if (!is.null(fill_file)) {
   unique_category <- unique(fill_data$category)
   # Create a named COLOR vector
   color_mapping <- setNames(custom_colors[seq_along(unique_category)], unique_category)
+
+# ---------------------------------------------------------------------------
+# Just try fill information of hover mode
+
+  fill_data <- fill_data %>%
+    mutate(
+      hover_text = paste0(
+        "Gene: ", category, "<br>",
+        "SeqID: ", seqid, "<br>",
+        "Start: ", start, "<br>",
+        "End: ", end, "<br>",
+        "Length: ", end - start, "<br>",
+        "Relative Pos: ", round((mid_position - chrom_start) / chrom_length, 3)
+      )
+    )
+
+# ---------------------------------------------------------------------------
   
   # Create the base plot object
   plot <- ggplot() +
