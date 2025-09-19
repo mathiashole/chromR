@@ -243,7 +243,8 @@ if (!is.null(fill_file)) {
     point_plot <- plot +
       geom_point(
       data = fill_data,
-      aes(x = mid_position, y = seqid, color = factor(category)),
+      # aes(x = mid_position, y = seqid, color = factor(category)),
+      aes(x = mid_position, y = seqid, color = factor(category), text = hover_text),
       size = 1.5
     ) +
     scale_color_manual(values = color_mapping) +  # Apply custom colors
