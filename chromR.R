@@ -337,6 +337,7 @@ if (!is.null(fill_file)) {
       point_plot <- plot +
         geom_point(
         data = filtered_data,
+        # aes(x = mid_position, y = seqid, color = factor(keyword_attr)),
         aes(x = mid_position, y = seqid, color = factor(keyword_attr)),
         size = 1.5
       ) +
