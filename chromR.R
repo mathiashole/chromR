@@ -211,6 +211,8 @@ if (!is.null(fill_file)) {
 
 # ---------------------------------------------------------------------------
 # Just try fill information of hover mode
+fill_data <- fill_data %>%
+  left_join(chrom_limits %>% select(seqid, chrom_start, chrom_length), by = "seqid")
 
   fill_data <- fill_data %>%
     mutate(
