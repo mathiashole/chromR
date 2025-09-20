@@ -318,8 +318,8 @@ filtered_data <- filtered_data %>%
   filtered_data <- filtered_data %>%
     mutate(
       hover_text = paste0(
-        "<b>Category:</b> ", keyword_attr, "<br>",
-        "<b>Chromosome:</b> ", keyword_type, "<br>",
+        "<b>Keyword:</b> ", keyword_attr, "<br>",
+        "<b>Type:</b> ", keyword_type, "<br>",
         "<b>Chromosome:</b> ", seqid, "<br>",
         "<b>Start:</b> ", start, "<br>",
         "<b>End:</b> ", end, "<br>",
