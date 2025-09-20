@@ -214,6 +214,7 @@ if (!is.null(fill_file)) {
 fill_data <- fill_data %>%
   left_join(chrom_limits %>% select(seqid, chrom_start, chrom_length), by = "seqid")
 
+
   fill_data <- fill_data %>%
     mutate(
       hover_text = paste0(
