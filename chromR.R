@@ -494,6 +494,20 @@ if (density_mode == "overlay") {
       ) +
       scale_fill_manual(values = color_mapping) +
       theme_minimal()
+  } else { # facet
+    # facet = one density per facet (one row per chromosome or per category)
+    # If you want per-chromosome facets use seqid; here we facet by category to compare shapes separately.
+    acc_plot <- ggplot(accum_data, aes_string(x = "relative_pos")) +
+      geom_density(fill = "grey60", alpha = 0.6) +
+      facet_wrap(as.formula(paste("~", category_var)), scales = "free_y", ncol = 1) +
+      labs(
+        x = "Relative position",
+        y = "Density",
+        title = "Normalized distribution (faceted by category)"
+      ) +
+      theme_minimal() +
+      theme(strip.text = element_text(size = 8))
+
   }
 
   # ggplot(accum_data, aes(x = relative_pos, fill = !!sym(category_var))) +
