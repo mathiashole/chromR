@@ -482,7 +482,6 @@ if (density_mode == "overlay") {
       scale_color_manual(values = color_mapping) +
       scale_fill_manual(values = color_mapping) +
       theme_minimal()
-
   } else if (density_mode == "stack") {
     # stacked = densities stacked (like ridge/stacked area)
     acc_plot <- ggplot(accum_data, aes_string(x = "relative_pos", fill = category_var)) +
@@ -495,7 +494,6 @@ if (density_mode == "overlay") {
       ) +
       scale_fill_manual(values = color_mapping) +
       theme_minimal()
-
   }
 
   # ggplot(accum_data, aes(x = relative_pos, fill = !!sym(category_var))) +
