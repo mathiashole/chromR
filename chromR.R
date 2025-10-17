@@ -466,6 +466,23 @@ if (accumulated_plot) {
     density_mode <- "overlay"
   }
 
+  if (density_mode == "overlay") {
+    # overlay = density curves (semi-transparent) + ECDF option
+    acc_plot <- ggplot(accum_data, aes_string(x = "relative_pos", color = category_var, fill = category_var)) +
+      geom_density(alpha = 0.35, adjust = 1) +
+      labs(
+        x = "Relative position",
+        y = "Density (normalized across chromosomes)",
+        color = ifelse(!is.null(fill_file), "Category", "Keyword"),
+        fill = ifelse(!is.null(fill_file), "Category", "Keyword"),
+        title = "Normalized distribution (overlay) across chromosomes"
+      ) +
+      scale_color_manual(values = color_mapping) +
+      scale_fill_manual(values = color_mapping) +
+      theme_minimal()
+
+  }
+
   # ggplot(accum_data, aes(x = relative_pos, fill = !!sym(category_var))) +
   #   geom_density(alpha = 0.6) +
   #   scale_fill_manual(values = color_mapping) +
