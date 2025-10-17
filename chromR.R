@@ -459,6 +459,23 @@ if (accumulated_plot) {
   #   ) +
   #   theme_minimal()
   
+  # Validate density_mode
+  density_mode <- tolower(density_mode)
+  if (!density_mode %in% c("overlay", "stack", "facet")) {
+    warning("Invalid density_mode. Falling back to 'overlay'.")
+    density_mode <- "overlay"
+  }
+
+  # ggplot(accum_data, aes(x = relative_pos, fill = !!sym(category_var))) +
+  #   geom_density(alpha = 0.6) +
+  #   scale_fill_manual(values = color_mapping) +
+  #   labs(
+  #     x = "Relative position on chromosome (0-1)",
+  #     y = "Density",
+  #     fill = ifelse(!is.null(fill_file), "Category", "Keyword"),
+  #     title = "Normalized gene distribution across chromosomes"
+  #   ) +
+  #   theme_minimal()
 
   ggsave("gene_distribution_accumulated_plot.pdf", acc_plot, width = 8, height = 5)
   ggsave("gene_distribution_accumulated_plot.png", acc_plot, width = 8, height = 5, dpi = 600)
