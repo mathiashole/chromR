@@ -459,6 +459,8 @@ if (accumulated_plot) {
   #   ) +
   #   theme_minimal()
   
+  accum_data[[category_var]] <- as.factor(accum_data[[category_var]])
+
   # Validate density_mode
   density_mode <- tolower(density_mode)
   if (!density_mode %in% c("overlay", "stack", "facet")) {
