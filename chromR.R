@@ -18,6 +18,7 @@ fill_file <- NULL
 file_format <- NULL
 order_file <- NULL
 accumulated_plot <- FALSE
+density_mode <- "overlay" # density mode for accumulated plot: "overlay" (default), "stack", "facet"
 summary_args <- FALSE
 interactive_plot <- FALSE # interactive plot
 
