@@ -36,7 +36,7 @@ This roadmap focuses on improving **performance, scalability, and visualization*
 ## 📊 Advanced Plots
 - [x] Accumulated/cumulative distribution plots
   - [x] Show normalized distribution across chromosomes
-  - [ ] Allow overlay of multiple categories or keywords
+  - [x] Allow overlay of multiple categories or keywords
 - [ ] Multi-layer plots
   - [ ] Combine different feature types in a single plot
   - [ ] Interactive filtering to toggle categories on/off
