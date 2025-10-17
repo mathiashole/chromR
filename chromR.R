@@ -446,6 +446,7 @@ if (line_plot) {
 }
 
 if (accumulated_plot) {
+  # determine which column holds the category/key
   category_var <- if (!is.null(fill_file)) "category" else "keyword_attr"
 
   acc_plot <- ggplot(accum_data, aes(x = relative_pos, color = !!sym(category_var))) +
