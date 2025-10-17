@@ -507,7 +507,6 @@ if (density_mode == "overlay") {
       ) +
       theme_minimal() +
       theme(strip.text = element_text(size = 8))
-
   }
 
   # ggplot(accum_data, aes(x = relative_pos, fill = !!sym(category_var))) +
