@@ -468,7 +468,7 @@ if (accumulated_plot) {
     density_mode <- "overlay"
   }
 
-  if (density_mode == "overlay") {
+if (density_mode == "overlay") {
     # overlay = density curves (semi-transparent) + ECDF option
     acc_plot <- ggplot(accum_data, aes_string(x = "relative_pos", color = category_var, fill = category_var)) +
       geom_density(alpha = 0.35, adjust = 1) +
@@ -480,6 +480,19 @@ if (accumulated_plot) {
         title = "Normalized distribution (overlay) across chromosomes"
       ) +
       scale_color_manual(values = color_mapping) +
+      scale_fill_manual(values = color_mapping) +
+      theme_minimal()
+
+  } else if (density_mode == "stack") {
+    # stacked = densities stacked (like ridge/stacked area)
+    acc_plot <- ggplot(accum_data, aes_string(x = "relative_pos", fill = category_var)) +
+      geom_density(position = "stack", alpha = 0.9) +
+      labs(
+        x = "Relative position",
+        y = "Stacked density (proportion)",
+        fill = ifelse(!is.null(fill_file), "Category", "Keyword"),
+        title = "Normalized distribution (stacked) across chromosomes"
+      ) +
       scale_fill_manual(values = color_mapping) +
       theme_minimal()
 
