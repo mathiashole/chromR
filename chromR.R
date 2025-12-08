@@ -21,6 +21,9 @@ accumulated_plot <- FALSE
 density_mode <- "overlay" # density mode for accumulated plot: "overlay" (default), "stack", "facet"
 summary_args <- FALSE
 interactive_plot <- FALSE # interactive plot
+# try new arguments
+window_count_mode <- FALSE
+window_size <- NULL
 
 # Parse arguments manually
 for (i in seq_along(args)) {
