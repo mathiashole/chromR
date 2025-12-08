@@ -24,6 +24,7 @@ interactive_plot <- FALSE # interactive plot
 # try new arguments
 window_count_mode <- FALSE
 window_size <- NULL
+gene_list <- NULL
 
 # Parse arguments manually
 for (i in seq_along(args)) {
