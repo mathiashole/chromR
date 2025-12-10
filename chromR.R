@@ -96,6 +96,12 @@ if (!is.null(table_format) && !table_format %in% c("csv", "tsv")) {
   stop("Invalid format specified for --table. Use 'csv' or 'tsv'.")
 }
 
+#validate window count mode
+if (window_count_mode) {
+  if (is.null(window_size)) stop("You must provide --window_size.")
+  if (is.null(gene_list)) stop("You must provide --genes.")
+}
+
 # Function to read fill file
 read_fill_file <- function(fill_file, format = NULL) {
   if (is.null(format)) {
