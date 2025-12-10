@@ -25,6 +25,7 @@ interactive_plot <- FALSE # interactive plot
 window_count_mode <- FALSE
 window_size <- NULL
 gene_list <- NULL
+min_genes <- 2   # default
 
 # Parse arguments manually
 for (i in seq_along(args)) {
