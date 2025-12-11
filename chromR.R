@@ -67,6 +67,8 @@ for (i in seq_along(args)) {
     window_size <- as.integer(args[i + 1])
   } else if (args[i] == "--genes") {
     gene_list <- args[(i + 1):length(args)]
+  } else if (args[i] == "--min_genes") {
+    min_genes <- as.integer(args[i + 1])
   }
 }
 
