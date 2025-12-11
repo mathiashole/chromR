@@ -65,6 +65,8 @@ for (i in seq_along(args)) {
     window_count_mode <- TRUE
   } else if (args[i] == "--window_size") {
     window_size <- as.integer(args[i + 1])
+  } else if (args[i] == "--genes") {
+    gene_list <- args[(i + 1):length(args)]
   }
 }
 
