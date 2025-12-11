@@ -61,6 +61,8 @@ for (i in seq_along(args)) {
     interactive_plot <- TRUE
   } else if (args[i] == "--summary" || args[i] == "-sm") {
     summary_args <- TRUE
+  } else   if (args[i] == "--window_count") {
+    window_count_mode <- TRUE
   }
 }
 
