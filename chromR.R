@@ -63,6 +63,8 @@ for (i in seq_along(args)) {
     summary_args <- TRUE
   } else   if (args[i] == "--window_count") {
     window_count_mode <- TRUE
+  } else if (args[i] == "--window_size") {
+    window_size <- as.integer(args[i + 1])
   }
 }
 
