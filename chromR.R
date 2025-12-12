@@ -250,6 +250,9 @@ fill_data <- fill_data %>%
     )
 
 # ---------------------------------------------------------------------------
+# If window count mode is enabled, perform gene counting in windows
+
+# ---------------------------------------------------------------------------
   
   # Create the base plot object
   plot <- ggplot() +
