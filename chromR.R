@@ -307,8 +307,13 @@ window_cluster_tables <- function(gff_file, fill_file, window_size, gene_list, m
   data <- load_gene_coordinates(gff_file, fill_file)
   # Filter by gene_list
   data <- data %>% filter(gene %in% gene_list)
+  # Get chromosome lengths
+  chr_lengths <- data %>%
+    group_by(seqid) %>%
+    summarise(chr_len = max(end), .groups = "drop")
 
-
+  final_output <- list()# store output tables per gene
+  # Process each gene in gene_list
   }
 
   invisible(final_output)
