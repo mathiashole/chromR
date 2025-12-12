@@ -254,7 +254,11 @@ make_windows <- function(seq_length, window_size) {
   ends <- pmin(starts + window_size - 1, seq_length)
   tibble(start = starts, end = ends)
 }
+# helper function to count genes in windows
+count_genes_in_windows <- function(data, windows, gene_name) {
 
+  tibble(count = counts)
+}
 # ------------------------------------------------------------------------------------------------------------------------------------------------------
 # Function to load gene coordinates from GFF or fill file uniquely
 load_gene_coordinates <- function(gff_file = NULL, fill_file = NULL) {
