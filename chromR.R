@@ -314,6 +314,26 @@ window_cluster_tables <- function(gff_file, fill_file, window_size, gene_list, m
 
   final_output <- list()# store output tables per gene
   # Process each gene in gene_list
+  for (gene_name in gene_list) {
+
+    message("Processing gene: ", gene_name)
+
+    per_gene_rows <- list()
+
+    for (i in seq_len(nrow(chr_lengths))) {
+
+
+    }
+
+    out_table <- bind_rows(per_gene_rows)
+
+    out_name <- paste0("window_groups_", gene_name, ".tsv")
+    write_tsv(out_table, out_name)
+
+    message("Saved: ", out_name)
+
+    final_output[[gene_name]] <- out_table
+
   }
 
   invisible(final_output)
