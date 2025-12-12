@@ -322,7 +322,25 @@ window_cluster_tables <- function(gff_file, fill_file, window_size, gene_list, m
 
     for (i in seq_len(nrow(chr_lengths))) {
 
+      chr <- chr_lengths$seqid[i]
+      len <- chr_lengths$chr_len[i]
 
+      windows <- make_windows(len, window_size)
+
+      df_counts <- count_genes_in_windows(
+        data %>% filter(seqid == chr),
+        windows,
+        gene_name
+      )
+
+      df_chr <- tibble(
+        seqid = chr,
+        seqid_window = paste0(chr, "_", windows$start, "-", windows$end),
+        total_genes = df_counts$count
+      ) %>%
+        filter(total_genes >= min_genes)
+
+      per_gene_rows[[chr]] <- df_chr
     }
 
     out_table <- bind_rows(per_gene_rows)
