@@ -351,9 +351,8 @@ window_cluster_tables <- function(gff_file, fill_file, window_size, gene_list, m
 
   }
 
-  invisible(final_output)
+  invisible(final_output) # return final output invisibly
 }
-
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------------
   
