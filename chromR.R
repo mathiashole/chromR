@@ -301,6 +301,19 @@ count_genes_in_windows <- function(data, windows, gene_name) {
   }) # end sapply
   tibble(count = counts)
 }
+# main function for window count mode
+window_cluster_tables <- function(gff_file, fill_file, window_size, gene_list, min_genes) {
+  # Load gene coordinates
+  data <- load_gene_coordinates(gff_file, fill_file)
+  # Filter by gene_list
+  data <- data %>% filter(gene %in% gene_list)
+
+
+  }
+
+  invisible(final_output)
+}
+
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------------
   
