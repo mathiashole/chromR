@@ -248,16 +248,52 @@ fill_data <- fill_data %>%
         "<b>Relative Pos:</b> ", round((mid_position - chrom_start) / chrom_length, 3)
       )
     )
+# helper function to create windows
+make_windows <- function(seq_length, window_size) {
+  starts <- seq(1, seq_length, by = window_size)
+  ends <- pmin(starts + window_size - 1, seq_length)
+  tibble(start = starts, end = ends)
+}
 
-# ---------------------------------------------------------------------------
+# ------------------------------------------------------------------------------------------------------------------------------------------------------
 # Function to load gene coordinates from GFF or fill file uniquely
 load_gene_coordinates <- function(gff_file = NULL, fill_file = NULL) {
+  if (!is.null(fill_file)) {
 
+    message("→ Using fill_file as input coordinates")
+
+    df <- read_tsv(fill_file)
+
+    df <- df %>%
+      mutate(gene = name) %>%
+      select(seqid, start, end, gene)
+
+    return(df)
+  }
+
+  if (!is.null(gff_file)) {
+
+    message("→ Using GFF gene coordinates")
+
+    gff <- read_tsv(
+      gff_file,
+      comment = "#",
+      col_names = c("seqid","source","type","start","end",
+                    "score","strand","phase","attributes")
+    )
+
+    gff <- gff %>%
+      mutate(gene = sub(".*Name=([^;]+).*", "\\1", attributes)) %>%
+      filter(type == "gene" | grepl("Name=", attributes)) %>%
+      select(seqid, start, end, gene)
+
+    return(gff)
+  }
 
   stop("You must provide either --gff or --fill_file.")
 }
 
-# ---------------------------------------------------------------------------
+# ------------------------------------------------------------------------------------------------------------------------------------------------------
   
   # Create the base plot object
   plot <- ggplot() +
