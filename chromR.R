@@ -315,42 +315,39 @@ window_cluster_tables <- function(gff_file, fill_file, window_size, gene_list, m
   final_output <- list()# store output tables per gene
   # Process each gene in gene_list
   for (gene_name in gene_list) {
+    message("Processing gene: ", gene_name)# debug message
+    per_gene_rows <- list() # store rows per chromosome
 
-    message("Processing gene: ", gene_name)
+    for (i in seq_len(nrow(chr_lengths))) { # process each chromosome data
 
-    per_gene_rows <- list()
+      chr <- chr_lengths$seqid[i] # get chromosome id
+      len <- chr_lengths$chr_len[i] # get chromosome length
+      windows <- make_windows(len, window_size)# create windows
 
-    for (i in seq_len(nrow(chr_lengths))) {
-
-      chr <- chr_lengths$seqid[i]
-      len <- chr_lengths$chr_len[i]
-
-      windows <- make_windows(len, window_size)
-
-      df_counts <- count_genes_in_windows(
-        data %>% filter(seqid == chr),
-        windows,
-        gene_name
+      df_counts <- count_genes_in_windows( # count genes in windows
+        data %>% filter(seqid == chr), # filter data for current chromosome
+        windows,# pass windows
+        gene_name # pass gene name
       )
 
-      df_chr <- tibble(
+      df_chr <- tibble( #create output table for current chromosome
         seqid = chr,
         seqid_window = paste0(chr, "_", windows$start, "-", windows$end),
         total_genes = df_counts$count
       ) %>%
-        filter(total_genes >= min_genes)
+        filter(total_genes >= min_genes) # filter by min_genes
 
       per_gene_rows[[chr]] <- df_chr
     }
 
     out_table <- bind_rows(per_gene_rows)
 
-    out_name <- paste0("window_groups_", gene_name, ".tsv")
-    write_tsv(out_table, out_name)
+    out_name <- paste0("window_groups_", gene_name, ".tsv")# output file name
+    write_tsv(out_table, out_name)# write output table
 
-    message("Saved: ", out_name)
+    message("Saved: ", out_name)# debug message
 
-    final_output[[gene_name]] <- out_table
+    final_output[[gene_name]] <- out_table # store in final output list
 
   }
 
