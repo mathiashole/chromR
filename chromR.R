@@ -254,37 +254,33 @@ fill_data <- fill_data %>%
 load_gene_coordinates <- function(gff_file = NULL, fill_file = NULL) {
   if (!is.null(fill_file)) {
 
-    message("→ Using fill_file as input coordinates")
-
-    df <- read_tsv(fill_file)
-
+    message("→ Using fill_file as input coordinates") # debug message
+    df <- read_tsv(fill_file) # assuming fill_file has at least seqid, start, end, name columns
     df <- df %>%
       mutate(gene = name) %>%
-      select(seqid, start, end, gene)
+      select(seqid, start, end, gene)# ensure correct columns
 
     return(df)
-  }
+  } # end if fill_file
 
   if (!is.null(gff_file)) {
 
-    message("→ Using GFF gene coordinates")
-
+    message("→ Using GFF gene coordinates")# debug message
     gff <- read_tsv(
       gff_file,
       comment = "#",
       col_names = c("seqid","source","type","start","end",
                     "score","strand","phase","attributes")
-    )
-
+    )# read GFF
     gff <- gff %>%
-      mutate(gene = sub(".*Name=([^;]+).*", "\\1", attributes)) %>%
-      filter(type == "gene" | grepl("Name=", attributes)) %>%
-      select(seqid, start, end, gene)
+      mutate(gene = sub(".*Name=([^;]+).*", "\\1", attributes)) %>%# extract gene name from attributes
+      filter(type == "gene" | grepl("Name=", attributes)) %>%# filter only genes with Name attribute
+      select(seqid, start, end, gene)# ensure correct columns
 
     return(gff)
-  }
+  }# end if gff_file
 
-  stop("You must provide either --gff or --fill_file.")
+  stop("You must provide either --gff or --fill_file.")# provide input is missing
 }
 
 # If window count mode is enabled, process accordingly
