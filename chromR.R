@@ -250,9 +250,9 @@ fill_data <- fill_data %>%
     )
 # helper function to create windows
 make_windows <- function(seq_length, window_size) {
-  starts <- seq(1, seq_length, by = window_size)
-  ends <- pmin(starts + window_size - 1, seq_length)
-  tibble(start = starts, end = ends)
+  starts <- seq(1, seq_length, by = window_size)# calculate window ends
+  ends <- pmin(starts + window_size - 1, seq_length)# ensure ends do not exceed sequence length
+  tibble(start = starts, end = ends) # create tibble of windows
 }
 # helper function to count genes in windows
 count_genes_in_windows <- function(data, windows, gene_name) {
