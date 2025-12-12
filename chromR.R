@@ -250,7 +250,12 @@ fill_data <- fill_data %>%
     )
 
 # ---------------------------------------------------------------------------
-# If window count mode is enabled, perform gene counting in windows
+# Function to load gene coordinates from GFF or fill file uniquely
+load_gene_coordinates <- function(gff_file = NULL, fill_file = NULL) {
+
+
+  stop("You must provide either --gff or --fill_file.")
+}
 
 # ---------------------------------------------------------------------------
   
