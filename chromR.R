@@ -248,23 +248,7 @@ fill_data <- fill_data %>%
         "<b>Relative Pos:</b> ", round((mid_position - chrom_start) / chrom_length, 3)
       )
     )
-# helper function to create windows
-make_windows <- function(seq_length, window_size) {
-  starts <- seq(1, seq_length, by = window_size)# calculate window ends
-  ends <- pmin(starts + window_size - 1, seq_length)# ensure ends do not exceed sequence length
-  tibble(start = starts, end = ends) # create tibble of windows
-}
-# helper function to count genes in windows
-count_genes_in_windows <- function(data, windows, gene_name) {
-  data_gene <- data %>% filter(gene == gene_name)
-# count genes in each window
-  counts <- sapply(seq_len(nrow(windows)), function(i) {
-    win_start <- windows$start[i]
-    win_end   <- windows$end[i]
-    sum(data_gene$start <= win_end & data_gene$end >= win_start)
-  }) # end sapply
-  tibble(count = counts)
-}
+
 # ------------------------------------------------------------------------------------------------------------------------------------------------------
 # Function to load gene coordinates from GFF or fill file uniquely
 load_gene_coordinates <- function(gff_file = NULL, fill_file = NULL) {
@@ -301,6 +285,25 @@ load_gene_coordinates <- function(gff_file = NULL, fill_file = NULL) {
   }
 
   stop("You must provide either --gff or --fill_file.")
+}
+
+# If window count mode is enabled, process accordingly
+# helper function to create windows
+make_windows <- function(seq_length, window_size) {
+  starts <- seq(1, seq_length, by = window_size)# calculate window ends
+  ends <- pmin(starts + window_size - 1, seq_length)# ensure ends do not exceed sequence length
+  tibble(start = starts, end = ends) # create tibble of windows
+}
+# helper function to count genes in windows
+count_genes_in_windows <- function(data, windows, gene_name) {
+  data_gene <- data %>% filter(gene == gene_name)
+# count genes in each window
+  counts <- sapply(seq_len(nrow(windows)), function(i) {
+    win_start <- windows$start[i]
+    win_end   <- windows$end[i]
+    sum(data_gene$start <= win_end & data_gene$end >= win_start)
+  }) # end sapply
+  tibble(count = counts)
 }
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------------
