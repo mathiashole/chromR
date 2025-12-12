@@ -354,6 +354,19 @@ window_cluster_tables <- function(gff_file, fill_file, window_size, gene_list, m
   invisible(final_output) # return final output invisibly
 }
 
+# if (window_count_mode) {
+
+#   window_cluster_tables(
+#     gff_file   = gff_file,
+#     fill_file  = fill_file,
+#     window_size = window_size,
+#     gene_list   = gene_list,
+#     min_genes   = min_genes
+#   )
+
+#   quit(save = "no")
+# }
+
 # ------------------------------------------------------------------------------------------------------------------------------------------------------
   
   # Create the base plot object
