@@ -256,7 +256,13 @@ make_windows <- function(seq_length, window_size) {
 }
 # helper function to count genes in windows
 count_genes_in_windows <- function(data, windows, gene_name) {
-
+  data_gene <- data %>% filter(gene == gene_name)
+# count genes in each window
+  counts <- sapply(seq_len(nrow(windows)), function(i) {
+    win_start <- windows$start[i]
+    win_end   <- windows$end[i]
+    sum(data_gene$start <= win_end & data_gene$end >= win_start)
+  }) # end sapply
   tibble(count = counts)
 }
 # ------------------------------------------------------------------------------------------------------------------------------------------------------
