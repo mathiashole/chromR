@@ -644,7 +644,7 @@ if (density_mode == "overlay") {
       ) +
       theme_minimal() +
       theme(strip.text = element_text(size = 8))
-  } else {
+  } else if (density_mode == "hist") {
     acc_plot <- ggplot(accum_data, aes(x = relative_pos, fill = !!sym(category_var))) +
     geom_histogram(binwidth = 0.05, position = "identity", alpha = 0.6) +
     scale_fill_manual(values = color_mapping) +
