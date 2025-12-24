@@ -590,7 +590,7 @@ if (accumulated_plot) {
 
   # Validate density_mode
   density_mode <- tolower(density_mode)
-  if (!density_mode %in% c("overlay", "stack", "facet")) {
+  if (!density_mode %in% c("overlay", "stack", "facet", "hist")) {
     warning("Invalid density_mode. Falling back to 'overlay'.")
     density_mode <- "overlay"
   }
