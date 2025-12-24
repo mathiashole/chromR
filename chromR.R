@@ -18,7 +18,7 @@ fill_file <- NULL
 file_format <- NULL
 order_file <- NULL
 accumulated_plot <- FALSE
-density_mode <- "overlay" # density mode for accumulated plot: "overlay" (default), "stack", "facet"
+density_mode <- "hist" # density mode for accumulated plot: "overlay" (default), "stack", "facet"
 summary_args <- FALSE
 interactive_plot <- FALSE # interactive plot
 # try new arguments
@@ -631,7 +631,7 @@ if (density_mode == "overlay") {
       ) +
       scale_fill_manual(values = color_mapping) +
       theme_minimal()
-  } else { # facet
+  } else if (density_mode == "facet") { # facet
     # facet = one density per facet (one row per chromosome or per category)
     # If you want per-chromosome facets use seqid; here we facet by category to compare shapes separately.
     acc_plot <- ggplot(accum_data, aes_string(x = "relative_pos")) +
@@ -644,6 +644,16 @@ if (density_mode == "overlay") {
       ) +
       theme_minimal() +
       theme(strip.text = element_text(size = 8))
+  } else {
+    acc_plot <- ggplot(accum_data, aes(x = relative_pos, fill = !!sym(category_var))) +
+    geom_histogram(binwidth = 0.05, position = "identity", alpha = 0.6) +
+    scale_fill_manual(values = color_mapping) +
+    labs(
+      x = "Relative position on chromosome (0-1)",
+      y = "Count of genes",
+      fill = "Category"
+    ) +
+    theme_minimal()
   }
 
   # ggplot(accum_data, aes(x = relative_pos, fill = !!sym(category_var))) +
