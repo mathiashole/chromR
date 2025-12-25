@@ -1,5 +1,14 @@
 #!/usr/bin/env Rscript
 
+# charge library
+suppressPackageStartupMessages({
+  library(dplyr)
+  library(readr)
+  library(ggplot2)
+  library(RColorBrewer)
+})
+
+
 # Get command-line arguments
 args <- commandArgs(trailingOnly = TRUE)
 
