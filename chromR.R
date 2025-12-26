@@ -13,34 +13,30 @@ suppressPackageStartupMessages({
 #------------------------------------------------------------------------
 
 parse_args_manual <- function(args) {
+  
   # Initialize default values
-  parsed_args <- list(
-    gff_file = NULL,
-    keyword_pairs = NULL,
-    layout_id = NULL,
-    pseudo_data = NULL,
-    strict = FALSE,
-    number = Inf,
-    colors_input = NULL,
-    palette_name = NULL,
-    line_plot = FALSE,
-    table_format = NULL,
-    fill_file = NULL,
-    file_format = NULL,
-    order_file = NULL,
+  opts <- list(
+    gff_file         = NULL,
+    feature_file     = NULL,     # formerly fill_file
+    feature_mode     = NULL,     # "fill" | "keyword"
+    keywords         = NULL,
+    strict_filter    = FALSE,
+    max_chromosomes  = Inf,
+    palette          = NULL,
+    colors           = NULL,
+    line_plot        = FALSE,
     accumulated_plot = FALSE,
-    density_mode = "hist",
-    summary_args = FALSE,
-    interactive_plot = FALSE,
-    window_count_mode = FALSE,
-    window_size = NULL,
-    gene_list = NULL,
-    min_genes = 2
+    density_mode     = "hist",
+    interactive      = FALSE,
+    window_mode      = FALSE,
+    window_size      = NULL,
+    gene_list        = NULL,
+    min_genes        = 2
   )
   
   # Parsing logic here...
   
-  return(parsed_args)
+  return(opts)
 }
 
 # Get command-line arguments
