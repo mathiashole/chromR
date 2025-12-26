@@ -1,6 +1,7 @@
 #!/usr/bin/env Rscript
 
-# charge library
+# Charge library
+#------------------------------------------------------------------------
 suppressPackageStartupMessages({
   library(dplyr)
   library(readr)
@@ -8,7 +9,8 @@ suppressPackageStartupMessages({
   library(RColorBrewer)
 })
 
-
+# Parse manual arguments
+#------------------------------------------------------------------------
 # Get command-line arguments
 args <- commandArgs(trailingOnly = TRUE)
 
