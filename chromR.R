@@ -34,7 +34,7 @@ parse_args_manual <- function(args) {
     min_genes        = 2
   )
   
-  # Parsing logic here...
+
   
   return(opts)
 }
