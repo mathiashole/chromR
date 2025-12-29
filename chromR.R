@@ -41,9 +41,12 @@ parse_args_manual <- function(args) {
 
     if (flag %in% c("-g","--gff_file")) {
       opts$gff_file <- args[i+1]; i <- i + 1
-
+    } else if (flag == "--fill_file") {
+      opts$feature_file <- args[i+1]
+      opts$feature_mode <- "fill"
+      i <- i + 1
     }
-
+    
     i <- i + 1 # this increments the main loop counter
   }
 
