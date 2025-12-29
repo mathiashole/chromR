@@ -64,12 +64,10 @@ parse_args_manual <- function(args) {
       opts$palette <- args[i+1]; i <- i + 1
     } else if (flag == "--line_plot" || flag == "-lp") {
       opts$line_plot <- TRUE
-    } else if (flag == "--accumulated_plot") {
+    } else if (flag == "--accumulated_plot" || flag == "-ap") {
       opts$accumulated_plot <- TRUE
-
-    } else if (flag == "--density_mode") {
+    } else if (flag == "--density_mode" || flag == "-dm") {
       opts$density_mode <- args[i+1]; i <- i + 1
-
     } else if (flag == "--interactive") {
       opts$interactive <- TRUE
 
