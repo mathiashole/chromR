@@ -34,6 +34,14 @@ parse_args_manual <- function(args) {
     min_genes        = 2
   )
   
+  i <- 1
+  while (i <= length(args)) {
+    flag <- args[i]
+
+
+
+    i <- i + 1 # this increments the main loop counter
+  }
 
   
   return(opts)
