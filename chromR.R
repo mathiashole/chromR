@@ -57,7 +57,7 @@ parse_args_manual <- function(args) {
       i <- j - 1
     } else if (flag == "--strict" || flag == "-s") {
       opts$strict_filter <- TRUE
-    } else if (flag %in% c("-n","--number")) {
+    } else if (flag == "--number" || flag == "-n") {
       opts$max_chromosomes <- as.integer(args[i+1])
       i <- i + 1
 
