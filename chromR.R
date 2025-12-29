@@ -128,6 +128,19 @@ validate_args <- function(opts) {
 load_gff <- function(file) {read_tsv(file, comment = "#", col_names = c("seqid","source","type","start","end","score","strand","phase","attributes"), show_col_types = FALSE)
 }
 
+compute_chrom_limits <- function(gff) {
+  gff %>%
+    group_by(seqid) %>%
+    summarise(
+      chrom_start = min(start),
+      chrom_end   = max(end),
+      chrom_length = chrom_end - chrom_start,
+      .groups = "drop"
+    ) %>%
+    arrange(chrom_length) %>%
+    mutate(seqid = factor(seqid, levels = seqid))
+}
+
 # Get command-line arguments
 args <- commandArgs(trailingOnly = TRUE)
 
