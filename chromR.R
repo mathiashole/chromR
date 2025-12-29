@@ -54,6 +54,19 @@ parse_args_manual <- function(args) {
         j <- j + 1
       }
       i <- j - 1
+    } else if (flag %in% c("-k","--keywords")) {
+      opts$feature_mode <- "keyword"
+      opts$keywords <- c()
+      j <- i + 1
+      while (j <= length(args) && !grepl("^--", args[j])) {
+        opts$keywords <- c(opts$keywords, args[j])
+        j <- j + 1
+      }
+      i <- j - 1
+
+    } else if (flag == "--strict") {
+      opts$strict_filter <- TRUE
+
     }
 
     i <- i + 1 # this increments the main loop counter
