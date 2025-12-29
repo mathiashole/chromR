@@ -39,6 +39,10 @@ parse_args_manual <- function(args) {
     flag <- args[i]
 
 
+    if (flag %in% c("-g","--gff_file")) {
+      opts$gff_file <- args[i+1]; i <- i + 1
+
+    }
 
     i <- i + 1 # this increments the main loop counter
   }
