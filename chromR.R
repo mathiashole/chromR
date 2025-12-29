@@ -74,8 +74,7 @@ parse_args_manual <- function(args) {
       opts$window_mode <- TRUE
     } else if (flag == "--window_size") {
       opts$window_size <- as.integer(args[i+1]); i <- i + 1
-
-    } else if (flag == "--genes") {
+    } else if (flag == "--genes" || flag == "-gene") {
       opts$gene_list <- c()
       j <- i + 1
       while (j <= length(args) && !grepl("^--", args[j])) {
@@ -83,8 +82,7 @@ parse_args_manual <- function(args) {
         j <- j + 1
       }
       i <- j - 1
-
-    } else if (flag == "--min_genes") {
+    } else if (flag == "--min_genes" || flag == "-mg") {
       opts$min_genes <- as.integer(args[i+1]); i <- i + 1
     } else if (flag == "--colors") {  # added colors option
       opts$colors <- c()
