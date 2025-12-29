@@ -39,13 +39,14 @@ parse_args_manual <- function(args) {
     flag <- args[i]
 
 
-    if (flag %in% c("-g","--gff_file")) {
+    #if (flag %in% c("-g","--gff_file")) {
+    if (flag == "-g" || flag == "--gff_file") {
       opts$gff_file <- args[i + 1]; i <- i + 1
-    } else if (flag == "--fill_file") {
+    } else if (flag == "ff" || flag == "--fill_file") {
       opts$feature_file <- args[i + 1]
       opts$feature_mode <- "fill"
       i <- i + 1
-    } else if (flag %in% c("-k","--keywords")) {
+    } else if (flag == "--keywords" || flag == "-k") {
       opts$feature_mode <- "keyword"
       opts$keywords <- c()
       j <- i + 1
