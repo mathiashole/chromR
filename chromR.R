@@ -54,32 +54,52 @@ parse_args_manual <- function(args) {
         j <- j + 1
       }
       i <- j - 1
-    } else if (flag %in% c("-k","--keywords")) {
-      opts$feature_mode <- "keyword"
-      opts$keywords <- c()
+    } else if (flag == "--strict") {
+      opts$strict_filter <- TRUE
+    } else if (flag %in% c("-n","--number")) {
+      opts$max_chromosomes <- as.integer(args[i+1])
+      i <- i + 1
+
+    } else if (flag == "--palette") {
+      opts$palette <- args[i+1]; i <- i + 1
+
+    } else if (flag == "--line_plot") {
+      opts$line_plot <- TRUE
+
+    } else if (flag == "--accumulated_plot") {
+      opts$accumulated_plot <- TRUE
+
+    } else if (flag == "--density_mode") {
+      opts$density_mode <- args[i+1]; i <- i + 1
+
+    } else if (flag == "--interactive") {
+      opts$interactive <- TRUE
+
+    } else if (flag == "--window_count") {
+      opts$window_mode <- TRUE
+
+    } else if (flag == "--window_size") {
+      opts$window_size <- as.integer(args[i+1]); i <- i + 1
+
+    } else if (flag == "--genes") {
+      opts$gene_list <- c()
       j <- i + 1
       while (j <= length(args) && !grepl("^--", args[j])) {
-        opts$keywords <- c(opts$keywords, args[j])
+        opts$gene_list <- c(opts$gene_list, args[j])
         j <- j + 1
       }
       i <- j - 1
 
-    } else if (flag == "--strict") {
-      opts$strict_filter <- TRUE
-
-    } else if (flag %in% c("-k","--keywords")) {
-      opts$feature_mode <- "keyword"
-      opts$keywords <- c()
+    } else if (flag == "--min_genes") {
+      opts$min_genes <- as.integer(args[i+1]); i <- i + 1
+    } else if (flag == "--colors") {  # added colors option
+      opts$colors <- c()
       j <- i + 1
       while (j <= length(args) && !grepl("^--", args[j])) {
-        opts$keywords <- c(opts$keywords, args[j])
+        opts$colors <- c(opts$colors, args[j])
         j <- j + 1
       }
       i <- j - 1
-
-    } else if (flag == "--strict") {
-      opts$strict_filter <- TRUE
-
     }
 
     i <- i + 1 # this increments the main loop counter
