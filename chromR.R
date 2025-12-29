@@ -60,8 +60,7 @@ parse_args_manual <- function(args) {
     } else if (flag == "--number" || flag == "-n") {
       opts$max_chromosomes <- as.integer(args[i+1])
       i <- i + 1
-
-    } else if (flag == "--palette") {
+    } else if (flag == "--palette" || flag == "-p") {
       opts$palette <- args[i+1]; i <- i + 1
 
     } else if (flag == "--line_plot") {
