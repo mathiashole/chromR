@@ -93,12 +93,16 @@ parse_args_manual <- function(args) {
       }
       i <- j - 1
     }
-    
+
     i <- i + 1 # this increments the main loop counter
   }
   
   return(opts)
 }
+
+# Arguments validation and processing
+#------------------------------------------------------------------------
+
 
 # Get command-line arguments
 args <- commandArgs(trailingOnly = TRUE)
