@@ -84,7 +84,7 @@ parse_args_manual <- function(args) {
       i <- j - 1
     } else if (flag == "--min_genes" || flag == "-mg") {
       opts$min_genes <- as.integer(args[i+1]); i <- i + 1
-    } else if (flag == "--colors") {  # added colors option
+    } else if (flag == "--colors" || flag == "-c") {  # added colors option
       opts$colors <- c()
       j <- i + 1
       while (j <= length(args) && !grepl("^--", args[j])) {
@@ -93,10 +93,9 @@ parse_args_manual <- function(args) {
       }
       i <- j - 1
     }
-
+    
     i <- i + 1 # this increments the main loop counter
   }
-
   
   return(opts)
 }
