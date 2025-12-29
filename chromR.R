@@ -62,10 +62,8 @@ parse_args_manual <- function(args) {
       i <- i + 1
     } else if (flag == "--palette" || flag == "-p") {
       opts$palette <- args[i+1]; i <- i + 1
-
-    } else if (flag == "--line_plot") {
+    } else if (flag == "--line_plot" || flag == "-lp") {
       opts$line_plot <- TRUE
-
     } else if (flag == "--accumulated_plot") {
       opts$accumulated_plot <- TRUE
 
