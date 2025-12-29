@@ -122,6 +122,10 @@ validate_args <- function(opts) {
   }
 }
 
+# Data loading
+#------------------------------------------------------------------------
+
+
 # Get command-line arguments
 args <- commandArgs(trailingOnly = TRUE)
 
