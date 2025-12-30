@@ -141,6 +141,9 @@ compute_chrom_limits <- function(gff) {
     mutate(seqid = factor(seqid, levels = seqid))
 }
 
+# Feature extraction (unified)
+#------------------------------------------------------------------------
+
 # Get command-line arguments
 args <- commandArgs(trailingOnly = TRUE)
 
