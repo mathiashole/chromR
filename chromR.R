@@ -144,6 +144,10 @@ compute_chrom_limits <- function(gff) {
 # Feature extraction (unified)
 #------------------------------------------------------------------------
 
+extract_fill_features <- function(file) {
+
+}
+
 # Get command-line arguments
 args <- commandArgs(trailingOnly = TRUE)
 
