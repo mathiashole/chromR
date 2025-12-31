@@ -145,7 +145,12 @@ compute_chrom_limits <- function(gff) {
 #------------------------------------------------------------------------
 
 extract_fill_features <- function(file) {
-
+  read_tsv(file, col_names = FALSE, show_col_types = FALSE) %>%
+    setNames(c("seqid","start","end","category")) %>%
+    mutate(
+      mid_position = (start + end) / 2,
+      source_type  = "fill"
+    )
 }
 
 # Get command-line arguments
