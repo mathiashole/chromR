@@ -172,6 +172,13 @@ extract_keyword_features <- function(gff, keywords) {
   })) # end bind_rows
 }
 
+build_features <- function(gff, chrom_limits, opts) {
+
+
+
+  df
+}
+
 # Get command-line arguments
 args <- commandArgs(trailingOnly = TRUE)
 
