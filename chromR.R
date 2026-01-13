@@ -157,7 +157,9 @@ extract_keyword_features <- function(gff, keywords) {
   attrs <- keywords[seq(1, length(keywords), 2)]
   types <- keywords[seq(2, length(keywords), 2)]
 
+  bind_rows(lapply(seq_along(attrs), function(i) {
 
+  }))
 }
 
 # Get command-line arguments
