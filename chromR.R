@@ -174,21 +174,21 @@ extract_keyword_features <- function(gff, keywords) {
 
 build_features <- function(gff, chrom_limits, opts) {
 
-  df <- if (opts$feature_mode == "fill") {
-    extract_fill_features(opts$feature_file)
-  } else {
-    extract_keyword_features(gff, opts$keywords)
+  df <- if (opts$feature_mode == "fill") { # fill mode
+    extract_fill_features(opts$feature_file) # load fill features
+  } else { # keyword mode
+    extract_keyword_features(gff, opts$keywords) # load keyword features
   }
 
   df <- df %>%
-    filter(seqid %in% chrom_limits$seqid)
+    filter(seqid %in% chrom_limits$seqid) # keep only relevant chromosomes
 
   if (opts$strict_filter) {
-    keep <- unique(df$seqid)
-    df <- df %>% filter(seqid %in% keep)
+    keep <- unique(df$seqid) # chromosomes with features
+    df <- df %>% filter(seqid %in% keep) # strict filtering
   }
 
-  df
+  df # return features
 }
 
 # Get command-line arguments
