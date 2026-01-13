@@ -180,7 +180,13 @@ build_features <- function(gff, chrom_limits, opts) {
     extract_keyword_features(gff, opts$keywords)
   }
 
+  df <- df %>%
+    filter(seqid %in% chrom_limits$seqid)
 
+  if (opts$strict_filter) {
+    keep <- unique(df$seqid)
+    df <- df %>% filter(seqid %in% keep)
+  }
 
   df
 }
