@@ -176,7 +176,11 @@ build_features <- function(gff, chrom_limits, opts) {
 
   df <- if (opts$feature_mode == "fill") {
     extract_fill_features(opts$feature_file)
+  } else {
+    extract_keyword_features(gff, opts$keywords)
   }
+
+
 
   df
 }
