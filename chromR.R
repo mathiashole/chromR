@@ -153,6 +153,10 @@ extract_fill_features <- function(file) {
     )
 }
 
+extract_keyword_features <- function(gff, keywords) {
+
+}
+
 # Get command-line arguments
 args <- commandArgs(trailingOnly = TRUE)
 
