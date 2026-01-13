@@ -154,10 +154,10 @@ extract_fill_features <- function(file) {
 }
 
 extract_keyword_features <- function(gff, keywords) {
-  attrs <- keywords[seq(1, length(keywords), 2)]
-  types <- keywords[seq(2, length(keywords), 2)]
+  attrs <- keywords[seq(1, length(keywords), 2)] # odd indices: attributes
+  types <- keywords[seq(2, length(keywords), 2)] # even indices: types
 
-  bind_rows(lapply(seq_along(attrs), function(i) {
+  bind_rows(lapply(seq_along(attrs), function(i) { # for each attribute/type pair
     gff %>%
       filter(
         grepl(attrs[i], attributes, ignore.case = TRUE),
@@ -165,11 +165,11 @@ extract_keyword_features <- function(gff, keywords) {
       ) %>%
       mutate(
         # Force category to be the family name (attrs[i])
-        category = attrs[i], 
-        mid_position = (start + end) / 2,
-        source_type = "keyword"
+        category = attrs[i], # assign category
+        mid_position = (start + end) / 2, # midpoint ubication
+        source_type = "keyword" # mark source type
       )
-  }))
+  })) # end bind_rows
 }
 
 # Get command-line arguments
