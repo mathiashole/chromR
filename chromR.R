@@ -158,7 +158,17 @@ extract_keyword_features <- function(gff, keywords) {
   types <- keywords[seq(2, length(keywords), 2)]
 
   bind_rows(lapply(seq_along(attrs), function(i) {
-
+    gff %>%
+      filter(
+        grepl(attrs[i], attributes, ignore.case = TRUE),
+        grepl(types[i], type, ignore.case = TRUE)
+      ) %>%
+      mutate(
+        # Force category to be the family name (attrs[i])
+        category = attrs[i], 
+        mid_position = (start + end) / 2,
+        source_type = "keyword"
+      )
   }))
 }
 
