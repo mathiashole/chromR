@@ -194,6 +194,10 @@ build_features <- function(gff, chrom_limits, opts) {
 # Plotting functions
 #------------------------------------------------------------------------
 
+plot_chromosomes <- function(chrom_limits) {
+
+}
+
 # Get command-line arguments
 args <- commandArgs(trailingOnly = TRUE)
 
