@@ -191,6 +191,9 @@ build_features <- function(gff, chrom_limits, opts) {
   df # return features
 }
 
+# Plotting functions
+#------------------------------------------------------------------------
+
 # Get command-line arguments
 args <- commandArgs(trailingOnly = TRUE)
 
