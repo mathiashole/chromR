@@ -196,7 +196,11 @@ build_features <- function(gff, chrom_limits, opts) {
 
 plot_chromosomes <- function(chrom_limits) {
   ggplot(chrom_limits) +
-
+    geom_segment(
+      aes(x = chrom_start, xend = chrom_end,
+          y = seqid, yend = seqid),
+      color = "grey50"
+    )
 }
 
 # Get command-line arguments
