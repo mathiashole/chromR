@@ -73,7 +73,9 @@ parse_args_manual <- function(args) {
       opts$density_mode <- args[i+1]; i <- i + 1
     }  else if (flag == "--facet_plot") {
       opts$facet_plot <- TRUE
-    } else if (flag == "--interactive" || flag == "-int") {
+    } else if (flag == "--facet_mode") {
+      opts$facet_mode <- args[i+1]; i <- i + 1
+    }  else if (flag == "--interactive" || flag == "-int") {
       opts$interactive <- TRUE
     } else if (flag == "--window_count" || flag == "-wc") {
       opts$window_mode <- TRUE
