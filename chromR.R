@@ -31,7 +31,10 @@ parse_args_manual <- function(args) {
     window_mode      = FALSE,
     window_size      = NULL,
     gene_list        = NULL,
-    min_genes        = 2
+    min_genes        = 2,
+    facet_plot   = FALSE,
+    facet_mode   = "density",
+    facet_scales = "fixed"
   )
   
   i <- 1
