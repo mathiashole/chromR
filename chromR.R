@@ -218,6 +218,19 @@ plot_chromosomes <- function(chrom_limits) {
     )
 }
 
+plot_faceted_accumulated <- function(
+  features,
+  chrom_limits,
+  colors,
+  geom = c("density", "hist"),
+  scales = c("fixed", "free"),
+  binwidth = 0.05,
+  alpha = 0.6
+) {
+
+
+  }
+
 # Get command-line arguments
 args <- commandArgs(trailingOnly = TRUE)
 
