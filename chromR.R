@@ -268,7 +268,28 @@ plot_faceted_accumulated <- function(
       )
 
   ylab <- "Number of features"
-}
+} else {
+
+      p <- p +
+        geom_histogram(
+          binwidth = binwidth,
+          alpha = alpha,
+          position = "identity"
+        )
+
+      ylab <- "Count"
+    }
+
+    p +
+      facet_wrap(~ category, scales = scales) +
+      scale_fill_manual(values = colors) +
+      scale_color_manual(values = colors) +
+      coord_cartesian(xlim = c(0, 1)) +
+      labs(
+        x = "Relative chromosomal position",
+        y = ylab
+      ) +
+      theme_minimal()
   }
 
 # Get command-line arguments
