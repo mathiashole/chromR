@@ -238,6 +238,13 @@ plot_faceted_accumulated <- function(
       ) %>%
       mutate(relative_pos = (mid_position - chrom_start) / chrom_length)
 
+    # ---- N per category (for annotation) ----
+    n_df <- df %>%
+    count(category) %>%
+    mutate(label = paste0("n = ", n))
+
+    p <- ggplot(df, aes(x = relative_pos, fill = category, color = category))
+
 
   }
 
