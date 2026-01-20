@@ -228,6 +228,16 @@ plot_faceted_accumulated <- function(
   alpha = 0.6
 ) {
 
+  geom   <- match.arg(geom)
+  scales <- match.arg(scales)
+
+    df <- features %>%
+      left_join(
+        chrom_limits %>% select(seqid, chrom_start, chrom_length),
+        by = "seqid"
+      ) %>%
+      mutate(relative_pos = (mid_position - chrom_start) / chrom_length)
+
 
   }
 
