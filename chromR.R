@@ -245,7 +245,30 @@ plot_faceted_accumulated <- function(
 
     p <- ggplot(df, aes(x = relative_pos, fill = category, color = category))
 
+    if (geom == "density") {
 
+  p <- p +
+    geom_density(
+      # aes(y = after_stat(count)),
+      alpha = alpha,
+      linewidth = 0.8
+    ) +
+      geom_text(
+        data = n_df,
+        aes(
+          x = Inf,
+          y = Inf,
+          label = label
+        ),
+        inherit.aes = FALSE,
+        hjust = 1.1,
+        vjust = 1.3,
+        size = 3.2,
+        color = "black"
+      )
+
+  ylab <- "Number of features"
+}
   }
 
 # Get command-line arguments
