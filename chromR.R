@@ -274,7 +274,8 @@ plot_faceted_accumulated <- function(
         geom_histogram(
           binwidth = binwidth,
           alpha = alpha,
-          position = "identity"
+          position = "identity",
+          linewidth = 0.8
         )
 
       ylab <- "Count"
