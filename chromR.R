@@ -276,6 +276,19 @@ plot_faceted_accumulated <- function(
           alpha = alpha,
           position = "identity",
           linewidth = 0.8
+        ) +
+        geom_text(
+          data = n_df,
+          aes(
+            x = Inf,
+            y = Inf,
+            label = label
+          ),
+          inherit.aes = FALSE,
+          hjust = 1.1,
+          vjust = 1.3,
+          size = 3.2,
+          color = "black"
         )
 
       ylab <- "Count"
