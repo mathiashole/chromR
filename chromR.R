@@ -257,7 +257,12 @@ add_feature_segments <- function(p, features, colors) {
     ) %>%
     mutate(relative_pos = (mid_position - chrom_start) / chrom_length)
 
+  if (mode %in% c("overlay", "density")) {
 
+    ggplot(df, aes(x = relative_pos, color = category, fill = category)) +
+
+
+  }
 }
 
 
