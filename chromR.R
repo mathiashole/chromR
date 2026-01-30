@@ -250,6 +250,13 @@ add_feature_segments <- function(p, features, colors) {
     alpha = 0.6
   ) {
 
+  df <- features %>%
+    left_join(
+      chrom_limits %>% select(seqid, chrom_start, chrom_length),
+      by = "seqid"
+    ) %>%
+    mutate(relative_pos = (mid_position - chrom_start) / chrom_length)
+
 
 }
 
