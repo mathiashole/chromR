@@ -260,7 +260,12 @@ add_feature_segments <- function(p, features, colors) {
   if (mode %in% c("overlay", "density")) {
 
     ggplot(df, aes(x = relative_pos, color = category, fill = category)) +
-
+      geom_density(alpha = alpha) +
+      # geom_density(aes(y = after_stat(scaled)), alpha = alpha) +
+      scale_color_manual(values = colors) +
+      scale_fill_manual(values = colors) +
+      theme_minimal() +
+      coord_cartesian(xlim = c(0, 1))
 
   }
 }
