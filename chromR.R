@@ -275,7 +275,10 @@ add_feature_segments <- function(p, features, colors) {
         # bins = bins,
         alpha = alpha,
         position = "identity"
-      ) 
+      ) +
+      scale_fill_manual(values = colors) +
+      theme_minimal() +
+      coord_cartesian(xlim = c(0, 1))
   }
 }
 
