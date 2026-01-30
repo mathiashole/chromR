@@ -228,6 +228,14 @@ add_feature_points <- function(p, features, colors) {
     scale_color_manual(values = colors)
 }
 
+add_feature_segments <- function(p, features, colors) {
+  p +
+    geom_segment(
+
+    ) +
+    scale_color_manual(values = colors)
+}
+
 plot_faceted_accumulated <- function(
   features,
   chrom_limits,
