@@ -267,6 +267,15 @@ add_feature_segments <- function(p, features, colors) {
       theme_minimal() +
       coord_cartesian(xlim = c(0, 1))
 
+  } else {  # hist por defecto
+
+    ggplot(df, aes(x = relative_pos, fill = category)) +
+      geom_histogram(
+        binwidth = binwidth,
+        # bins = bins,
+        alpha = alpha,
+        position = "identity"
+      ) 
   }
 }
 
