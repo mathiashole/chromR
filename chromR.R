@@ -219,7 +219,11 @@ plot_chromosomes <- function(chrom_limits) {
 }
 
 add_feature_points <- function(p, features, colors) {
+  p +
+    geom_point(
 
+    ) +
+    scale_color_manual(values = colors)
 }
 
 plot_faceted_accumulated <- function(
