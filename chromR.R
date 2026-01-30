@@ -282,7 +282,6 @@ add_feature_segments <- function(p, features, colors) {
   }
 }
 
-
 plot_faceted_accumulated <- function(
   features,
   chrom_limits,
