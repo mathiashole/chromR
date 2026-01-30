@@ -231,7 +231,11 @@ add_feature_points <- function(p, features, colors) {
 add_feature_segments <- function(p, features, colors) {
   p +
     geom_segment(
-
+      data = features,
+      aes(x = start, xend = end,
+          y = seqid, yend = seqid,
+          color = category),
+      size = 1.2
     ) +
     scale_color_manual(values = colors)
 }
