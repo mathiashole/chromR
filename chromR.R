@@ -240,6 +240,20 @@ add_feature_segments <- function(p, features, colors) {
     scale_color_manual(values = colors)
 }
 
+  plot_accumulated <- function(
+    features,
+    chrom_limits,
+    colors,
+    mode = "hist",
+    binwidth = 0.05,
+    # bins = bins,
+    alpha = 0.6
+  ) {
+
+
+}
+
+
 plot_faceted_accumulated <- function(
   features,
   chrom_limits,
