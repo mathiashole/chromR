@@ -381,7 +381,12 @@ run_window_mode <- function(opts, features) {
   clusters <- features %>%
     filter(category %in% target_genes) %>%
     arrange(seqid, start) %>%
-    group_by(seqid)
+    group_by(seqid) %>%
+    mutate(
+      dist = start - lag(end),
+      is_new = is.na(dist) | dist > opts$window_size,
+      cluster_id = cumsum(is_new)
+    )
 
   return(clusters)
 }
