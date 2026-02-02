@@ -375,6 +375,9 @@ plot_faceted_accumulated <- function(
 
 run_window_mode <- function(opts, features) {
   message("→ Running Clustering Mode (Distance based)")
+    
+  target_genes <- if(!is.null(opts$gene_list)) opts$gene_list else unique(features$category)
+    
 
 
   return(clusters)
