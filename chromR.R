@@ -378,7 +378,10 @@ run_window_mode <- function(opts, features) {
     
   target_genes <- if(!is.null(opts$gene_list)) opts$gene_list else unique(features$category)
     
-
+  clusters <- features %>%
+    filter(category %in% target_genes) %>%
+    arrange(seqid, start) %>%
+    group_by(seqid)
 
   return(clusters)
 }
