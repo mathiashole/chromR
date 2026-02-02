@@ -395,6 +395,9 @@ run_window_mode <- function(opts, features) {
     ) %>%
     filter(total_features >= opts$min_genes)
 
+  write_tsv(clusters, "genomic_clusters_report.tsv")
+  message("-> Found ", nrow(clusters), " clusters. Saved to genomic_clusters_report.tsv")
+
   return(clusters)
 }
 
