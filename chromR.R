@@ -370,6 +370,16 @@ plot_faceted_accumulated <- function(
       theme_minimal()
   }
 
+# Windows count mode functions
+#------------------------------------------------------------------------
+
+run_window_mode <- function(opts, features) {
+  message("→ Running Clustering Mode (Distance based)")
+
+
+  return(clusters)
+}
+
 # Get command-line arguments
 args <- commandArgs(trailingOnly = TRUE)
 
