@@ -401,6 +401,8 @@ run_window_mode <- function(opts, features) {
   return(clusters)
 }
 
+# Main execution
+
 # Get command-line arguments
 args <- commandArgs(trailingOnly = TRUE)
 
