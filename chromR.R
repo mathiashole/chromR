@@ -416,12 +416,13 @@ features <- build_features(gff_data, chrom_limits, opts)
 
 # Aplly filtering based on arguments
 #------------------------------------------------------------------------
-
 # First: only apply --strict filter
 if (opts$strict_filter) {
   chrom_limits <- chrom_limits %>%
     filter(seqid %in% unique(features$seqid))
 }
+
+# Second: only apply number of chromosome
 
 # Get command-line arguments
 args <- commandArgs(trailingOnly = TRUE)
