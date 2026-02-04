@@ -414,6 +414,8 @@ chrom_limits <- compute_chrom_limits(gff_data)
 # Build features based on mode
 features <- build_features(gff_data, chrom_limits, opts)
 
+# Aplly filtering based on arguments
+
 # Get command-line arguments
 args <- commandArgs(trailingOnly = TRUE)
 
