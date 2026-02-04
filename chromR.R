@@ -411,7 +411,7 @@ validate_args(opts)
 gff_data <- load_gff(opts$gff_file)
 # Compute chromosome limits
 chrom_limits <- compute_chrom_limits(gff_data)
-
+# Build features based on mode
 features <- build_features(gff_data, chrom_limits, opts)
 
 # Get command-line arguments
