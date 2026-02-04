@@ -412,6 +412,8 @@ gff_data <- load_gff(opts$gff_file)
 # Compute chromosome limits
 chrom_limits <- compute_chrom_limits(gff_data)
 
+features <- build_features(gff_data, chrom_limits, opts)
+
 # Get command-line arguments
 args <- commandArgs(trailingOnly = TRUE)
 
