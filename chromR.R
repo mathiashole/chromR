@@ -403,6 +403,8 @@ run_window_mode <- function(opts, features) {
 
 # Main execution
 
+args <- commandArgs(trailingOnly = TRUE)
+
 # Get command-line arguments
 args <- commandArgs(trailingOnly = TRUE)
 
