@@ -409,6 +409,8 @@ validate_args(opts)
 
 # Load GFF data
 gff_data <- load_gff(opts$gff_file)
+# Compute chromosome limits
+chrom_limits <- compute_chrom_limits(gff_data)
 
 # Get command-line arguments
 args <- commandArgs(trailingOnly = TRUE)
