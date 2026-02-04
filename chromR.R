@@ -408,6 +408,7 @@ opts <- parse_args_manual(args)
 validate_args(opts)
 
 # Load GFF data
+gff_data <- load_gff(opts$gff_file)
 
 # Get command-line arguments
 args <- commandArgs(trailingOnly = TRUE)
