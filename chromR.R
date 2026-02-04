@@ -403,8 +403,11 @@ run_window_mode <- function(opts, features) {
 
 # Main execution
 #------------------------------------------------------------------------
-
 args <- commandArgs(trailingOnly = TRUE)
+opts <- parse_args_manual(args)
+validate_args(opts)
+
+# Load GFF data
 
 # Get command-line arguments
 args <- commandArgs(trailingOnly = TRUE)
