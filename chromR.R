@@ -437,6 +437,9 @@ chrom_limits <- chrom_limits %>%
 
 features <- features %>%
   filter(seqid %in% chrom_limits$seqid)
+# apply factor levels to ensure correct ordering in plots
+chrom_limits$seqid <- factor(chrom_limits$seqid, levels = chrom_limits$seqid)
+features$seqid     <- factor(features$seqid,     levels = levels(chrom_limits$seqid))
 
 # Get command-line arguments
 args <- commandArgs(trailingOnly = TRUE)
