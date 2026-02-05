@@ -446,7 +446,8 @@ if (opts$window_mode) {
 
   if (nrow(clusters) > 0) {
     message("→ Generating cluster plot...")
-    
+    clusters$seqid <- factor(clusters$seqid, levels = levels(chrom_limits$seqid))
+
   }
 
   quit(save = "no")
