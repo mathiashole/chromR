@@ -429,6 +429,15 @@ if (!is.infinite(opts$max_chromosomes)) {
     head(opts$max_chromosomes)
 } 
 
+# third: apply order file if provided
+# the most bigger chromosome is the first one, and the smaller is the last one
+# Re-order data frames the last one is most smaller chromosome, and the first one is the most bigger chromosome
+chrom_limits <- chrom_limits %>%
+  arrange(chrom_length)
+
+features <- features %>%
+  filter(seqid %in% chrom_limits$seqid)
+
 # Get command-line arguments
 args <- commandArgs(trailingOnly = TRUE)
 
