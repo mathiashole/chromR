@@ -460,17 +460,17 @@ features <- build_features(gff_data, chrom_limits, opts)
 # unique categories for color mapping
 categories <- unique(features$category)
 
-  if (!is.null(opts$colors)) {
+if (!is.null(opts$colors)) {
     # Use custom colors provided by the user
     colors <- opts$colors
     # If fewer colors than categories are provided, R will recycle colors automatically
-  } else if (!is.null(opts$palette)) {
+} else if (!is.null(opts$palette)) {
     # Use a palette from RColorBrewer
     colors <- brewer.pal(max(3, length(categories)), opts$palette) # Ensure at least 3 colors for better visualization
-  } else {
+} else {
     # Default color set
     colors <- brewer.pal(max(3, length(categories)), "Set1")
-  }
+}
 
 # Get command-line arguments
 args <- commandArgs(trailingOnly = TRUE)
