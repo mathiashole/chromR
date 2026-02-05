@@ -446,6 +446,7 @@ if (opts$window_mode) {
 
   if (nrow(clusters) > 0) {
     message("→ Generating cluster plot...")
+    # Create base plot for clusters (similar to chromosome plot)
     clusters$seqid <- factor(clusters$seqid, levels = levels(chrom_limits$seqid))
 
   }
