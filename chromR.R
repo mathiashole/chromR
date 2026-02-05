@@ -443,6 +443,12 @@ features$seqid     <- factor(features$seqid,     levels = levels(chrom_limits$se
 
 if (opts$window_mode) {
   clusters <- run_window_mode(opts, features)
+
+  if (nrow(clusters) > 0) {
+    message("→ Generating cluster plot...")
+    
+  }
+
   quit(save = "no")
 }
 
