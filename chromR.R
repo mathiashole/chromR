@@ -475,6 +475,8 @@ if (!is.null(opts$colors)) {
 colors <- head(colors, length(categories)) # Trim colors to match number of categories
 names(colors) <- categories # Name colors by category
 
+# Create base plot and add features
+# ------------------------------------------------------------------------
 base_plot <- plot_chromosomes(chrom_limits)
 point_plot <- add_feature_points(base_plot, features, colors)
 
