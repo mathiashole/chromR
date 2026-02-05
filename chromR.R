@@ -467,6 +467,9 @@ categories <- unique(features$category)
   } else if (!is.null(opts$palette)) {
     # Use a palette from RColorBrewer
     colors <- brewer.pal(max(3, length(categories)), opts$palette) # Ensure at least 3 colors for better visualization
+  } else {
+    # Default color set
+    colors <- brewer.pal(max(3, length(categories)), "Set1")
   }
 
 # Get command-line arguments
