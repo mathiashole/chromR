@@ -441,6 +441,11 @@ features <- features %>%
 chrom_limits$seqid <- factor(chrom_limits$seqid, levels = chrom_limits$seqid)
 features$seqid     <- factor(features$seqid,     levels = levels(chrom_limits$seqid))
 
+if (opts$window_mode) {
+  clusters <- run_window_mode(opts, features)
+  quit(save = "no")
+}
+
 # Get command-line arguments
 args <- commandArgs(trailingOnly = TRUE)
 
