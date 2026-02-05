@@ -472,6 +472,8 @@ if (!is.null(opts$colors)) {
     colors <- brewer.pal(max(3, length(categories)), "Set1")
 }
 
+colors <- head(colors, length(categories)) # Trim colors to match number of categories
+
 # Get command-line arguments
 args <- commandArgs(trailingOnly = TRUE)
 
