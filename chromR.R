@@ -456,6 +456,8 @@ if (opts$window_mode) {
   quit(save = "no")
 }
 
+features <- build_features(gff_data, chrom_limits, opts)
+
 # Get command-line arguments
 args <- commandArgs(trailingOnly = TRUE)
 
