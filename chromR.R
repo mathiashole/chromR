@@ -460,6 +460,12 @@ features <- build_features(gff_data, chrom_limits, opts)
 # unique categories for color mapping
 categories <- unique(features$category)
 
+  if (!is.null(opts$colors)) {
+    # Use custom colors provided by the user
+    colors <- opts$colors
+    # If fewer colors than categories are provided, R will recycle colors automatically
+  }
+
 # Get command-line arguments
 args <- commandArgs(trailingOnly = TRUE)
 
