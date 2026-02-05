@@ -484,8 +484,8 @@ point_plot <- add_feature_points(base_plot, features, colors)
 ggsave("gene_positions_plot.pdf", point_plot, width = 8, height = 10)
 ggsave("gene_positions_plot.png", point_plot, width = 8, height = 10, dpi = 900)
 
-# Get command-line arguments
-args <- commandArgs(trailingOnly = TRUE)
+# # Get command-line arguments
+# args <- commandArgs(trailingOnly = TRUE)
 
 # init variable values
 gff_file <- NULL
