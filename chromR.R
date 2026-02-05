@@ -449,6 +449,8 @@ if (opts$window_mode) {
     # Create base plot for clusters (similar to chromosome plot)
     clusters$seqid <- factor(clusters$seqid, levels = levels(chrom_limits$seqid))
 
+    # p_clusters <- plot_clusters(clusters)
+    # ggsave("genomic_clusters_map.png", p_clusters, width = 10, height = 8, dpi = 300)
   }
 
   quit(save = "no")
