@@ -476,6 +476,7 @@ colors <- head(colors, length(categories)) # Trim colors to match number of cate
 names(colors) <- categories # Name colors by category
 
 base_plot <- plot_chromosomes(chrom_limits)
+point_plot <- add_feature_points(base_plot, features, colors)
 
 # Get command-line arguments
 args <- commandArgs(trailingOnly = TRUE)
