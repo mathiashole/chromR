@@ -475,6 +475,8 @@ if (!is.null(opts$colors)) {
 colors <- head(colors, length(categories)) # Trim colors to match number of categories
 names(colors) <- categories # Name colors by category
 
+base_plot <- plot_chromosomes(chrom_limits)
+
 # Get command-line arguments
 args <- commandArgs(trailingOnly = TRUE)
 
