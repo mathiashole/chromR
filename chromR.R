@@ -464,6 +464,9 @@ categories <- unique(features$category)
     # Use custom colors provided by the user
     colors <- opts$colors
     # If fewer colors than categories are provided, R will recycle colors automatically
+  } else if (!is.null(opts$palette)) {
+    # Use a palette from RColorBrewer
+    colors <- brewer.pal(max(3, length(categories)), opts$palette) # Ensure at least 3 colors for better visualization
   }
 
 # Get command-line arguments
