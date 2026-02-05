@@ -457,6 +457,8 @@ if (opts$window_mode) {
 }
 
 features <- build_features(gff_data, chrom_limits, opts)
+# unique categories for color mapping
+categories <- unique(features$category)
 
 # Get command-line arguments
 args <- commandArgs(trailingOnly = TRUE)
