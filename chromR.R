@@ -485,5 +485,6 @@ ggsave("gene_positions_plot.pdf", point_plot, width = 8, height = 10)
 ggsave("gene_positions_plot.png", point_plot, width = 8, height = 10, dpi = 900)
 
 if (opts$line_plot) {
-
+  line_plot <- add_feature_segments(base_plot, features, colors)
+  ggsave("gene_positions_line_plot.pdf", line_plot, width = 8, height = 10)
 }
