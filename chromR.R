@@ -508,6 +508,11 @@ if (opts$facet_plot) {
     scales        = opts$facet_scales
   )
 
+  fname <- paste0(
+    "gene_distribution_facet_",
+    opts$facet_mode, "_",
+    opts$facet_scales
+  )
 
   ggsave(paste0(fname, ".pdf"), facet_plot, width = 8, height = 6)
   ggsave(paste0(fname, ".png"), facet_plot, width = 8, height = 6, dpi = 800)
