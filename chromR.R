@@ -484,7 +484,6 @@ point_plot <- add_feature_points(base_plot, features, colors)
 # Save the base plot with points
 ggsave("gene_positions_plot.pdf", point_plot, width = 8, height = 10)
 ggsave("gene_positions_plot.png", point_plot, width = 8, height = 10, dpi = 900)
-ggsave("gene_positions_plot.svg", point_plot, width = 8, height = 10, device = "svg")
 
 if (opts$line_plot) {
   line_plot <- add_feature_segments(base_plot, features, colors)
@@ -496,7 +495,6 @@ if (opts$accumulated_plot) {
   
   ggsave("gene_distribution_accumulated_plot.pdf", acc_plot, width = 8, height = 5)
   ggsave("gene_distribution_accumulated_plot.png", acc_plot, width = 8, height = 5, dpi = 800)
-  ggsave("gene_distribution_accumulated_plot.svg", acc_plot, width = 8, height = 5, device = "svg")
 }
 
 if (opts$facet_plot) {
@@ -517,5 +515,4 @@ if (opts$facet_plot) {
 
   ggsave(paste0(fname, ".pdf"), facet_plot, width = 8, height = 6)
   ggsave(paste0(fname, ".png"), facet_plot, width = 8, height = 6, dpi = 800)
-  ggsave(paste0(fname, ".svg"), facet_plot, width = 8, height = 6, device = "svg")  
 }
