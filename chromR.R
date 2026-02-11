@@ -489,3 +489,11 @@ if (opts$line_plot) {
   line_plot <- add_feature_segments(base_plot, features, colors)
   ggsave("gene_positions_line_plot.pdf", line_plot, width = 8, height = 10)
 }
+
+if (opts$accumulated_plot) {
+  acc_plot <- plot_accumulated(features, chrom_limits, colors, opts$density_mode)
+  
+  ggsave("gene_distribution_accumulated_plot.pdf", acc_plot, width = 8, height = 5)
+  ggsave("gene_distribution_accumulated_plot.png", acc_plot, width = 8, height = 5, dpi = 800)
+  ggsave("gene_distribution_accumulated_plot.svg", acc_plot, width = 8, height = 5, device = "svg")
+}
