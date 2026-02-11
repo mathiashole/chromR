@@ -500,6 +500,14 @@ if (opts$accumulated_plot) {
 
 if (opts$facet_plot) {
 
+  facet_plot <- plot_faceted_accumulated(
+    features      = features,
+    chrom_limits  = chrom_limits,
+    colors        = colors,
+    geom          = opts$facet_mode,
+    scales        = opts$facet_scales
+  )
+
 
   ggsave(paste0(fname, ".pdf"), facet_plot, width = 8, height = 6)
   ggsave(paste0(fname, ".png"), facet_plot, width = 8, height = 6, dpi = 800)
