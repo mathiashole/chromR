@@ -483,6 +483,7 @@ point_plot <- add_feature_points(base_plot, features, colors)
 # Save the base plot with points
 ggsave("gene_positions_plot.pdf", point_plot, width = 8, height = 10)
 ggsave("gene_positions_plot.png", point_plot, width = 8, height = 10, dpi = 900)
+ggsave("gene_positions_plot.svg", point_plot, width = 8, height = 10, device = "svg")
 
 if (opts$line_plot) {
   line_plot <- add_feature_segments(base_plot, features, colors)
