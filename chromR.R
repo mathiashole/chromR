@@ -367,7 +367,8 @@ plot_faceted_accumulated <- function(
         x = "Relative chromosomal position",
         y = ylab
       ) +
-      theme_minimal()
+      theme_minimal() +
+      theme(panel.grid = element_blank(), strip.background = element_blank())
   }
 
 # Windows count mode functions
