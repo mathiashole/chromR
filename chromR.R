@@ -497,3 +497,10 @@ if (opts$accumulated_plot) {
   ggsave("gene_distribution_accumulated_plot.png", acc_plot, width = 8, height = 5, dpi = 800)
   ggsave("gene_distribution_accumulated_plot.svg", acc_plot, width = 8, height = 5, device = "svg")
 }
+
+if (opts$facet_plot) {
+
+
+  ggsave(paste0(fname, ".pdf"), facet_plot, width = 8, height = 6)
+  ggsave(paste0(fname, ".png"), facet_plot, width = 8, height = 6, dpi = 800)
+}
