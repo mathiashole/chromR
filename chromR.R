@@ -208,14 +208,13 @@ plot_chromosomes <- function(chrom_limits) {
     geom_segment(
       aes(x = chrom_start, xend = chrom_end,
           y = seqid, yend = seqid),
-      color = "grey50" +
+      color = "grey50") +
     theme_minimal() +
     theme(
       # Force white background for the panel
       panel.background = element_rect(fill = "white", color = NA),
       # Force white background for the plot area
       plot.background = element_rect(fill = "white", color = NA))
-    )
 }
 
 add_feature_points <- function(p, features, colors) {
