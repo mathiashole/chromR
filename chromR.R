@@ -202,6 +202,7 @@ build_features <- function(gff, chrom_limits, opts) {
 
 # Plotting functions
 #------------------------------------------------------------------------
+# second plotting function: plot_chromosomes, add_feature_points, add_feature_segments, plot_accumulated, plot_faceted_accumulated
 
 plot_chromosomes <- function(chrom_limits) {
   ggplot(chrom_limits) +
