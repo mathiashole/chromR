@@ -368,7 +368,9 @@ plot_faceted_accumulated <- function(
         y = ylab
       ) +
       theme_minimal() +
-      theme(panel.grid = element_blank(), strip.background = element_blank()) # remove grid and facet background for cleaner look
+      theme(panel.grid = element_blank(), strip.background = element_blank(),
+            axis.text.x = element_text(size = 14, color = "black"),
+            axis.text.y = element_text(size = 14, color = "black")) # remove grid and facet background for cleaner look
   }
 
 # Windows count mode functions
