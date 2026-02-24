@@ -212,7 +212,6 @@ plot_chromosomes <- function(chrom_limits) {
       color = "grey50") +
     theme_minimal() +
     theme(
-      text = element_text(family = "Arial"),
       # Force white background for the panel
       panel.background = element_rect(fill = "white", color = NA),
       # Force white background for the plot area
@@ -374,7 +373,6 @@ plot_faceted_accumulated <- function(
             # axis.text.y = element_text(size = 14, color = "black"),
             axis.text.x = element_text(size = 14),
             axis.text.y = element_text(size = 14),
-            text = element_text(family = "Arial"),
             axis.line = element_line(linewidth = 0.2),
             axis.ticks = element_line()) # remove grid and facet background for cleaner look
   }
