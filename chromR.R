@@ -295,8 +295,6 @@ plot_faceted_accumulated <- function(
   geom   <- match.arg(geom)
   scales <- match.arg(scales)
 
-  font_family <- "Arial" # Set default font family
-
     df <- features %>%
       left_join(
         chrom_limits %>% select(seqid, chrom_start, chrom_length),
@@ -331,7 +329,6 @@ plot_faceted_accumulated <- function(
         vjust = 1.3,
         size = 3.2,
         # color = "black"
-        family = font_family
       )
 
   ylab <- "Number of features"
@@ -356,7 +353,6 @@ plot_faceted_accumulated <- function(
           vjust = 1.3,
           size = 3.2,
           # color = "black"
-          family = font_family
         )
 
       ylab <- "Count"
@@ -372,11 +368,9 @@ plot_faceted_accumulated <- function(
         y = ylab
       ) +
       theme_minimal() +
-      theme(text = element_text(family = font_family),
-            panel.grid = element_blank(), strip.background = element_blank(),strip.text = element_text(family = font_family),
+      theme(panel.grid = element_blank(), strip.background = element_blank(),
             # axis.text.x = element_text(size = 14, color = "black"),
             # axis.text.y = element_text(size = 14, color = "black"),
-            axis.title = element_text(family = font_family),
             axis.text.x = element_text(size = 14),
             axis.text.y = element_text(size = 14),
             axis.line = element_line(linewidth = 0.2),
