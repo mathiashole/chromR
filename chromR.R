@@ -295,6 +295,8 @@ plot_faceted_accumulated <- function(
   geom   <- match.arg(geom)
   scales <- match.arg(scales)
 
+  font_family <- "Arial" # Set default font family
+
     df <- features %>%
       left_join(
         chrom_limits %>% select(seqid, chrom_start, chrom_length),
