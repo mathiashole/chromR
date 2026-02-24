@@ -328,7 +328,7 @@ plot_faceted_accumulated <- function(
         hjust = 1.1,
         vjust = 1.3,
         size = 3.2,
-        # color = "black"
+        color = "black"
       )
 
   ylab <- "Number of features"
@@ -352,7 +352,7 @@ plot_faceted_accumulated <- function(
           hjust = 1.1,
           vjust = 1.3,
           size = 3.2,
-          # color = "black"
+          color = "black"
         )
 
       ylab <- "Count"
