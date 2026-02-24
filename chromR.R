@@ -376,6 +376,7 @@ plot_faceted_accumulated <- function(
             panel.grid = element_blank(), strip.background = element_blank(),strip.text = element_text(family = font_family),
             # axis.text.x = element_text(size = 14, color = "black"),
             # axis.text.y = element_text(size = 14, color = "black"),
+            axis.title = element_text(family = font_family),
             axis.text.x = element_text(size = 14),
             axis.text.y = element_text(size = 14),
             axis.line = element_line(linewidth = 0.2),
