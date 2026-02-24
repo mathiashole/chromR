@@ -212,6 +212,7 @@ plot_chromosomes <- function(chrom_limits) {
       color = "grey50") +
     theme_minimal() +
     theme(
+      text = element_text(family = "Arial"),
       # Force white background for the panel
       panel.background = element_rect(fill = "white", color = NA),
       # Force white background for the plot area
