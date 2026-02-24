@@ -371,6 +371,8 @@ plot_faceted_accumulated <- function(
       theme(panel.grid = element_blank(), strip.background = element_blank(),
             # axis.text.x = element_text(size = 14, color = "black"),
             # axis.text.y = element_text(size = 14, color = "black"),
+            axis.text.x = element_text(size = 14),
+            axis.text.y = element_text(size = 14),
             axis.line = element_line(linewidth = 0.2),
             axis.ticks = element_line()) # remove grid and facet background for cleaner look
   }
