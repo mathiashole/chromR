@@ -104,6 +104,8 @@ parse_args_manual <- function(args) {
         j <- j + 1
       }
       i <- j - 1
+    } else if (flag == "--additional_track") {
+      opts$additional_track_file <- args[i+1]; i <- i + 1
     }
 
     i <- i + 1 # this increments the main loop counter
