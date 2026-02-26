@@ -108,6 +108,14 @@ parse_args_manual <- function(args) {
       opts$additional_track_file <- args[i+1]; i <- i + 1
     } else if (flag == "--track_offset") {
       opts$additional_track_offset <- as.numeric(args[i+1]); i <- i + 1
+    } else if (flag == "--additional_colors") {
+        opts$additional_colors <- c()
+        j <- i + 1
+        while (j <= length(args) && !grepl("^--", args[j])) {
+          opts$additional_colors <- c(opts$additional_colors, args[j])
+          j <- j + 1
+        }
+      i <- j - 1
     }
 
     i <- i + 1 # this increments the main loop counter
