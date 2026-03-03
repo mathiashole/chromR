@@ -253,7 +253,7 @@ add_feature_segments <- function(p, features, colors) {
       size = 1.2
     ) +
     scale_color_manual(values = colors)
-}
+} # new function add more feature
 
   plot_accumulated <- function(
     features,
