@@ -262,6 +262,8 @@ add_feature_segments <- function(p, features, colors) {
         y_numeric = as.numeric(seqid) - offset
       )
 
+    p +
+      geom_segment()
   }
 
   plot_accumulated <- function(
