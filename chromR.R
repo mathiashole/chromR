@@ -263,7 +263,18 @@ add_feature_segments <- function(p, features, colors) {
       )
 
     p +
-      geom_segment()
+      geom_segment(
+        data = track_data,
+        aes(
+          x = start,
+          xend = end,
+          y = y_numeric,
+          yend = y_numeric,
+          color = region_type
+        ),
+        linewidth = 2
+      ) #+
+      #scale_color_manual(values = colors, guide = guide_legend(order = 2))
   }
 
   plot_accumulated <- function(
