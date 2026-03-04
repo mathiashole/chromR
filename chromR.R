@@ -257,6 +257,10 @@ add_feature_segments <- function(p, features, colors) {
 
   add_additional_track <- function(p, track_data, offset = 0.5, colors) {
 
+    track_data <- track_data %>%
+      mutate(
+        y_numeric = as.numeric(seqid) - offset
+      )
 
   }
 
