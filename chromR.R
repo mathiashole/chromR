@@ -255,6 +255,11 @@ add_feature_segments <- function(p, features, colors) {
     scale_color_manual(values = colors)
 } ##
 
+  add_additional_track <- function(p, track_data, offset = 0.5, colors) {
+
+
+  }
+
   plot_accumulated <- function(
     features,
     chrom_limits,
