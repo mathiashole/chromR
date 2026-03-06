@@ -165,6 +165,12 @@ compute_chrom_limits <- function(gff) {
     mutate(seqid = factor(seqid, levels = seqid))
 }
 
+  load_additional_track <- function(file, chrom_limits) {
+
+
+  }
+
+
 # Feature extraction (unified)
 #------------------------------------------------------------------------
 
