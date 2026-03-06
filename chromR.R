@@ -167,7 +167,11 @@ compute_chrom_limits <- function(gff) {
 
   load_additional_track <- function(file, chrom_limits) {
 
+    df  <- read_tsv(file, col_names = FALSE, show_col_types = FALSE) %>%
+      setNames(c("seqid","start","end","region_type"))
 
+
+    return(df)
   }
 
 
