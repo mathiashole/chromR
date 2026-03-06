@@ -176,6 +176,9 @@ compute_chrom_limits <- function(gff) {
       end   = as.numeric(as.character(end))
     )
 
+    df <- df %>%
+      filter(seqid %in% chrom_limits$seqid)
+
 
     return(df)
   }
