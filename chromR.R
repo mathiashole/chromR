@@ -170,6 +170,12 @@ compute_chrom_limits <- function(gff) {
     df  <- read_tsv(file, col_names = FALSE, show_col_types = FALSE) %>%
       setNames(c("seqid","start","end","region_type"))
 
+    df <- df %>%
+      mutate(
+      start = as.numeric(as.character(start)),
+      end   = as.numeric(as.character(end))
+    )
+
 
     return(df)
   }
