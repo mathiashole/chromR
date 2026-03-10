@@ -235,6 +235,9 @@ build_features <- function(gff, chrom_limits, opts) {
 
   if (!is.null(manual_colors)) {
 
+    if (length(manual_colors) < n) {
+      warning("Less manual colors than categories. Colors will be recycled.")
+    }
 
     colors <- rep(manual_colors, length.out = n)
 
