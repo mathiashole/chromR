@@ -229,6 +229,12 @@ build_features <- function(gff, chrom_limits, opts) {
   df # return features
 }
 
+  build_color_vector <- function(categories, manual_colors = NULL, palette_name = NULL, default_palette = "Set1") {
+
+
+  return(colors)
+}
+
 # Plotting functions
 #------------------------------------------------------------------------
 # second plotting function: plot_chromosomes, add_feature_points, add_feature_segments, plot_accumulated, plot_faceted_accumulated
