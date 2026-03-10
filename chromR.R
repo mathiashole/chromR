@@ -231,6 +231,8 @@ build_features <- function(gff, chrom_limits, opts) {
 
   build_color_vector <- function(categories, manual_colors = NULL, palette_name = NULL, default_palette = "Set1") {
 
+  n <- length(categories)
+
 
   return(colors)
 }
