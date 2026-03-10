@@ -241,7 +241,14 @@ build_features <- function(gff, chrom_limits, opts) {
 
     colors <- rep(manual_colors, length.out = n)
 
+  } else if (!is.null(palette_name)) {
+
+    colors <- brewer.pal(max(3, n), palette_name)
+    colors <- colors[1:n]
+
   }
+
+  names(colors) <- categories
   return(colors)
 }
 
