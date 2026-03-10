@@ -233,7 +233,12 @@ build_features <- function(gff, chrom_limits, opts) {
 
   n <- length(categories)
 
+  if (!is.null(manual_colors)) {
 
+
+    colors <- rep(manual_colors, length.out = n)
+
+  }
   return(colors)
 }
 
