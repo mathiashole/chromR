@@ -271,7 +271,8 @@ plot_chromosomes <- function(chrom_limits) {
       # Force white background for the panel
       panel.background = element_rect(fill = "white", color = NA),
       # Force white background for the plot area
-      plot.background = element_rect(fill = "white", color = NA))
+      plot.background = element_rect(fill = "white", color = NA)) +
+    labs(x = "Position (pb)", y = "Chromosome")
 }
 
 add_feature_points <- function(p, features, colors) {
