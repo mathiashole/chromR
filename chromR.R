@@ -430,7 +430,7 @@ plot_faceted_accumulated <- function(
           inherit.aes = FALSE,
           hjust = 1.1,
           vjust = 1.3,
-          size = 3.2,
+          size = 4.5,
           color = "black"
         )
 
