@@ -547,6 +547,10 @@ features <- build_features(gff_data, chrom_limits, opts)
 # categories <- unique(features$category)
 gene_categories <- unique(features$category)
 
+gene_colors <- build_color_vector(
+
+)
+
 if (!is.null(opts$colors)) {
     # Use custom colors provided by the user
     colors <- opts$colors
