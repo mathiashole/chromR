@@ -544,7 +544,7 @@ if (opts$window_mode) {
 
 features <- build_features(gff_data, chrom_limits, opts)
 # unique categories for color mapping
-categories <- unique(features$category)
+# categories <- unique(features$category)
 
 if (!is.null(opts$colors)) {
     # Use custom colors provided by the user
