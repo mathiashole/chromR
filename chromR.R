@@ -548,7 +548,7 @@ features <- build_features(gff_data, chrom_limits, opts)
 gene_categories <- unique(features$category)
 
 gene_colors <- build_color_vector(
-
+  categories = gene_categories
 )
 
 if (!is.null(opts$colors)) {
