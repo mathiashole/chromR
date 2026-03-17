@@ -554,17 +554,17 @@ gene_colors <- build_color_vector(
   default_palette = "Set1"
 )
 
-if (!is.null(opts$colors)) {
-    # Use custom colors provided by the user
-    colors <- opts$colors
-    # If fewer colors than categories are provided, R will recycle colors automatically
-} else if (!is.null(opts$palette)) {
-    # Use a palette from RColorBrewer
-    colors <- brewer.pal(max(3, length(categories)), opts$palette) # Ensure at least 3 colors for better visualization
-} else {
-    # Default color set
-    colors <- brewer.pal(max(3, length(categories)), "Set1")
-}
+# if (!is.null(opts$colors)) {
+#     # Use custom colors provided by the user
+#     colors <- opts$colors
+#     # If fewer colors than categories are provided, R will recycle colors automatically
+# } else if (!is.null(opts$palette)) {
+#     # Use a palette from RColorBrewer
+#     colors <- brewer.pal(max(3, length(categories)), opts$palette) # Ensure at least 3 colors for better visualization
+# } else {
+#     # Default color set
+#     colors <- brewer.pal(max(3, length(categories)), "Set1")
+# }
 
 colors <- head(colors, length(categories)) # Trim colors to match number of categories
 names(colors) <- categories # Name colors by category
