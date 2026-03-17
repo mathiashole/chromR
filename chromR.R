@@ -550,7 +550,8 @@ gene_categories <- unique(features$category)
 gene_colors <- build_color_vector(
   categories = gene_categories,
   manual_colors = opts$colors,
-  palette_name = opts$palette
+  palette_name = opts$palette,
+  default_palette = "Set1"
 )
 
 if (!is.null(opts$colors)) {
