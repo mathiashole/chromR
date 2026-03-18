@@ -558,6 +558,7 @@ if (!is.null(opts$additional_track_file)) {
 
   track_data <- load_additional_track(opts$additional_track_file, chrom_limits)
 
+  track_categories <- unique(track_data$region_type)
 
 
 }
