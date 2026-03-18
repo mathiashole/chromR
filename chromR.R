@@ -554,6 +554,14 @@ gene_colors <- build_color_vector(
   default_palette = "Set1"
 )
 
+if (!is.null(opts$additional_track_file)) {
+
+  track_data <- load_additional_track(opts$additional_track_file, chrom_limits)
+
+
+
+}
+
 # if (!is.null(opts$colors)) {
 #     # Use custom colors provided by the user
 #     colors <- opts$colors
