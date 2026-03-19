@@ -560,6 +560,10 @@ if (!is.null(opts$additional_track_file)) {
 
   track_categories <- unique(track_data$region_type)
 
+  track_colors <- build_color_vector(
+    categories = track_categories
+  )
+
 
 }
 
