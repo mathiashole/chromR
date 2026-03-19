@@ -563,7 +563,8 @@ if (!is.null(opts$additional_track_file)) {
   track_colors <- build_color_vector(
     categories = track_categories,
     manual_colors = opts$additional_colors,
-    # palette_name = opts$additional_palette
+    # palette_name = opts$additional_palette,
+    default_palette = "Dark2"
   )
 
   combined_colors <- c(gene_colors, track_colors)
