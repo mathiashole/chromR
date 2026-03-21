@@ -595,7 +595,9 @@ point_plot <- add_feature_points(base_plot, features, colors)
 
 if (!is.null(opts$additional_track_file)) {
 
+  point_plot <- add_additional_track(
 
+  )
 }
 
 # Save the base plot with points
