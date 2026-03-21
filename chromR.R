@@ -568,7 +568,9 @@ if (!is.null(opts$additional_track_file)) {
   )
 
   combined_colors <- c(gene_colors, track_colors)
+} else {
 
+  combined_colors <- gene_colors
 }
 
 # if (!is.null(opts$colors)) {
