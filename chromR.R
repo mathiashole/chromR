@@ -602,6 +602,9 @@ if (!is.null(opts$additional_track_file)) {
   )
 }
 
+point_plot <- point_plot +
+  scale_color_manual(values = combined_colors)
+
 # Save the base plot with points
 ggsave("gene_positions_plot.pdf", point_plot, width = 8, height = 10)
 ggsave("gene_positions_plot.png", point_plot, width = 8, height = 10, dpi = 900)
