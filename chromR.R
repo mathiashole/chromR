@@ -596,7 +596,9 @@ point_plot <- add_feature_points(base_plot, features, colors)
 if (!is.null(opts$additional_track_file)) {
 
   point_plot <- add_additional_track(
-
+    point_plot,
+    track_data,
+    offset = opts$additional_track_offset
   )
 }
 
