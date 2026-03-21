@@ -585,8 +585,8 @@ if (!is.null(opts$additional_track_file)) {
 #     colors <- brewer.pal(max(3, length(categories)), "Set1")
 # }
 
-colors <- head(colors, length(categories)) # Trim colors to match number of categories
-names(colors) <- categories # Name colors by category
+# colors <- head(colors, length(categories)) # Trim colors to match number of categories
+# names(colors) <- categories # Name colors by category
 
 # Create base plot and add features
 # ------------------------------------------------------------------------
