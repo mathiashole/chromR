@@ -294,7 +294,7 @@ add_feature_segments <- function(p, features, colors) {
       size = 1.2
     ) +
     scale_color_manual(values = colors)
-} ##
+}
 
   add_additional_track <- function(p, track_data, offset = 0.5, colors) {
 
