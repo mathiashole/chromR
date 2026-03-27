@@ -348,7 +348,6 @@ add_feature_segments <- function(p, features, colors) {
     ggplot(df, aes(x = relative_pos, fill = category)) +
       geom_histogram(
         binwidth = binwidth,
-        # bins = bins,
         alpha = alpha,
         position = "identity"
       ) +
