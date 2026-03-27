@@ -281,8 +281,7 @@ add_feature_points <- function(p, features, colors) {
       data = features,
       aes(x = mid_position, y = seqid, color = category),
       size = 1.4
-    ) #+
-    # scale_color_manual(values = colors)
+    )
 }
 
 add_feature_segments <- function(p, features, colors) {
