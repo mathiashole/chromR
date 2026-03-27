@@ -315,8 +315,7 @@ add_feature_segments <- function(p, features, colors) {
           color = region_type
         ),
         linewidth = 2
-      ) #+
-      #scale_color_manual(values = colors, guide = guide_legend(order = 2))
+      )
   }
 
   plot_accumulated <- function(
