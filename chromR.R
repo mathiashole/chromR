@@ -457,7 +457,12 @@ build_plot_dataframes <- function(features, chrom_limits) {
 
   df <- features %>%
     left_join(
-      chrom_limits %>% select(seqid, chrom_start, chrom_length), by = "seqid")
+      chrom_limits %>% select(seqid, chrom_start, chrom_length), by = "seqid"
+    ) %>%
+    mutate(
+      relative_pos = (mid_position - chrom_start) / chrom_length,
+
+    )
 
   return(df)
 }
