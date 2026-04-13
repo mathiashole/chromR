@@ -455,7 +455,9 @@ plot_faceted_accumulated <- function(
 
 build_plot_dataframes <- function(features, chrom_limits) {
 
-  df <- features
+  df <- features %>%
+    left_join(
+      chrom_limits %>% select(seqid, chrom_start, chrom_length), by = "seqid")
 
   return(df)
 }
