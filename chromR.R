@@ -455,6 +455,7 @@ plot_faceted_accumulated <- function(
 
 build_plot_dataframes <- function(features, chrom_limits) {
 
+  df <- features
 
   return(df)
 }
