@@ -461,7 +461,7 @@ build_plot_dataframes <- function(features, chrom_limits) {
     ) %>%
     mutate(
       relative_pos = (mid_position - chrom_start) / chrom_length,
-
+      folded_pos   = abs(relative_pos - 0.5) * 2
     )
 
   return(df)
