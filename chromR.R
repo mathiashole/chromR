@@ -452,6 +452,14 @@ plot_faceted_accumulated <- function(
             axis.ticks = element_line()) # remove grid and facet background for cleaner look
   }
 
+
+build_plot_dataframes <- function(features, chrom_limits) {
+
+
+  return(df)
+}
+
+
 # Windows count mode functions
 #------------------------------------------------------------------------
 
