@@ -636,3 +636,7 @@ if (opts$facet_plot) {
   ggsave(paste0(fname, ".pdf"), facet_plot, width = 8, height = 6)
   ggsave(paste0(fname, ".png"), facet_plot, width = 8, height = 6, dpi = 800)
 }
+
+if (opts$accumulated_plot || opts$facet_plot) {
+  
+}
