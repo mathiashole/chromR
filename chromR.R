@@ -638,5 +638,6 @@ if (opts$facet_plot) {
 }
 
 if (opts$accumulated_plot || opts$facet_plot) {
-  
+  df_plot <- build_plot_dataframes(features, chrom_limits)
+
 }
