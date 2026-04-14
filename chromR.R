@@ -642,5 +642,6 @@ if (opts$accumulated_plot || opts$facet_plot) {
 
   # save accumulated and folded
   write.table(
-    df_plot %>% select(seqid, category, mid_position, relative_pos, folded_pos), file = "plot_faceted_folded.tsv", sep = "\t", quote = FALSE, row.names = FALSE)
+    df_plot %>% select(seqid, category, mid_position, relative_pos, folded_pos),
+    file = "plot_faceted_accumulated_folded.tsv", sep = "\t", quote = FALSE, row.names = FALSE)
 }
