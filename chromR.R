@@ -463,7 +463,11 @@ plot_faceted_folded <- function(features, chrom_limits, colors, geom = c("densit
   df <- features %>%
     left_join(chrom_limits %>% select(seqid, chrom_start, chrom_length),
       by = "seqid"
+    ) %>%
+    mutate(
+      relative_pos = (mid_position - chrom_start) / chrom_length
     )
+
 
 }
 
