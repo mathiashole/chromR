@@ -455,6 +455,9 @@ plot_faceted_accumulated <- function(
             axis.ticks = element_line()) # remove grid and facet background for cleaner look
   }
 
+plot_faceted_folded <- function(features, chrom_limits, colors, geom = c("density", "hist"), scales = c("fixed", "free"), binwidth = 0.1, alpha = 0.6) {
+
+}
 
 build_plot_dataframes <- function(features, chrom_limits) {
 
