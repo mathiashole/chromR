@@ -37,7 +37,8 @@ parse_args_manual <- function(args) {
     facet_scales = "fixed",
     additional_track_file = NULL, # additional information
     additional_colors = NULL,
-    additional_track_offset = 0.5
+    additional_track_offset = 0.5,
+    folded_plot = FALSE
   )
   
   i <- 1
