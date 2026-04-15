@@ -465,7 +465,9 @@ plot_faceted_folded <- function(features, chrom_limits, colors, geom = c("densit
       by = "seqid"
     ) %>%
     mutate(
-      relative_pos = (mid_position - chrom_start) / chrom_length
+      relative_pos = (mid_position - chrom_start) / chrom_length,
+      # folded_pos   = abs(relative_pos - 0.5)
+      folded_pos = abs(relative_pos - 0.5) * 2
     )
 
 
