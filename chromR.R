@@ -118,7 +118,7 @@ parse_args_manual <- function(args) {
         }
       i <- j - 1
     } else if (flag == "--folded_plot") {
-
+        opts$folded_plot <- TRUE
     }
 
     i <- i + 1 # this increments the main loop counter
