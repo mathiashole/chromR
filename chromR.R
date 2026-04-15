@@ -460,6 +460,11 @@ plot_faceted_folded <- function(features, chrom_limits, colors, geom = c("densit
   geom   <- match.arg(geom)
   scales <- match.arg(scales)
 
+  df <- features %>%
+    left_join(chrom_limits %>% select(seqid, chrom_start, chrom_length),
+      by = "seqid"
+    )
+
 }
 
 build_plot_dataframes <- function(features, chrom_limits) {
