@@ -7,6 +7,7 @@ suppressPackageStartupMessages({
   library(readr)
   library(ggplot2)
   library(RColorBrewer)
+  library(yaml)
 })
 
 # Parse manual arguments
