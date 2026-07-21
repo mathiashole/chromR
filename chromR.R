@@ -95,6 +95,15 @@ suppressPackageStartupMessages({
       stop("feature_file not found")
   }
 
+  if(opts$feature_mode == "keyword"){
+
+    if(is.null(opts$keywords))
+      stop("keywords are required")
+
+    if(length(opts$keywords) %% 2 != 0)
+      stop("keywords must be attribute/type pairs")
+  }
+
 
 }
 
