@@ -75,6 +75,29 @@ suppressPackageStartupMessages({
 #   }
 # }
 
+  validate_args <- function(opts){
+
+  if(is.null(opts$gff_file))
+    stop("gff_file is required")
+
+  if(!file.exists(opts$gff_file))
+    stop("File not found: ", opts$gff_file)
+
+  if(is.null(opts$feature_mode))
+    stop("feature_mode must be 'fill' or 'keyword'")
+
+  if(opts$feature_mode == "fill"){
+
+    if(is.null(opts$feature_file))
+      stop("feature_file is required")
+
+    if(!file.exists(opts$feature_file))
+      stop("feature_file not found")
+  }
+
+
+}
+
 # Data loading
 #------------------------------------------------------------------------
 
