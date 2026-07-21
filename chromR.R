@@ -55,25 +55,25 @@ suppressPackageStartupMessages({
 
 # Arguments validation and processing
 #------------------------------------------------------------------------
-validate_args <- function(opts) {
+# validate_args <- function(opts) {
 
-  if (is.null(opts$gff_file) || !file.exists(opts$gff_file))
-    stop("Valid --gff file is required")
+#   if (is.null(opts$gff_file) || !file.exists(opts$gff_file))
+#     stop("Valid --gff file is required")
 
-  if (is.null(opts$feature_mode))
-    stop("You must specify --fill_file or --keywords")
+#   if (is.null(opts$feature_mode))
+#     stop("You must specify --fill_file or --keywords")
 
-  if (opts$feature_mode == "keyword" &&
-      length(opts$keywords) %% 2 != 0)
-    stop("--keywords must be attribute/type pairs")
+#   if (opts$feature_mode == "keyword" &&
+#       length(opts$keywords) %% 2 != 0)
+#     stop("--keywords must be attribute/type pairs")
 
-  if (opts$window_mode) {
-    if (is.null(opts$window_size))
-      stop("--window_count requires --window_size")
-    if (is.null(opts$gene_list))
-      stop("--window_count requires --genes")
-  }
-}
+#   if (opts$window_mode) {
+#     if (is.null(opts$window_size))
+#       stop("--window_count requires --window_size")
+#     if (is.null(opts$gene_list))
+#       stop("--window_count requires --genes")
+#   }
+# }
 
 # Data loading
 #------------------------------------------------------------------------
