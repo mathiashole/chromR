@@ -85,9 +85,37 @@ Rscript chromR.R --gff_file </path/to/file.gff> --keywords <keyword1> <keyword2>
 -  Open chromR.R in RStudio.
 -  Set the arguments manually in the script or pass them interactively.
 
-## :gear: Arguments
+## :gear: Arguments and configurations
 
+### Command-line arguments
 
+| Argument | Description | Example |
+|----------|-------------|---------|
+| `--config` / `-c` | Path to the YAML configuration file. All program options are read from this file. | `Rscript chromR.R --config config.yaml` |
+
+### YAML configuration options
+
+| YAML key | Description | Example |
+|----------|-------------|---------|
+| `gff_file` | Path to the GFF annotation file. | `data/genome.gff` |
+| `feature_mode` | Feature selection mode (`fill` or `keyword`). | `fill` |
+| `feature_file` | File containing genomic regions (used with `fill` mode). | `regions.tsv` |
+| `keywords` | Attribute/type pairs used to select features (used with `keyword` mode). | `["gene", "TYA"]` |
+| `strict_filter` | Require exact keyword matching. | `true` |
+| `max_chromosomes` | Maximum number of chromosomes to plot. | `5` |
+| `palette` | Name of an RColorBrewer palette. Ignored if `colors` is provided. | `Dark2` |
+| `colors` | Custom colors (hex codes or color names). | `["#d95f02", "#1b9e77"]` |
+| `line_plot` | Generate a line plot instead of a histogram. | `true` |
+| `accumulated_plot` | Plot accumulated densities instead of individual densities. | `false` |
+| `density_mode` | Density representation (`hist` or `density`). | `hist` |
+| `facet_plot` | Generate faceted plots. | `true` |
+| `facet_mode` | Facet representation (`hist` or `density`). | `hist` |
+| `facet_scales` | Scale behavior for facets (`fixed` or `free`). | `free` |
+| `interactive` | Enable interactive plotting. | `false` |
+| `window_mode` | Enable sliding-window analysis. | `true` |
+| `window_size` | Sliding-window size (bp). | `5000` |
+| `gene_list` | List of genes for sliding-window analysis. | `["TYA", "Ty1"]` |
+| `min_genes` | Minimum number of genes required per window. | `2` |
 
 <!-- | Argument            | Description                               | Example                     |
 |---------------------|-------------------------------------------|-----------------------------|
