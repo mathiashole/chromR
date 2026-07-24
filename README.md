@@ -102,7 +102,7 @@ Rscript chromR.R --gff_file </path/to/file.gff> --keywords <keyword1> <keyword2>
 | `feature_file` | File containing genomic regions (used with `fill` mode). | `regions.tsv` |
 | `keywords` | Attribute/type pairs used to select features (used with `keyword` mode). | `["gene", "TYA"]` |
 | `strict_filter` | Require exact keyword matching. | `true` |
-| `max_chromosomes` | Maximum number of chromosomes to plot. | `5` |
+| `max_chromosomes` | Maximum number of chromosomes to plot. | `5` or `N`|
 | `palette` | Name of an RColorBrewer palette. Ignored if `colors` is provided. | `Dark2` |
 | `colors` | Custom colors (hex codes or color names). | `["#d95f02", "#1b9e77"]` |
 | `line_plot` | Generate a line plot instead of a histogram. | `true` |
