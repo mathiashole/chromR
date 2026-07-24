@@ -87,7 +87,9 @@ Rscript chromR.R --gff_file </path/to/file.gff> --keywords <keyword1> <keyword2>
 
 ## :gear: Arguments
 
-| Argument            | Description                               | Example                     |
+
+
+<!-- | Argument            | Description                               | Example                     |
 |---------------------|-------------------------------------------|-----------------------------|
 | `--gff_file` / `-g` | Path to the GFF file.                    | `--gff_file data.gff`       |
 | `--keywords` / `-k` | Keywords to highlight specific features. | `--keywords gene1 CDS`      |
@@ -101,7 +103,7 @@ Rscript chromR.R --gff_file </path/to/file.gff> --keywords <keyword1> <keyword2>
 | `--number` / `-n` | Maximum number of chromosomes to display.  | `-n 10 (Top 10 most longest)`       |
 | `--fill_file` / `-ff` | File with regions to fill.             | `--fill_file regions.tsv`   |
 | `--format` / `-f` | Fill and Order file format (csv/tsv)       | `--format tsv`              |
-| `--table` / `-tab` | Export tables (csv/tsv).                  | `--table csv`               |
+| `--table` / `-tab` | Export tables (csv/tsv).                  | `--table csv`               | -->
 
 :bulb: Note: Colors must match the number of keywords provided. They can be standard R color names or hex codes. In the case of hexadecimal colors, they must be put in quotes (e.g. "#F4A582").
 
