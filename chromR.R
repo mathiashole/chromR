@@ -442,6 +442,9 @@ plot_faceted_folded <- function(features, chrom_limits, colors, geom = c("densit
     count(category) %>%
     mutate(label = paste0("n = ", n))
 
+  p <- ggplot(df, aes(x = folded_pos, fill = category, color = category))
+
+
 }
 
 build_plot_dataframes <- function(features, chrom_limits) {
