@@ -292,6 +292,7 @@ add_feature_segments <- function(p, features, colors) {
     colors,
     mode = "hist",
     binwidth = 0.05,
+    # bins = bins,
     alpha = 0.6
   ) {
 
