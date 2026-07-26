@@ -152,7 +152,6 @@ load_additional_track <- function(file, chrom_limits) {
   return(df)
 }
 
-
 # Feature extraction (unified)
 #------------------------------------------------------------------------
 
