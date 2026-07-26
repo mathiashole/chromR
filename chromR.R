@@ -698,6 +698,8 @@ if (opts$folded_plot) {
 # if (opts$accumulated_plot || opts$facet_plot) {
   df_plot <- build_plot_dataframes(features, chrom_limits)
 
+  write.table(df_plot %>% select(seqid, category, mid_position, relative_pos), file = "plot_faceted_accumulated.tsv", sep = "\t", quote = FALSE, row.names = FALSE)
+
   # save accumulated and folded
   write.table(
     df_plot %>% select(seqid, category, mid_position, relative_pos, folded_pos),
