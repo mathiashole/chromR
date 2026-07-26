@@ -438,6 +438,9 @@ plot_faceted_folded <- function(features, chrom_limits, colors, geom = c("densit
       folded_pos = abs(relative_pos - 0.5) * 2
     )
 
+  n_df <- df %>%
+    count(category) %>%
+    mutate(label = paste0("n = ", n))
 
 }
 
