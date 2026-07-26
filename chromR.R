@@ -481,6 +481,21 @@ plot_faceted_folded <- function(features, chrom_limits, colors, geom = c("densit
     ylab <- "Count"
   }
 
+  p +
+    facet_wrap(~ category, scales = scales) +
+    scale_fill_manual(values = colors) +
+    scale_color_manual(values = colors) +
+    labs(
+      x = "Relative distance from chromosome center (0=center, 1=telomeres)",
+      y = ylab
+    ) +
+    theme_minimal() +
+    theme(panel.grid = element_blank(), strip.background = element_blank(),
+          axis.text.x = element_text(size = 14),
+          axis.text.y = element_text(size = 14),
+          axis.line = element_line(linewidth = 0.2),
+          axis.ticks = element_line())
+
 }
 
 build_plot_dataframes <- function(features, chrom_limits) {
