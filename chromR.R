@@ -457,6 +457,28 @@ plot_faceted_folded <- function(features, chrom_limits, colors, geom = c("densit
 
     ylab <- "Density"
 
+  } else {
+
+    p <- p +
+      geom_histogram(
+        binwidth = binwidth,
+        boundary = 0,
+        # breaks = seq(0, 1, by = binwidth),
+        alpha = alpha,
+        position = "identity"
+      ) +
+      scale_x_continuous(
+        expand = expansion(mult = c(0.05, 0.02))
+      ) +
+      coord_cartesian(xlim = c(0,1))+
+      geom_text(
+        data = n_df,
+        aes(x = Inf, y = Inf, label = label),
+        inherit.aes = FALSE,
+        hjust = 1.1, vjust = 1.3, size = 4.5
+      )
+
+    ylab <- "Count"
   }
 
 }
