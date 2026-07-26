@@ -133,18 +133,18 @@ compute_chrom_limits <- function(gff) {
     mutate(seqid = factor(seqid, levels = seqid))
 }
 
-# load_additional_track <- function(file, chrom_limits) {
+load_additional_track <- function(file, chrom_limits) {
 
-#   df  <- read_tsv(file, col_names = FALSE, show_col_types = FALSE) %>%
-#     setNames(c("seqid","start","end","region_type"))
+  df  <- read_tsv(file, col_names = FALSE, show_col_types = FALSE) %>%
+    setNames(c("seqid","start","end","region_type"))
 
-#   df <- df %>%
-#     filter(seqid %in% chrom_limits$seqid)
+  df <- df %>%
+    filter(seqid %in% chrom_limits$seqid)
 
-#   df$seqid <- factor(df$seqid, levels = levels(chrom_limits$seqid))
+  df$seqid <- factor(df$seqid, levels = levels(chrom_limits$seqid))
 
-#   return(df)
-# }
+  return(df)
+}
 
 
 # Feature extraction (unified)
