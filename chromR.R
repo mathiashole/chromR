@@ -695,11 +695,11 @@ if (opts$folded_plot) {
   ggsave("gene_distribution_folded.pdf", fold_plot, width = 8, height = 6)
 }
 
-if (opts$accumulated_plot || opts$facet_plot) {
+# if (opts$accumulated_plot || opts$facet_plot) {
   df_plot <- build_plot_dataframes(features, chrom_limits)
 
   # save accumulated and folded
   write.table(
     df_plot %>% select(seqid, category, mid_position, relative_pos, folded_pos),
     file = "plot_faceted_accumulated_folded.tsv", sep = "\t", quote = FALSE, row.names = FALSE)
-}
+# }
