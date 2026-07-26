@@ -444,6 +444,20 @@ plot_faceted_folded <- function(features, chrom_limits, colors, geom = c("densit
 
   p <- ggplot(df, aes(x = folded_pos, fill = category, color = category))
 
+  if (geom == "density") {
+
+    p <- p +
+      geom_density(alpha = alpha, linewidth = 0.8) +
+      geom_text(
+        data = n_df,
+        aes(x = Inf, y = Inf, label = label),
+        inherit.aes = FALSE,
+        hjust = 1.1, vjust = 1.3, size = 4.5
+      )
+
+    ylab <- "Density"
+
+  }
 
 }
 
