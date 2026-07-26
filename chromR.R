@@ -682,6 +682,19 @@ if (opts$facet_plot) {
   ggsave(paste0(fname, ".png"), facet_plot, width = 8, height = 6, dpi = 800)
 }
 
+if (opts$folded_plot) {
+
+  fold_plot <- plot_faceted_folded(
+    features     = features,
+    chrom_limits = chrom_limits,
+    colors       = gene_colors,
+    geom         = opts$facet_mode,
+    scales       = opts$facet_scales
+  )
+
+  ggsave("gene_distribution_folded.pdf", fold_plot, width = 8, height = 6)
+}
+
 if (opts$accumulated_plot || opts$facet_plot) {
   df_plot <- build_plot_dataframes(features, chrom_limits)
 
