@@ -592,7 +592,6 @@ if (!is.null(opts$additional_track_file)) {
   combined_colors  <- gene_colors
 }
 
-
 # Create base plot and add features
 # ------------------------------------------------------------------------
 point_plot <- plot_chromosomes(chrom_limits) %>% add_feature_points(features)
@@ -601,8 +600,8 @@ if (!is.null(opts$additional_track_file)) {
   point_plot <- add_additional_track(point_plot, track_data, offset = opts$additional_track_offset)
 }
 
-point_plot <- point_plot +
-  scale_color_manual(values = combined_colors)
+point_plot <- point_plot + scale_color_manual(values = combined_colors)
+
 
 # Save the base plot with points
 ggsave("gene_positions_plot.pdf", point_plot, width = 8, height = 10)
