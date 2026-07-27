@@ -304,175 +304,175 @@ df <- features %>%
   }
 }
 
-plot_faceted_accumulated <- function(
-  features,
-  chrom_limits,
-  colors,
-  geom = c("density", "hist"),
-  scales = c("fixed", "free"),
-  binwidth = 0.05,
-  alpha = 0.6
-) {
+# plot_faceted_accumulated <- function(
+#   features,
+#   chrom_limits,
+#   colors,
+#   geom = c("density", "hist"),
+#   scales = c("fixed", "free"),
+#   binwidth = 0.05,
+#   alpha = 0.6
+# ) {
 
-  geom   <- match.arg(geom)
-  scales <- match.arg(scales)
+#   geom   <- match.arg(geom)
+#   scales <- match.arg(scales)
 
-    df <- features %>%
-      left_join(
-        chrom_limits %>% select(seqid, chrom_start, chrom_length),
-        by = "seqid"
-      ) %>%
-      mutate(relative_pos = (mid_position - chrom_start) / chrom_length)
+#     df <- features %>%
+#       left_join(
+#         chrom_limits %>% select(seqid, chrom_start, chrom_length),
+#         by = "seqid"
+#       ) %>%
+#       mutate(relative_pos = (mid_position - chrom_start) / chrom_length)
 
-    # ---- N per category (for annotation) ----
-    n_df <- df %>%
-    count(category) %>%
-    mutate(label = paste0("n = ", n))
+#     # ---- N per category (for annotation) ----
+#     n_df <- df %>%
+#     count(category) %>%
+#     mutate(label = paste0("n = ", n))
 
-    p <- ggplot(df, aes(x = relative_pos, fill = category, color = category))
+#     p <- ggplot(df, aes(x = relative_pos, fill = category, color = category))
 
-    if (geom == "density") {
+#     if (geom == "density") {
 
-  p <- p +
-    geom_density(
-      # aes(y = after_stat(count)),
-      alpha = alpha,
-      linewidth = 0.8
-    ) +
-      geom_text(
-        data = n_df,
-        aes(
-          x = Inf,
-          y = Inf,
-          label = label
-        ),
-        inherit.aes = FALSE,
-        hjust = 1.1,
-        vjust = 1.3,
-        size = 4.5,
-        color = "black"
-      )
+#   p <- p +
+#     geom_density(
+#       # aes(y = after_stat(count)),
+#       alpha = alpha,
+#       linewidth = 0.8
+#     ) +
+#       geom_text(
+#         data = n_df,
+#         aes(
+#           x = Inf,
+#           y = Inf,
+#           label = label
+#         ),
+#         inherit.aes = FALSE,
+#         hjust = 1.1,
+#         vjust = 1.3,
+#         size = 4.5,
+#         color = "black"
+#       )
 
-  ylab <- "Number of features"
-} else {
+#   ylab <- "Number of features"
+# } else {
 
-      p <- p +
-        geom_histogram(
-          binwidth = binwidth,
-          alpha = alpha,
-          position = "identity",
-          linewidth = 0.8
-        ) +
-        geom_text(
-          data = n_df,
-          aes(
-            x = Inf,
-            y = Inf,
-            label = label
-          ),
-          inherit.aes = FALSE,
-          hjust = 1.1,
-          vjust = 1.3,
-          size = 4.5,
-          color = "black"
-        )
+#       p <- p +
+#         geom_histogram(
+#           binwidth = binwidth,
+#           alpha = alpha,
+#           position = "identity",
+#           linewidth = 0.8
+#         ) +
+#         geom_text(
+#           data = n_df,
+#           aes(
+#             x = Inf,
+#             y = Inf,
+#             label = label
+#           ),
+#           inherit.aes = FALSE,
+#           hjust = 1.1,
+#           vjust = 1.3,
+#           size = 4.5,
+#           color = "black"
+#         )
 
-      ylab <- "Count"
-    }
+#       ylab <- "Count"
+#     }
 
-    p +
-      facet_wrap(~ category, scales = scales) +
-      scale_fill_manual(values = colors) +
-      scale_color_manual(values = colors) +
-      coord_cartesian(xlim = c(0, 1)) +
-      labs(
-        x = "Relative chromosomal position",
-        y = ylab
-      ) +
-      theme_minimal() +
-      theme(panel.grid = element_blank(), strip.background = element_blank(),
-            # axis.text.x = element_text(size = 14, color = "black"),
-            # axis.text.y = element_text(size = 14, color = "black"),
-            axis.text.x = element_text(size = 14),
-            axis.text.y = element_text(size = 14),
-            axis.line = element_line(linewidth = 0.2),
-            axis.ticks = element_line()) # remove grid and facet background for cleaner look
-  }
+#     p +
+#       facet_wrap(~ category, scales = scales) +
+#       scale_fill_manual(values = colors) +
+#       scale_color_manual(values = colors) +
+#       coord_cartesian(xlim = c(0, 1)) +
+#       labs(
+#         x = "Relative chromosomal position",
+#         y = ylab
+#       ) +
+#       theme_minimal() +
+#       theme(panel.grid = element_blank(), strip.background = element_blank(),
+#             # axis.text.x = element_text(size = 14, color = "black"),
+#             # axis.text.y = element_text(size = 14, color = "black"),
+#             axis.text.x = element_text(size = 14),
+#             axis.text.y = element_text(size = 14),
+#             axis.line = element_line(linewidth = 0.2),
+#             axis.ticks = element_line()) # remove grid and facet background for cleaner look
+#   }
 
-plot_faceted_folded <- function(features, chrom_limits, colors, geom = c("density", "hist"), scales = c("fixed", "free"), binwidth = 0.1, alpha = 0.6) {
+# plot_faceted_folded <- function(features, chrom_limits, colors, geom = c("density", "hist"), scales = c("fixed", "free"), binwidth = 0.1, alpha = 0.6) {
 
-  geom   <- match.arg(geom)
-  scales <- match.arg(scales)
+#   geom   <- match.arg(geom)
+#   scales <- match.arg(scales)
 
-  df <- features %>%
-    left_join(chrom_limits %>% select(seqid, chrom_start, chrom_length),
-      by = "seqid"
-    ) %>%
-    mutate(
-      relative_pos = (mid_position - chrom_start) / chrom_length,
-      # folded_pos   = abs(relative_pos - 0.5)
-      folded_pos = abs(relative_pos - 0.5) * 2
-    )
+#   df <- features %>%
+#     left_join(chrom_limits %>% select(seqid, chrom_start, chrom_length),
+#       by = "seqid"
+#     ) %>%
+#     mutate(
+#       relative_pos = (mid_position - chrom_start) / chrom_length,
+#       # folded_pos   = abs(relative_pos - 0.5)
+#       folded_pos = abs(relative_pos - 0.5) * 2
+#     )
 
-  n_df <- df %>%
-    count(category) %>%
-    mutate(label = paste0("n = ", n))
+#   n_df <- df %>%
+#     count(category) %>%
+#     mutate(label = paste0("n = ", n))
 
-  p <- ggplot(df, aes(x = folded_pos, fill = category, color = category))
+#   p <- ggplot(df, aes(x = folded_pos, fill = category, color = category))
 
-  if (geom == "density") {
+#   if (geom == "density") {
 
-    p <- p +
-      geom_density(alpha = alpha, linewidth = 0.8) +
-      geom_text(
-        data = n_df,
-        aes(x = Inf, y = Inf, label = label),
-        inherit.aes = FALSE,
-        hjust = 1.1, vjust = 1.3, size = 4.5
-      )
+#     p <- p +
+#       geom_density(alpha = alpha, linewidth = 0.8) +
+#       geom_text(
+#         data = n_df,
+#         aes(x = Inf, y = Inf, label = label),
+#         inherit.aes = FALSE,
+#         hjust = 1.1, vjust = 1.3, size = 4.5
+#       )
 
-    ylab <- "Density"
+#     ylab <- "Density"
 
-  } else {
+#   } else {
 
-    p <- p +
-      geom_histogram(
-        binwidth = binwidth,
-        boundary = 0,
-        # breaks = seq(0, 1, by = binwidth),
-        alpha = alpha,
-        position = "identity"
-      ) +
-      scale_x_continuous(
-        expand = expansion(mult = c(0.05, 0.02))
-      ) +
-      coord_cartesian(xlim = c(0,1))+
-      geom_text(
-        data = n_df,
-        aes(x = Inf, y = Inf, label = label),
-        inherit.aes = FALSE,
-        hjust = 1.1, vjust = 1.3, size = 4.5
-      )
+#     p <- p +
+#       geom_histogram(
+#         binwidth = binwidth,
+#         boundary = 0,
+#         # breaks = seq(0, 1, by = binwidth),
+#         alpha = alpha,
+#         position = "identity"
+#       ) +
+#       scale_x_continuous(
+#         expand = expansion(mult = c(0.05, 0.02))
+#       ) +
+#       coord_cartesian(xlim = c(0,1))+
+#       geom_text(
+#         data = n_df,
+#         aes(x = Inf, y = Inf, label = label),
+#         inherit.aes = FALSE,
+#         hjust = 1.1, vjust = 1.3, size = 4.5
+#       )
 
-    ylab <- "Count"
-  }
+#     ylab <- "Count"
+#   }
 
-  p +
-    facet_wrap(~ category, scales = scales) +
-    scale_fill_manual(values = colors) +
-    scale_color_manual(values = colors) +
-    labs(
-      x = "Relative distance from chromosome center (0=center, 1=telomeres)",
-      y = ylab
-    ) +
-    theme_minimal() +
-    theme(panel.grid = element_blank(), strip.background = element_blank(),
-          axis.text.x = element_text(size = 14),
-          axis.text.y = element_text(size = 14),
-          axis.line = element_line(linewidth = 0.2),
-          axis.ticks = element_line())
+#   p +
+#     facet_wrap(~ category, scales = scales) +
+#     scale_fill_manual(values = colors) +
+#     scale_color_manual(values = colors) +
+#     labs(
+#       x = "Relative distance from chromosome center (0=center, 1=telomeres)",
+#       y = ylab
+#     ) +
+#     theme_minimal() +
+#     theme(panel.grid = element_blank(), strip.background = element_blank(),
+#           axis.text.x = element_text(size = 14),
+#           axis.text.y = element_text(size = 14),
+#           axis.line = element_line(linewidth = 0.2),
+#           axis.ticks = element_line())
 
-}
+# }
 
 build_plot_dataframes <- function(features, chrom_limits) {
 
