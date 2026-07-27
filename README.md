@@ -49,6 +49,10 @@ Rscript chromR.R -g ../genome/Saccharomyces_cerevisiae.R64-1-1.114.gff3 --keywor
 
 <img align="center" src="docs/gene_positions_plot.png" width="800">
 
+and 
+
+<img align="center" src="docs/gene_distribution_folded.png" width="800">
+
 ## 🧪 Installation
 
 ### 1. Clone this repository:
