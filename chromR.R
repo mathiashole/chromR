@@ -598,12 +598,7 @@ if (!is.null(opts$additional_track_file)) {
 point_plot <- plot_chromosomes(chrom_limits) %>% add_feature_points(features)
 
 if (!is.null(opts$additional_track_file)) {
-
-  point_plot <- add_additional_track(
-    point_plot,
-    track_data,
-    offset = opts$additional_track_offset
-  )
+  point_plot <- add_additional_track(point_plot, track_data, offset = opts$additional_track_offset)
 }
 
 point_plot <- point_plot +
