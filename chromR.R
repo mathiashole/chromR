@@ -271,6 +271,7 @@ plot_faceted <- function(
       axis.ticks = element_line()
     )
 
+return(p)
 }
 
 plot_accumulated <- function(
