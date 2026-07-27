@@ -582,9 +582,6 @@ if (opts$window_mode) {
 gene_categories <- unique(features$category)
 gene_colors     <- build_color_vector(gene_categories, opts$colors, opts$palette, "Set1")
 
-features <- build_features(gff_data, chrom_limits, opts)
-# unique categories for color mapping
-gene_categories <- unique(features$category)
 
 gene_colors <- build_color_vector(
   categories = gene_categories,
