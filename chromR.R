@@ -217,16 +217,11 @@ plot_accumulated <- function(
   # bins = bins,
   alpha = 0.6
 ) {
-
-  df <- features %>%
-    left_join(
-      chrom_limits %>% select(seqid, chrom_start, chrom_length),
-      by = "seqid"
-    ) %>%
-    mutate(relative_pos = (mid_position - chrom_start) / chrom_length)
+df <- features %>%
+  left_join(chrom_limits %>% select(seqid, chrom_start, chrom_length), by = "seqid") %>%
+  mutate(relative_pos = (mid_position - chrom_start) / chrom_length)
 
   if (mode %in% c("overlay", "density")) {
-
     ggplot(df, aes(x = relative_pos, color = category, fill = category)) +
       geom_density(alpha = alpha) +
       # geom_density(aes(y = after_stat(scaled)), alpha = alpha) +
@@ -234,16 +229,9 @@ plot_accumulated <- function(
       scale_fill_manual(values = colors) +
       theme_minimal() +
       coord_cartesian(xlim = c(0, 1))
-
   } else {  # hist default mode
-
     ggplot(df, aes(x = relative_pos, fill = category)) +
-      geom_histogram(
-        binwidth = binwidth,
-        # bins = bins,
-        alpha = alpha,
-        position = "identity"
-      ) +
+      geom_histogram(binwidth = binwidth, alpha = alpha, position = "identity") +
       scale_fill_manual(values = colors) +
       theme_minimal() +
       coord_cartesian(xlim = c(0, 1))
