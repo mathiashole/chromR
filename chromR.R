@@ -614,8 +614,7 @@ if (opts$line_plot) {
 }
 
 if (opts$accumulated_plot) {
-  acc_plot <- plot_accumulated(features, chrom_limits, colors, opts$density_mode)
-  
+  acc_plot <- plot_accumulated(features, chrom_limits, combined_colors, opts$density_mode)
   ggsave("gene_distribution_accumulated_plot.pdf", acc_plot, width = 8, height = 5)
   ggsave("gene_distribution_accumulated_plot.png", acc_plot, width = 8, height = 5, dpi = 800)
 }
