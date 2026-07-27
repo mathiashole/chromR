@@ -93,21 +93,15 @@ compute_chrom_limits <- function(gff) {
 }
 
 load_additional_track <- function(file, chrom_limits) {
-
-  df  <- read_tsv(file, col_names = FALSE, show_col_types = FALSE) %>%
-    setNames(c("seqid","start","end","region_type"))
-
-  df <- df %>%
+  df <- read_tsv(file, col_names = FALSE, show_col_types = FALSE) %>%
+    setNames(c("seqid","start","end","region_type")) %>%
     mutate(
     start = as.numeric(as.character(start)),
     end   = as.numeric(as.character(end))
-  )
-
-  df <- df %>%
-    filter(seqid %in% chrom_limits$seqid)
+  ) %>%
+  filter(seqid %in% chrom_limits$seqid)
 
   df$seqid <- factor(df$seqid, levels = levels(chrom_limits$seqid))
-
   return(df)
 }
 
