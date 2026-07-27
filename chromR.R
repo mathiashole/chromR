@@ -242,6 +242,13 @@ plot_faceted <- function(
 
   p <- ggplot(df, aes(x = .data[[x_var]], fill = category, color = category))
 
+  if (geom == "density") {
+    p <- p + geom_density(alpha = alpha, linewidth = 0.8)
+    ylab <- if (type == "accumulated") "Number of features" else "Density"
+  } else {
+    p <- p + geom_histogram(binwidth = binwidth, alpha = alpha, position = "identity", linewidth = 0.8)
+    ylab <- "Count"
+  }
 
   p <- p +
     geom_text(
