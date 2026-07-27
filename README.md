@@ -67,7 +67,7 @@ cd chromR
 Open R or RStudio and run:
 
 ```{r, eval = FALSE}
-install.packages(c("dplyr", "readr", "ggplot2"))
+install.packages(c("dplyr", "readr", "ggplot2", "yaml"))
 ```
 
 ## :wrench: Usage
