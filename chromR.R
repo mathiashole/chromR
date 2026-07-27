@@ -208,15 +208,15 @@ add_additional_track <- function(p, track_data, offset = 0.5) {
     linewidth = 2)
 }
 
-  plot_accumulated <- function(
-    features,
-    chrom_limits,
-    colors,
-    mode = "hist",
-    binwidth = 0.05,
-    # bins = bins,
-    alpha = 0.6
-  ) {
+plot_accumulated <- function(
+  features,
+  chrom_limits,
+  colors,
+  mode = "hist",
+  binwidth = 0.05,
+  # bins = bins,
+  alpha = 0.6
+) {
 
   df <- features %>%
     left_join(
