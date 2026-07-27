@@ -187,13 +187,11 @@ plot_chromosomes <- function(chrom_limits) {
 }
 
 add_feature_points <- function(p, features, colors) {
-  p +
-    geom_point(
-      data = features,
-      aes(x = mid_position, y = seqid, color = category),
-      size = 1.4
-    ) +
-    scale_color_manual(values = colors)
+  p + geom_point(
+    data = features,
+    aes(x = mid_position, y = seqid, color = category),
+    size = 1.4
+  )
 }
 
 add_feature_segments <- function(p, features, colors) {
