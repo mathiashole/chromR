@@ -77,8 +77,7 @@ suppressPackageStartupMessages({
 # Data loading
 #------------------------------------------------------------------------
 
-load_gff <- function(file) {read_tsv(file, comment = "#", col_names = c("seqid","source","type","start","end","score","strand","phase","attributes"), show_col_types = FALSE)
-}
+load_gff <- function(file) {read_tsv(file, comment = "#", col_names = c("seqid","source","type","start","end","score","strand","phase","attributes"), show_col_types = FALSE)}
 
 compute_chrom_limits <- function(gff) {
   gff %>%
