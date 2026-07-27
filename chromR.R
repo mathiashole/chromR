@@ -236,6 +236,27 @@ plot_faceted <- function(
     "Relative distance from center (0=center, 1=telomeres)"
   }
 
+  p <- p +
+    geom_text(
+      data = n_df,
+      aes(x = Inf, y = Inf, label = label),
+      inherit.aes = FALSE, hjust = 1.1, vjust = 1.3, size = 4.5, color = "black"
+    ) +
+    facet_wrap(~ category, scales = scales) +
+    scale_fill_manual(values = colors) +
+    scale_color_manual(values = colors) +
+    coord_cartesian(xlim = c(0, 1)) +
+    labs(x = x_label, y = ylab) +
+    theme_minimal() +
+    theme(
+      panel.grid = element_blank(),
+      strip.background = element_blank(),
+      axis.text.x = element_text(size = 14),
+      axis.text.y = element_text(size = 14),
+      axis.line = element_line(linewidth = 0.2),
+      axis.ticks = element_line()
+    )
+
 }
 
 plot_accumulated <- function(
