@@ -582,22 +582,6 @@ if (opts$window_mode) {
 gene_categories <- unique(features$category)
 gene_colors     <- build_color_vector(gene_categories, opts$colors, opts$palette, "Set1")
 
-
-if (opts$window_mode) {
-  clusters <- run_window_mode(opts, features)
-
-  if (nrow(clusters) > 0) {
-    message("→ Generating cluster plot...")
-    # Create base plot for clusters (similar to chromosome plot)
-    clusters$seqid <- factor(clusters$seqid, levels = levels(chrom_limits$seqid))
-
-    # p_clusters <- plot_clusters(clusters)
-    # ggsave("genomic_clusters_map.png", p_clusters, width = 10, height = 8, dpi = 300)
-  }
-
-  quit(save = "no")
-}
-
 features <- build_features(gff_data, chrom_limits, opts)
 # unique categories for color mapping
 gene_categories <- unique(features$category)
