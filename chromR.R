@@ -542,10 +542,13 @@ if (opts$strict_filter) {
 
 # Second: only apply number of chromosome
 if (!is.infinite(opts$max_chromosomes)) {
-  chrom_limits <- chrom_limits %>%
-    arrange(desc(chrom_length)) %>%
-    head(opts$max_chromosomes)
-} 
+  chrom_limits <- chrom_limits %>% arrange(desc(chrom_length)) %>% head(opts$max_chromosomes)
+}
+# if (!is.infinite(opts$max_chromosomes)) {
+#   chrom_limits <- chrom_limits %>%
+#     arrange(desc(chrom_length)) %>%
+#     head(opts$max_chromosomes)
+# } 
 
 # third: apply order file if provided
 # the most bigger chromosome is the first one, and the smaller is the last one
