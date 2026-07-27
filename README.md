@@ -51,7 +51,9 @@ Rscript chromR.R -g ../genome/Saccharomyces_cerevisiae.R64-1-1.114.gff3 --keywor
 
 and 
 
-<img align="center" src="docs/gene_distribution_folded.png" width="800"style="background-color: white;>
+<div align="center" style="background-color: white; display: inline-block;">
+  <img src="docs/gene_distribution_folded.png" width="800">
+</div>
 
 ## 🧪 Installation
 
