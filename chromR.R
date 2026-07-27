@@ -208,6 +208,22 @@ add_additional_track <- function(p, track_data, offset = 0.5) {
     linewidth = 2)
 }
 
+plot_faceted <- function(
+  features,
+  chrom_limits,
+  colors,
+  type = c("accumulated", "folded"),
+  geom = c("density", "hist"),
+  scales = c("fixed", "free"),
+  binwidth = 0.05,
+  alpha = 0.6
+) {
+  type   <- match.arg(type)
+  geom   <- match.arg(geom)
+  scales <- match.arg(scales)
+
+}
+
 plot_accumulated <- function(
   features,
   chrom_limits,
