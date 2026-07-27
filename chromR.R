@@ -174,14 +174,9 @@ build_color_vector <- function(categories, manual_colors = NULL, palette_name = 
 
 # Plotting functions
 #------------------------------------------------------------------------
-# second plotting function: plot_chromosomes, add_feature_points, add_feature_segments, plot_accumulated, plot_faceted_accumulated
-
 plot_chromosomes <- function(chrom_limits) {
   ggplot(chrom_limits) +
-    geom_segment(
-      aes(x = chrom_start, xend = chrom_end,
-          y = seqid, yend = seqid),
-      color = "grey50") +
+    geom_segment(aes(x = chrom_start, xend = chrom_end, y = seqid, yend = seqid), color = "grey50") +
     theme_minimal() +
     theme(
       # Force white background for the panel
