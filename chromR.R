@@ -581,7 +581,16 @@ if (opts$window_mode) {
 #-----------------------------------------------------------------------------
 gene_categories <- unique(features$category)
 gene_colors     <- build_color_vector(gene_categories, opts$colors, opts$palette, "Set1")
+#-----------------------------------------------------------------------------
 
+if (!is.null(opts$additional_track_file)) {
+  track_data       <- load_additional_track(opts$additional_track_file, chrom_limits)
+  track_categories <- unique(track_data$region_type)
+  track_colors     <- build_color_vector(track_categories, opts$additional_colors, default_palette = "Dark2")
+  combined_colors  <- c(gene_colors, track_colors)
+} else {
+  combined_colors  <- gene_colors
+}
 
 gene_colors <- build_color_vector(
   categories = gene_categories,
