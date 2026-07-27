@@ -643,6 +643,7 @@ if (opts$folded_plot) {
     scales       = opts$facet_scales
   )
   ggsave("gene_distribution_folded.pdf", fold_plot, width = 8, height = 6)
+  ggsave("gene_distribution_folded.png", fold_plot, width = 8, height = 6, dpi = 800)
 }
 
 # Export TSV Tables
