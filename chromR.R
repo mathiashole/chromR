@@ -222,6 +222,20 @@ plot_faceted <- function(
   geom   <- match.arg(geom)
   scales <- match.arg(scales)
 
+  df <- features %>%
+    left_join(chrom_limits %>% select(seqid, chrom_start, chrom_length), by = "seqid") %>%
+    mutate(
+      relative_pos = (mid_position - chrom_start) / chrom_length,
+      folded_pos   = abs(relative_pos - 0.5) * 2
+    )
+
+  x_var <- if (type == "accumulated") "relative_pos" else "folded_pos"
+  x_label <- if (type == "accumulated") {
+    "Relative chromosomal position"
+  } else {
+    "Relative distance from center (0=center, 1=telomeres)"
+  }
+
 }
 
 plot_accumulated <- function(
