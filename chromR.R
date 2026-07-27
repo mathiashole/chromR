@@ -201,25 +201,12 @@ add_feature_segments <- function(p, features) {
 }
 
 add_additional_track <- function(p, track_data, offset = 0.5) {
-
-    track_data <- track_data %>%
-      mutate(
-        y_numeric = as.numeric(seqid) - offset
-      )
-
-    p +
-      geom_segment(
-        data = track_data,
-        aes(
-          x = start,
-          xend = end,
-          y = y_numeric,
-          yend = y_numeric,
-          color = region_type
-        ),
-        linewidth = 2
-      )
-  }
+  track_data <- track_data %>% mutate(y_numeric = as.numeric(seqid) - offset)
+  p + geom_segment(
+    data = track_data,
+    aes(x = start, xend = end, y = y_numeric, yend = y_numeric, color = region_type),
+    linewidth = 2)
+}
 
   plot_accumulated <- function(
     features,
