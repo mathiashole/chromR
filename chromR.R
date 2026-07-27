@@ -153,27 +153,19 @@ build_features <- function(gff, chrom_limits, opts) {
   return(df) # return features
 }
 
-  build_color_vector <- function(categories, manual_colors = NULL, palette_name = NULL, default_palette = "Set1") {
-
+build_color_vector <- function(categories, manual_colors = NULL, palette_name = NULL, default_palette = "Set1") {
   n <- length(categories)
+  if (n == 0) return(character(0))
 
   if (!is.null(manual_colors)) {
-
     if (length(manual_colors) < n) {
       warning("Less manual colors than categories. Colors will be recycled.")
     }
-
     colors <- rep(manual_colors, length.out = n)
-
   } else if (!is.null(palette_name)) {
-
-    colors <- brewer.pal(max(3, n), palette_name)
-    colors <- colors[1:n]
-
+    colors <- suppressWarnings(brewer.pal(max(3, n), palette_name)[1:n])
   } else {
-
-    colors <- brewer.pal(max(3, n), default_palette)
-    colors <- colors[1:n]
+    colors <- suppressWarnings(brewer.pal(max(3, n), default_palette)[1:n])
   }
 
   names(colors) <- categories
