@@ -564,6 +564,12 @@ features     <- build_features(gff_data, chrom_limits, opts)
 chrom_limits$seqid <- factor(chrom_limits$seqid, levels = chrom_limits$seqid)
 features$seqid     <- factor(features$seqid,     levels = levels(chrom_limits$seqid))
 
+# Maps colors
+#-----------------------------------------------------------------------------
+gene_categories <- unique(features$category)
+gene_colors     <- build_color_vector(gene_categories, opts$colors, opts$palette, "Set1")
+
+
 if (opts$window_mode) {
   clusters <- run_window_mode(opts, features)
 
