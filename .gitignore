@@ -5,3 +5,4 @@
 
 # Exclude 
 !docs/gene_positions_plot.png
+!docs/gene_distribution_folded.png
