@@ -556,8 +556,10 @@ if (!is.infinite(opts$max_chromosomes)) {
 chrom_limits <- chrom_limits %>% arrange(chrom_length)
 features     <- build_features(gff_data, chrom_limits, opts)
 
-features <- features %>%
-  filter(seqid %in% chrom_limits$seqid)
+## NEED EXPLORE
+# features <- features %>%
+#   filter(seqid %in% chrom_limits$seqid)
+
 # apply factor levels to ensure correct ordering in plots
 chrom_limits$seqid <- factor(chrom_limits$seqid, levels = chrom_limits$seqid)
 features$seqid     <- factor(features$seqid,     levels = levels(chrom_limits$seqid))
