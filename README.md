@@ -13,10 +13,11 @@
 ### 📊 Visualization Option 
 
 -  Plot genes, domains, or specific regions on chromosomes or contigs.
--  Highlight specific genes, regions, or domains using keyword filtering (`--keywords`).
+-  Highlight specific genes, regions, or domains using `keyword` filtering.
 - Additional plot types:
-  - `--line_plot`: display features as lines instead of points.
-  - `--accumulated_plot`: generate an accumulated gene count plot.
+  - `line_plot`: display features as lines instead of points.
+  - `accumulated_plot`: generate an accumulated gene count plot.
+  - `folded_plot`: generate an accumulated gene count plot but folded in center of chromosome.
 
 ### 🎨 Color Customization 
 - Define colors for categories using R color names (e.g., "black") or hex codes (e.g., #1f77b4).
