@@ -15,19 +15,12 @@ suppressPackageStartupMessages({
 
   parse_args_manual <- function(args){
 
-  if(length(args) == 0)
-    stop("Usage: Rscript chromR.R --config config.yaml")
-
-  if(!(args[1] %in% c("--config","-config","-c")))
-    stop("First argument must be --config")
-
-  if(length(args) < 2)
-    stop("Missing configuration file")
+  if(length(args) == 0) stop("Usage: Rscript chromR.R --config config.yaml")
+  if(!(args[1] %in% c("--config","-config","-c"))) stop("First argument must be --config")
+  if(length(args) < 2) stop("Missing configuration file")
 
   config_file <- args[2]
-
-  if(!file.exists(config_file))
-    stop("Configuration file not found: ", config_file)
+  if(!file.exists(config_file))stop("Configuration file not found: ", config_file)
 
   opts <- yaml::read_yaml(config_file)
 
@@ -39,6 +32,7 @@ suppressPackageStartupMessages({
     colors = NULL,
     line_plot = FALSE,
     accumulated_plot = FALSE,
+    folded_plot = FALSE,
     density_mode = "hist",
     interactive = FALSE,
     window_mode = FALSE,
@@ -47,7 +41,9 @@ suppressPackageStartupMessages({
     min_genes = 2,
     facet_plot = FALSE,
     facet_mode = "density",
-    facet_scales = "fixed"
+    facet_scales = "fixed",    additional_track_file = NULL,
+    additional_track_offset = 0.5,
+    additional_colors = NULL
   )
 
   modifyList(defaults, opts)
