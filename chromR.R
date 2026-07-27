@@ -595,8 +595,7 @@ if (!is.null(opts$additional_track_file)) {
 
 # Create base plot and add features
 # ------------------------------------------------------------------------
-base_plot <- plot_chromosomes(chrom_limits)
-point_plot <- add_feature_points(base_plot, features, colors)
+point_plot <- plot_chromosomes(chrom_limits) %>% add_feature_points(features)
 
 if (!is.null(opts$additional_track_file)) {
 
