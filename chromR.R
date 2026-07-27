@@ -532,9 +532,13 @@ features <- build_features(gff_data, chrom_limits, opts)
 #------------------------------------------------------------------------
 # First: only apply --strict filter
 if (opts$strict_filter) {
-  chrom_limits <- chrom_limits %>%
-    filter(seqid %in% unique(features$seqid))
+  temp_feats <- build_features(gff_data, chrom_limits, opts)
+  chrom_limits <- chrom_limits %>% filter(seqid %in% unique(temp_feats$seqid))
 }
+# if (opts$strict_filter) {
+#   chrom_limits <- chrom_limits %>%
+#     filter(seqid %in% unique(features$seqid))
+# }
 
 # Second: only apply number of chromosome
 if (!is.infinite(opts$max_chromosomes)) {
