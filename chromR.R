@@ -634,15 +634,14 @@ if (opts$facet_plot) {
 }
 
 if (opts$folded_plot) {
-
-  fold_plot <- plot_faceted_folded(
+  fold_plot <- plot_faceted(
     features     = features,
     chrom_limits = chrom_limits,
-    colors       = gene_colors,
+    colors       = combined_colors,
+    type         = "folded",
     geom         = opts$facet_mode,
     scales       = opts$facet_scales
   )
-
   ggsave("gene_distribution_folded.pdf", fold_plot, width = 8, height = 6)
 }
 
