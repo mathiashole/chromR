@@ -186,7 +186,7 @@ plot_chromosomes <- function(chrom_limits) {
     labs(x = "Position (pb)", y = "Chromosome")
 }
 
-add_feature_points <- function(p, features, colors) {
+add_feature_points <- function(p, features) {
   p + geom_point(
     data = features,
     aes(x = mid_position, y = seqid, color = category),
@@ -194,13 +194,13 @@ add_feature_points <- function(p, features, colors) {
   )
 }
 
-add_feature_segments <- function(p, features, colors) {
+add_feature_segments <- function(p, features) {
   p + geom_segment(
     data = features,
     aes(x = start, xend = end, y = seqid, yend = seqid, color = category), linewidth = 1.2)
 }
 
-  add_additional_track <- function(p, track_data, offset = 0.5, colors) {
+add_additional_track <- function(p, track_data, offset = 0.5) {
 
     track_data <- track_data %>%
       mutate(
