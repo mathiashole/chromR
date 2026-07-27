@@ -564,6 +564,19 @@ features     <- build_features(gff_data, chrom_limits, opts)
 chrom_limits$seqid <- factor(chrom_limits$seqid, levels = chrom_limits$seqid)
 features$seqid     <- factor(features$seqid,     levels = levels(chrom_limits$seqid))
 
+# ---- MODO WINDOWS / CLUSTERING ----
+if (opts$window_mode) {
+  clusters <- run_window_mode(opts, features)
+  
+  if (nrow(clusters) > 0) {
+    message("→ Generating cluster plot...")
+    clusters$seqid <- factor(clusters$seqid, levels = levels(chrom_limits$seqid))
+  }
+  
+  quit(save = "no")
+}
+# -----------------------------------
+
 # Maps colors
 #-----------------------------------------------------------------------------
 gene_categories <- unique(features$category)
