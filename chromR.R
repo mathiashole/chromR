@@ -69,12 +69,8 @@ suppressPackageStartupMessages({
   }
 
   if(opts$window_mode){
-
-    if(is.null(opts$window_size))
-      stop("window_size is required")
-
-    if(is.null(opts$gene_list))
-      stop("gene_list is required")
+    if(is.null(opts$window_size)) stop("window_size is required")
+    if(is.null(opts$gene_list)) stop("gene_list is required")
   }
 }
 
