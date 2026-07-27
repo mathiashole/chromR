@@ -592,31 +592,6 @@ if (!is.null(opts$additional_track_file)) {
   combined_colors  <- gene_colors
 }
 
-gene_colors <- build_color_vector(
-  categories = gene_categories,
-  manual_colors = opts$colors,
-  palette_name = opts$palette,
-  default_palette = "Set1"
-)
-
-if (!is.null(opts$additional_track_file)) {
-
-  track_data <- load_additional_track(opts$additional_track_file, chrom_limits)
-
-  track_categories <- unique(track_data$region_type)
-
-  track_colors <- build_color_vector(
-    categories = track_categories,
-    manual_colors = opts$additional_colors,
-    # palette_name = opts$additional_palette,
-    default_palette = "Dark2"
-  )
-
-  combined_colors <- c(gene_colors, track_colors)
-} else {
-
-  combined_colors <- gene_colors
-}
 
 # Create base plot and add features
 # ------------------------------------------------------------------------
