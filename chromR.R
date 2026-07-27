@@ -236,6 +236,13 @@ plot_faceted <- function(
     "Relative distance from center (0=center, 1=telomeres)"
   }
 
+  n_df <- df %>%
+    count(category) %>%
+    mutate(label = paste0("n = ", n))
+
+  p <- ggplot(df, aes(x = .data[[x_var]], fill = category, color = category))
+
+
   p <- p +
     geom_text(
       data = n_df,
