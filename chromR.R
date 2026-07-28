@@ -41,7 +41,8 @@ suppressPackageStartupMessages({
     min_genes = 2,
     facet_plot = FALSE,
     facet_mode = "density",
-    facet_scales = "fixed",    additional_track_file = NULL,
+    facet_scales = "fixed",
+    additional_track_file = NULL,
     additional_track_offset = 0.5,
     additional_colors = NULL
   )
