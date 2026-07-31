@@ -24,15 +24,15 @@
 - Support for RColorBrewer palettes via `palette`
 
 ### 📁 Data Handling
-- Accepts standard GFF (General Feature Format) files as input (`--gff_file`).
-- Support for fill files (`--fill_file`) in CSV/TSV (`--formats`).
-- Export processed data as tables in CSV or TSV formats (CSV/TSV with `--table`)
+- Accepts standard GFF (General Feature Format) files as input (`gff_file`).
+- Support for fill files (`fill_file`) in CSV/TSV (`formats`).
+- Export processed data as tables in CSV or TSV formats (CSV/TSV with `table`)
 
 ### 🔍 Filtering Option
-- Strict mode (`--strict`) to show only chromosomes containing keywords
-- High point support via layout file (`--layout`)
-- Custom chromosome ordering (`--order_file`)
-- Filter by number of chromosomes to display (`--number`)
+- Strict mode (`strict`) to show only chromosomes containing keywords
+- High point support via layout file (`layout`)
+- Custom chromosome ordering (`order_file`)
+- Filter by number of chromosomes to display (`number`)
 
 ### ⚙️ Integration & Compatibility
 -  🚀 Command-Line Friendly. Run directly from the terminal or integrate into pipelines.
