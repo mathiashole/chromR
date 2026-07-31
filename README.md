@@ -16,12 +16,12 @@
 -  Highlight specific genes, regions, or domains using `keyword` filtering.
 - Additional plot types:
   - `line_plot`: display features as lines instead of points.
-  - `accumulated_plot`: generate an accumulated gene count plot.
-  - `folded_plot`: generate an accumulated gene count plot but folded in center of chromosome.
+  - `accumulated_plot`: generate an accumulated gene count plot. `(Fig. 2)`
+  - `folded_plot`: generate an accumulated gene count plot but folded in center of chromosome. `(Fig. 2)`
 
 ### 🎨 Color Customization 
 - Define colors for categories using R color names (e.g., "black") or hex codes (e.g., #1f77b4).
-- Support for RColorBrewer palettes via --palette
+- Support for RColorBrewer palettes via `palette`
 
 ### 📁 Data Handling
 - Accepts standard GFF (General Feature Format) files as input (`--gff_file`).
@@ -47,9 +47,11 @@ Rscript chromR.R -g ../genome/Saccharomyces_cerevisiae.R64-1-1.114.gff3 --keywor
 ```
 - **Genome example**: [Download Saccharomyces cerevisiae GFF](https://ftp.ensembl.org/pub/release-114/gff3/saccharomyces_cerevisiae/Saccharomyces_cerevisiae.R64-1-1.114.gff3.gz)
 
+### Figure 1.
+
 <img align="center" src="docs/gene_positions_plot.png" width="800">
 
-and 
+### Figure 2.
 
 <img align="center" src="docs/gene_distribution_folded.png" width="800" style="background-color: white">
 
