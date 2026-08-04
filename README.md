@@ -129,7 +129,7 @@ Rscript chromR.R --config <config.yaml>
 
 :bulb: Note: Colors must match the number of keywords provided. They can be standard R color names or hex codes. In the case of hexadecimal colors, they must be put in quotes (e.g. "#F4A582").
 
-## :bulb: Bash Quick Examples
+<!-- ## :bulb: Bash Quick Examples
 
 Example 1: Basic Plot
 
@@ -177,7 +177,7 @@ args <- c("chromR.R", "--gff_file", "data.gff", "--fill_file", "data_to_fill_inf
 
 # Execution command
 system2("Rscript", args = args)
-```
+``` -->
 
 
 ## :sparkling_heart: Contributing
