@@ -43,7 +43,7 @@
 - **Description**: This graph shows the position of two transposons in `Saccharomyces cerevisiae R64`, Ty1 (`Ty1`, `gene`) and TYA (`TYA`, `gene`) highlighted in green and orange.
 - **Command used**:
 ```{bash, eval = FALSE}
-Rscript chromR.R -g ../genome/Saccharomyces_cerevisiae.R64-1-1.114.gff3 --keywords Ty1 gene TYA gene
+Rscript chromR.R --config config.yaml
 ```
 - **Genome example**: [Download Saccharomyces cerevisiae GFF](https://ftp.ensembl.org/pub/release-114/gff3/saccharomyces_cerevisiae/Saccharomyces_cerevisiae.R64-1-1.114.gff3.gz)
 
