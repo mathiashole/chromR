@@ -95,9 +95,9 @@ Rscript chromR.R --config <config.yaml>
 -  Open chromR.R in RStudio.
 -  Set the arguments manually in the script or pass them interactively.
 
-## :gear: Arguments and configurations
+## :gear: Configuration options and argument
 
-### Command-line arguments
+### Command-line argument
 
 | Argument | Description | Example |
 |----------|-------------|---------|
