@@ -127,22 +127,6 @@ Rscript chromR.R --config <config.yaml>
 | `gene_list` | List of genes for sliding-window analysis. | `["TYA", "Ty1"]` |
 | `min_genes` | Minimum number of genes required per window. | `2` |
 
-<!-- | Argument            | Description                               | Example                     |
-|---------------------|-------------------------------------------|-----------------------------|
-| `--gff_file` / `-g` | Path to the GFF file.                    | `--gff_file data.gff`       |
-| `--keywords` / `-k` | Keywords to highlight specific features. | `--keywords gene1 CDS`      |
-| `--colors` / `-c`   | Colors for keywords (names or hex).      | `--colors black orange`     |
-| `--palette` / `-p`  | Select palette of RColorBrewer (names)   | `--palette Dark2`           |
-| `--layout` / `-l`   | Optional layout input (e.g., ID file).   | `--layout data_ids.txt`     |
-| `--accumulated_plot`/ `-ap`| Optional accumulated gene plot    | `--accumulated_plot`        |
-| `--strict` / `-s`   | Only show chromosomes that contain any of the keywords | `--strict`               |
-| `--line_plot` / `-lp`| Optional line plot gene.                | `--line_plot`               |
-| `--order_file` / `-of` | File with custom chromosome order.    | `-of chrom_order.tsv`       |
-| `--number` / `-n` | Maximum number of chromosomes to display.  | `-n 10 (Top 10 most longest)`       |
-| `--fill_file` / `-ff` | File with regions to fill.             | `--fill_file regions.tsv`   |
-| `--format` / `-f` | Fill and Order file format (csv/tsv)       | `--format tsv`              |
-| `--table` / `-tab` | Export tables (csv/tsv).                  | `--table csv`               | -->
-
 :bulb: Note: Colors must match the number of keywords provided. They can be standard R color names or hex codes. In the case of hexadecimal colors, they must be put in quotes (e.g. "#F4A582").
 
 ## :bulb: Bash Quick Examples
