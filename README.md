@@ -79,7 +79,7 @@ install.packages(c("dplyr", "readr", "ggplot2", "yaml"))
 
 ### Requirements:
 
-Ensure the following R packages are installed: `dplyr`, `readr`, `ggplot2`
+Ensure the following R packages are installed: `dplyr`, `readr`, `ggplot2` and `yaml`
 
 ### Execution Options:
 
