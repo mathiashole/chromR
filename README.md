@@ -56,7 +56,7 @@ Rscript chromR.R --config config.yaml
 
 ### Figure 2.
 
-<img align="center" src="docs/gene_distribution_folded.png" width="800" style="background-color: white">
+<img align="center" src="docs/gene_distribution_folded.png" width="800">
 
 ## 🧪 Installation
 
