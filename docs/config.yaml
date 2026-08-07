@@ -1,0 +1,24 @@
+# Input files
+gff_file: Saccharomyces_cerevisiae.R64-1-1.114.gff3
+
+# Extract mode
+feature_mode: keyword
+
+# Pares Name of gene/Type of annotation
+keywords:
+  - Ty1
+  - gene
+  - TYA
+  - gene
+
+# Plot options
+accumulated_plot: true
+folded_plot: true
+facet_plot: true
+facet_mode: hist
+facet_scales: free
+
+# Colors
+colors:
+  - "#1b9e77"
+  - "#d95f02"
