@@ -46,7 +46,7 @@
 ```{bash, eval = FALSE}
 Rscript chromR.R --config config.yaml
 ```
-- **Config yaml file**: [Download config.yaml](config.yaml)
+- **Config yaml file**: [Download config.yaml](docs/config.yaml)
 
 - **Genome example**: [Download Saccharomyces cerevisiae GFF](https://ftp.ensembl.org/pub/release-114/gff3/saccharomyces_cerevisiae/Saccharomyces_cerevisiae.R64-1-1.114.gff3.gz)
 
